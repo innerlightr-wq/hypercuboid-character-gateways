@@ -1,0 +1,47 @@
+License for the manuscript / paper
+===================================
+
+This license applies to the manuscript and scholarly paper only:
+
+  manuscript/hypercuboid_character_sums.pdf
+  manuscript/hypercuboid_character_sums.tex
+
+Title: Finite-Field Hypercuboid Character Sums and a Discriminant-8
+       Singular K3 Surface
+Author: Elias De Jesus
+
+The manuscript is distributed under the same license as specified by
+its authoritative Zenodo record:
+
+  DOI:    10.5281/zenodo.22711323
+  Record: https://doi.org/10.5281/zenodo.22711323
+
+That record's license was verified directly against the Zenodo API
+(https://zenodo.org/api/records/22711323) prior to writing this file,
+and is:
+
+  Creative Commons Attribution 4.0 International (CC BY 4.0)
+  License text: https://creativecommons.org/licenses/by/4.0/legalcode
+  License summary: https://creativecommons.org/licenses/by/4.0/
+
+Under CC BY 4.0, you are free to share and adapt the manuscript for
+any purpose, including commercially, provided you give appropriate
+credit to the author, provide a link to the license, and indicate if
+changes were made. See the full legal text at the URL above for the
+complete terms.
+
+This license does NOT apply to the code, scripts, or other software
+components of this repository, which are separately licensed under
+the MIT License (see LICENSE-MIT). See README.md for the full
+explanation of this split-license arrangement.
+
+Unless otherwise indicated, supporting scholarly materials in this
+repository (the contents of notes/, results/, and the Markdown
+documentation files in manuscript/) follow this same paper license,
+as they document and support the manuscript's derivation and audit
+rather than constituting independent software.
+
+Third-party material quoted, cited, or referenced within the
+manuscript (including excerpts of other authors' theorem statements)
+remains subject to its own original rights and licenses and is not
+relicensed by this file.

@@ -121,4 +121,42 @@ Zenodo record for the mathematical results themselves.
 
 ## License
 
-No license has been specified for this repository.
+This repository uses a **split license**: the code and the manuscript
+are licensed separately.
+
+- **Code** — the scripts in `scripts/` and other original software
+  components of this repository are licensed under the **MIT License**.
+  See [`LICENSE-MIT`](LICENSE-MIT).
+
+- **Manuscript** (`manuscript/hypercuboid_character_sums.tex` and
+  `manuscript/hypercuboid_character_sums.pdf`) — the paper is **not**
+  MIT-licensed. It is distributed under the scholarly-content license
+  specified by its authoritative Zenodo record
+  ([DOI 10.5281/zenodo.22711323](https://doi.org/10.5281/zenodo.22711323)),
+  verified directly against that record to be
+  **Creative Commons Attribution 4.0 International (CC BY 4.0)**. See
+  [`LICENSE-PAPER`](LICENSE-PAPER) for the full terms and the official
+  license text.
+
+- **Supporting scholarly materials** — unless otherwise indicated, the
+  contents of `notes/`, `results/`, and the Markdown documentation files
+  in `manuscript/` (the theorem/claim ledger, audits, contribution map,
+  etc.) follow the paper's license (CC BY 4.0), as they document and
+  support the manuscript rather than constituting independent software.
+
+- **Third-party material** — quotations, citations, and referenced
+  works (e.g. theorem statements attributed to other authors) remain
+  subject to their own original rights and licenses and are not
+  relicensed by anything in this repository.
+
+**The MIT License does not apply to the manuscript merely because the
+manuscript is stored in this repository.** If you are unsure which
+license governs a particular file, the code/paper split above is
+authoritative; MIT covers `scripts/` and comparable original software
+only.
+
+**Manuscript citation** (see also [How to Cite](#how-to-cite) above):
+
+> De Jesus, Elias. (2026). Finite-Field Hypercuboid Character Sums and
+> a Discriminant-8 Singular K3 Surface. Zenodo.
+> https://doi.org/10.5281/zenodo.22711323
