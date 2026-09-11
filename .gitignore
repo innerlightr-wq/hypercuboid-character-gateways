@@ -1,4 +1,4 @@
-# LaTeX build artifacts (scoped to manuscript/ so results/*.log survives)
+# LaTeX build artifacts (scoped to manuscript/ dirs so results/*.log survives)
 manuscript/*.aux
 manuscript/*.log
 manuscript/*.out
@@ -11,6 +11,18 @@ manuscript/*.synctex.gz
 manuscript/*.nav
 manuscript/*.snm
 manuscript/*.vrb
+class_iii/manuscript/*.aux
+class_iii/manuscript/*.log
+class_iii/manuscript/*.out
+class_iii/manuscript/*.toc
+class_iii/manuscript/*.bbl
+class_iii/manuscript/*.blg
+class_iii/manuscript/*.fls
+class_iii/manuscript/*.fdb_latexmk
+class_iii/manuscript/*.synctex.gz
+class_iii/manuscript/*.nav
+class_iii/manuscript/*.snm
+class_iii/manuscript/*.vrb
 
 # Python
 __pycache__/

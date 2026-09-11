@@ -1,9 +1,12 @@
 cff-version: 1.2.0
 message: >-
-  If you use the mathematical results in this work, please cite the
-  permanent Zenodo archive of the manuscript (preferred-citation
-  below), not this GitHub repository. This repository is a code and
-  reproducibility archive for the manuscript.
+  This repository contains two companion papers. If you use the
+  mathematical results of either, please cite its own permanent Zenodo
+  archive, not this GitHub repository: the Classes I/II paper is given
+  below as preferred-citation, and the Class III paper is listed under
+  references. See README.md ("Companion Papers" / "How to Cite") for
+  the full citation guidance for each paper individually. This
+  repository is a code and reproducibility archive for both manuscripts.
 title: >-
   Finite-Field Hypercuboid Character Sums and a Discriminant-8 Singular
   K3 Surface
@@ -27,3 +30,16 @@ preferred-citation:
     name: Zenodo
   doi: "10.5281/zenodo.22711323"
   url: "https://doi.org/10.5281/zenodo.22711323"
+references:
+  - type: generic
+    title: >-
+      Class III Hypercuboid Character Sums and a Discriminant-4
+      Singular K3 Surface
+    authors:
+      - family-names: "De Jesus"
+        given-names: "Elias"
+    year: 2026
+    publisher:
+      name: Zenodo
+    doi: "10.5281/zenodo.22713447"
+    url: "https://doi.org/10.5281/zenodo.22713447"

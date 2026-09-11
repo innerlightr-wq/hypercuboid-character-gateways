@@ -21,6 +21,49 @@ See [How to Cite](#how-to-cite) below for the distinction between
 citing the manuscript (Zenodo) and citing this code/reproducibility
 repository (GitHub).
 
+## Companion Papers
+
+This repository now contains two companion papers, resolving between
+them all three character-sum classes of the same finite-field
+hypercuboid construction.
+
+### Classes I/II
+
+**Finite-Field Hypercuboid Character Sums and a Discriminant-8 Singular
+K3 Surface**
+
+DOI: [https://doi.org/10.5281/zenodo.22711323](https://doi.org/10.5281/zenodo.22711323)
+
+Manuscript: [`manuscript/hypercuboid_character_sums.pdf`](manuscript/hypercuboid_character_sums.pdf)
+
+Key arithmetic sector: $T(X)\cong\operatorname{diag}(2,4)$,
+$\operatorname{disc}=8$, CM by $\mathbb Q(\sqrt{-2})$.
+
+### Class III
+
+**Class III Hypercuboid Character Sums and a Discriminant-4 Singular K3
+Surface**
+
+DOI: [https://doi.org/10.5281/zenodo.22713447](https://doi.org/10.5281/zenodo.22713447)
+
+Manuscript: [`class_iii/manuscript/class3_hypercuboid_k3.pdf`](class_iii/manuscript/class3_hypercuboid_k3.pdf)
+
+Key arithmetic sector: $T(X)\cong\operatorname{diag}(2,2)$,
+$\operatorname{disc}=4$, CM by $\mathbb Q(i)$.
+
+See [`class_iii/README.md`](class_iii/README.md) for the full account of
+this paper, including its literature positioning, its relation to
+Ahlgren–Ono–Penniston, and its own reproducibility material.
+
+---
+
+Together, the two studies show that the three hypercuboid character-sum
+classes considered in this project separate into two distinct
+arithmetic-geometric sectors. This is stated here, as in both papers
+themselves, only as an observation about these two resolved cases — not
+as a general theorem about the hypercuboid construction or its constraint
+classes.
+
 ## What this project studies
 
 A clean finite-field hypercuboid residue system on four coordinates,
@@ -49,8 +92,10 @@ not claimed as new** here. This repository's contribution is:
 **Class III** is proved to vanish for $p\equiv3\pmod4$ by an
 independent, self-contained symmetry argument unrelated to the K3
 machinery. Its value for $p\equiv1\pmod4$ — not addressed by
-Ahlgren–Ono–Penniston either — remains **open**, and is the genuine
-research frontier this project leaves behind.
+Ahlgren–Ono–Penniston either — is resolved in a companion paper via a
+*different* singular K3 surface (discriminant 4, CM by $\mathbb
+Q(i)$); see [`class_iii/`](class_iii/) and the **Companion Papers**
+section below.
 
 ## Repository contents
 
