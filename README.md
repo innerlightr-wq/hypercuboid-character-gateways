@@ -7,6 +7,20 @@ hypercuboid residue system.
 
 **Manuscript**: [`manuscript/hypercuboid_character_sums.pdf`](manuscript/hypercuboid_character_sums.pdf)
 
+## Permanent archive
+
+This manuscript is permanently archived on Zenodo:
+
+**DOI**: [https://doi.org/10.5281/zenodo.22711323](https://doi.org/10.5281/zenodo.22711323)
+
+> De Jesus, Elias. (2026). *Finite-Field Hypercuboid Character Sums and
+> a Discriminant-8 Singular K3 Surface*. Zenodo.
+> https://doi.org/10.5281/zenodo.22711323
+
+See [How to Cite](#how-to-cite) below for the distinction between
+citing the manuscript (Zenodo) and citing this code/reproducibility
+repository (GitHub).
+
 ## What this project studies
 
 A clean finite-field hypercuboid residue system on four coordinates,
@@ -66,6 +80,44 @@ against Hecke eigenvalue data for the newform `8.3.d.a` from the
 for the complete dependency graph and `manuscript/REFEREE_AUDIT.md` /
 `manuscript/CONTRIBUTION_MAP.md` for a detailed account of what is
 established here versus what is recovered from prior literature.
+
+## How to Cite
+
+There are two things one might cite here, and they are not the same:
+
+**1. The manuscript / mathematical results.** If you are citing the
+mathematical content — the theorems, proofs, or the character-sum
+identity itself — please cite the permanent Zenodo archive. This is
+the preferred citation for the manuscript and mathematical results:
+
+> De Jesus, Elias. (2026). Finite-Field Hypercuboid Character Sums and
+> a Discriminant-8 Singular K3 Surface. Zenodo.
+> https://doi.org/10.5281/zenodo.22711323
+
+**2. The code, reproducibility materials, or research audit trail.** If
+you are referring specifically to the computational scripts, raw
+results, or the full round-by-round research/audit log in this
+repository, you may additionally reference:
+
+> Elias De Jesus, Hypercuboid Character Gateways, GitHub repository:
+> https://github.com/innerlightr-wq/hypercuboid-character-gateways
+
+This GitHub repository is a code and reproducibility archive, not a
+peer-reviewed publication; it should not be cited in place of the
+Zenodo record for the mathematical results themselves.
+
+### BibTeX
+
+```bibtex
+@misc{dejesus2026hypercuboid,
+  author       = {De Jesus, Elias},
+  title        = {Finite-Field Hypercuboid Character Sums and a Discriminant-8 Singular K3 Surface},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.22711323},
+  url          = {https://doi.org/10.5281/zenodo.22711323}
+}
+```
 
 ## License
 

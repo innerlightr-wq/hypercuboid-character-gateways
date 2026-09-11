@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: >-
+  If you use the mathematical results in this work, please cite the
+  permanent Zenodo archive of the manuscript (preferred-citation
+  below), not this GitHub repository. This repository is a code and
+  reproducibility archive for the manuscript.
+title: >-
+  Finite-Field Hypercuboid Character Sums and a Discriminant-8 Singular
+  K3 Surface
+authors:
+  - family-names: "De Jesus"
+    given-names: "Elias"
+version: "1.0.0"
+date-released: "2026-01-01"
+repository-code: "https://github.com/innerlightr-wq/hypercuboid-character-gateways"
+type: software
+preferred-citation:
+  type: generic
+  title: >-
+    Finite-Field Hypercuboid Character Sums and a Discriminant-8
+    Singular K3 Surface
+  authors:
+    - family-names: "De Jesus"
+      given-names: "Elias"
+  year: 2026
+  publisher:
+    name: Zenodo
+  doi: "10.5281/zenodo.22711323"
+  url: "https://doi.org/10.5281/zenodo.22711323"
