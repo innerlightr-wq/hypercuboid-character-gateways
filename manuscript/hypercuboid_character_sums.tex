@@ -1,0 +1,597 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{openproblem}[theorem]{Open Problem}
+
+\newcommand{\Fp}{\mathbb{F}_p}
+\newcommand{\Fq}{\mathbb{F}_q}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qbar}{\overline{\mathbb{Q}}}
+\newcommand{\Triv}{\mathrm{Triv}}
+\newcommand{\NS}{\mathrm{NS}}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\rk}{rank}
+
+\title{Finite-Field Hypercuboid Character Sums and a Discriminant-8 Singular K3 Surface}
+
+\author{Elias De Jes\'us}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{abstract}
+We study three residual character-sum classes, $\Sigma_I(p)$, $\Sigma_{II}(p)$, $\Sigma_{III}(p)$, arising from the zero-diagonal complement collapse structure of a clean finite-field hypercuboid residue system with $n=4$. An elementary projective reduction shows $\Sigma_I(p)=(p-1)S(p)$ for the two-variable sum $S(p)=\sum_{x,t\in\Fp}\chi\bigl(x(x+1)t(t+1)(x+t)\bigr)$, where $\chi$ is the Legendre symbol modulo an odd prime $p$. The sum $S(p)$ is, up to an explicit elliptic-curve normalization, the character sum $A(1,q)$ studied by Ahlgren, Ono, and Penniston \cite{AOP2002}, whose Theorem 2.1 already gives its exact evaluation as part of a one-parameter family of K3 surfaces; the identity
+\[
+S(p)=\chi(-1)\bigl(a_p(f)+p\bigr)=-\chi(2)\,p+\chi(-1)\,a_p(E)^2,\qquad E:y^2=x^3+4x^2+2x,\quad f=\texttt{8.3.d.a},
+\]
+recovers their result and is \emph{not} claimed as new. Our contribution is twofold: we exhibit the hypercuboid reduction that produces this sum in the first place, together with an exact Gateway relation $\Sigma_{II}(p)=\chi(-1)\Sigma_I(p)$ connecting the two solved classes (apparently new, and specific to the hypercuboid construction); and we give a self-contained, independently-derived geometric proof of the character-sum identity via the specific singular K3 surface $X$ that the hypercuboid reduction naturally produces — realizing $S(p)=\#V(\Fp)-p^2$ for an explicit affine surface $V$, compactifying $V$ to $X$ (geometric Picard number $20$), and determining its Picard lattice, its rank-$2$ transcendental lattice ($T(X)\cong\mathrm{diag}(2,4)$), and the Frobenius trace on $T(X)$ via Livn\'e's modularity theorem. This is a different proof method from Ahlgren--Ono--Penniston's direct Jacobi-sum computation, of independent methodological interest. We record the resulting exact closed forms for $\Sigma_I(p)$ and $\Sigma_{II}(p)$ in every residue class modulo $8$ as corollaries. The vanishing $\Sigma_{III}(p)=0$ for $p\equiv3\pmod4$ is proved by an independent, unrelated symmetry argument; the sector $p\equiv1\pmod4$ — not addressed by \cite{AOP2002} or by this paper — is left open as the genuine remaining problem.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+Let $p$ be an odd prime and let $\chi$ denote the Legendre symbol modulo $p$. A \emph{clean finite-field hypercuboid residue system} on $n$ coordinates $A_1,\dots,A_n\in\Fp$ subject to $\sum_i A_i=0$ is governed by the vanishing pattern of the $2^{n-1}-1$ pairwise-sum forms $L_J(x)=\sum_{j\in J}x_j$, $\emptyset\neq J\subseteq\{1,\dots,n-1\}$, where $x_i=A_i$ parametrizes the zero-diagonal complement. For $n=4$ there are $7$ such forms, and the natural $S_4$-symmetry permuting $A_1,\dots,A_4$ acts on the $\binom{7}{6}=7$ possible six-element subsets with exactly three orbits, giving rise to three character-sum classes
+\[
+\Sigma_I(p),\qquad \Sigma_{II}(p),\qquad \Sigma_{III}(p).
+\]
+Of these, $\Sigma_{III}(p)$ was shown by an elementary symmetry argument to vanish identically for $p\equiv3\pmod4$, while $\Sigma_I(p)$ and $\Sigma_{II}(p)$ resisted elementary evaluation and were shown to be equivalent to one another up to the sign $\chi(-1)$ via a further symmetry (Gateway relation). The evaluation of $\Sigma_I(p)$ itself reduces, by an elementary projective argument (Lemma~\ref{lem:sigmaI}), to the two-variable character sum
+\[
+S(p) = \sum_{x,t\in\Fp}\chi\bigl(x(x+1)\,t(t+1)\,(x+t)\bigr).
+\]
+
+\subsection*{Identification with a known character sum}
+Writing $S(p)=\#V(\Fp)-p^2$ for the affine surface $V:Y^2=X(X+1)T(T+1)(X+T)$, one recognizes, on inspection, that $S(p)$ is exactly the sum $A(\lambda,q)$ studied by Ahlgren, Ono, and Penniston \cite{AOP2002} at $\lambda=1$: their $A(\lambda,q):=\sum_{x,y\in\Fq}\chi\bigl(xy(x+1)(y+1)(x+\lambda y)\bigr)$ satisfies $A(1,p)=S(p)$ identically (the same polynomial, up to renaming variables). Ahlgren--Ono--Penniston's Theorem 2.1 gives, for $\lambda\not\equiv0,-1\pmod p$,
+\[
+A(\lambda,q)=\chi(\lambda+1)\bigl(a(\lambda,q)^2-q\bigr),\qquad a(\lambda,q):=-\sum_{x\in\Fq}\chi\Bigl((x-1)\bigl(x^2-\tfrac1{\lambda+1}\bigr)\Bigr),
+\]
+and their Theorem 1.2 shows $X_1$ (their K3 surface at $\lambda=1$, which is the same affine surface as our $V$) is singular with complex multiplication by $\Q(\sqrt{-2})$. Combined with the exact identity $a(1,p)=\chi(2)(p)\,a_p(E)$ (their elliptic curve $E_1$ is the quadratic twist of $E$ by $2$, exhibited explicitly in Remark~\ref{rem:aop}), their result reduces exactly to
+\[
+S(p)=-\chi(2)\,p+\chi(-1)\,a_p(E)^2
+\]
+for the CM elliptic curve $E:y^2=x^3+4x^2+2x$ — \textbf{the same identity this paper proves}. \emph{We do not claim this evaluation of $S(p)$ as new.} What we contribute is: (i) the hypercuboid construction that leads to $S(p)$ in the first place, and the Gateway relation connecting it to the second unsolved class $\Sigma_{II}(p)$ (Section~\ref{sec:corollaries}), neither of which appears in \cite{AOP2002} or, as far as we have found, anywhere else; and (ii) an independent, self-contained derivation of the character-sum identity via the singular K3 surface $X$ that the hypercuboid reduction itself naturally produces — a Picard-lattice/Mordell--Weil/modularity argument, structurally different from Ahlgren--Ono--Penniston's direct Jacobi-sum manipulation (Section~\ref{sec:methods} compares the two routes explicitly). This chain of identifications is:
+
+\[
+\boxed{S(p)=\chi(-1)\bigl(a_p(f)+p\bigr)=-\chi(2)\,p+\chi(-1)\,a_p(E)^2}
+\qquad\text{for every odd prime }p,
+\]
+
+with $E:y^2=x^3+4x^2+2x$ and $f=\texttt{8.3.d.a}$, from which exact closed forms for $\Sigma_I(p)$ and $\Sigma_{II}(p)$ follow (Section~\ref{sec:corollaries}).
+
+\subsection*{What this paper does not do}
+The principal character-sum evaluation above is not claimed as new: it recovers Ahlgren--Ono--Penniston \cite{AOP2002}, Theorem 2.1 at $\lambda=1$. This paper does not address the classical integer \emph{perfect hypercuboid} problem (the existence of a rectangular box with all edges, face diagonals, and space diagonal of integer length); the finite-field system studied here is a separate, purely arithmetic object motivated by that classical problem but logically independent of it. We do not evaluate $\Sigma_{III}(p)$ for $p\equiv1\pmod4$ — not addressed by \cite{AOP2002} either, since it has no analogue of a "Class III" — which remains open and is, in the present state of this project, the genuine open frontier of the hypercuboid classification (Section~\ref{sec:classIII}). We do not claim any new general theorem in the theory of K3 surfaces or modular forms: the K3-theoretic and modularity machinery used here (Shioda--Tate, Shioda's height pairing, the singular-K3 classification, Livn\'e's modularity theorem, and the symmetric-square decomposition for CM elliptic curves) is entirely classical.
+
+\subsection*{Outline}
+Section~\ref{sec:prelim} fixes notation. Section~\ref{sec:reduction} proves the elementary reductions $\Sigma_I(p)=(p-1)S(p)$ and $\#V(\Fp)=p^2+S(p)$. Section~\ref{sec:K3} constructs $X$ and its Kodaira fibers. Section~\ref{sec:pointcount} establishes the exact point-count identity $\#X(\Fp)=\#V(\Fp)+19p+1$, including the corrected treatment of the $I_2$ fiber. Section~\ref{sec:lattices} determines the Picard and transcendental lattices of $X$, including a torsion-completeness lemma. Section~\ref{sec:trace} computes the Frobenius trace on $NS(X)$ and, via modularity, on $T(X)$, and identifies the elliptic-curve twist connecting our route to \cite{AOP2002}. Section~\ref{sec:main} assembles the identity, attributed correctly. Section~\ref{sec:methods} compares the two proof methods. Section~\ref{sec:corollaries} records the hypercuboid corollaries for $\Sigma_I,\Sigma_{II}$, with a residue-class-$8$ table. Section~\ref{sec:classIII} records the Class~III boundary — the paper's genuine open problem. Sections~\ref{sec:discussion}--\ref{sec:limitations} discuss the result and its limitations. Five appendices contain the longer explicit calculations.
+
+\section{Preliminaries and notation}
+\label{sec:prelim}
+
+Throughout, $p$ denotes an odd prime and $\chi(a):=\left(\frac{a}{p}\right)$ the Legendre symbol modulo $p$; we also use $\chi(-1),\chi(2),\chi(-2)$ to denote the associated Kronecker symbols viewed as functions of $p$ (equivalently, as quadratic Dirichlet characters unramified outside $\{2,\infty\}$, attached to $\Q(i)$, $\Q(\sqrt2)$, $\Q(\sqrt{-2})$ respectively). We consistently exclude $p=2$: the surface $X$ constructed below and the newform $f$ both have bad/degenerate behavior only at $2$ (justified in the proof of Proposition~\ref{prop:trt}), so every boxed identity in this paper holds for \emph{every odd prime}, with no further exclusion.
+
+For $n=4$, fix $x=(x_0,x_1,x_2)\in\Fp^3$, set $A_1=x_0,A_2=x_1,A_3=x_2,A_4=-(x_0+x_1+x_2)$, and let $L_J(x)=\sum_{j\in J}x_j$ for nonempty $J\subseteq\{0,1,2\}$, giving $7$ linear forms. Ordering them $L_0=x_0,L_1=x_1,L_2=x_2,L_3=x_0+x_1,L_4=x_0+x_2,L_5=x_1+x_2,L_6=x_0+x_1+x_2$, the three $S_4$-orbits of $6$-element subsets are represented by
+\[
+\Sigma_I(p)=\sum_{x\in\Fp^3}\chi\bigl(x_0x_1x_2(x_0+x_1)(x_0+x_2)(x_1+x_2)\bigr),
+\]
+\[
+\Sigma_{II}(p)=\sum_{x\in\Fp^3}\chi\bigl(x_0x_1(x_0+x_1)(x_0+x_2)(x_1+x_2)(x_0+x_1+x_2)\bigr),
+\]
+and $\Sigma_{III}(p)$ (omitting the remaining form, associated to the double transposition $(1\,3)(2\,4)$; see \S\ref{sec:classIII}).
+
+We write $S(p)=\sum_{x,t\in\Fp}\chi\bigl(x(x+1)t(t+1)(x+t)\bigr)$, $E:y^2=x^3+4x^2+2x$ (an elliptic curve with complex multiplication by $\Z[\sqrt{-2}]$, with Frobenius trace $a_p(E):=p+1-\#E(\Fp)$), and $f=\texttt{8.3.d.a}$, the weight-$3$, level-$8$, CM-by-$\Q(\sqrt{-2})$ newform with Hecke eigenvalues $a_p(f)\in\Z$. We write $V$ for the affine surface $Y^2=X(X+1)T(T+1)(X+T)$ and $X$ for its smooth projective (K3) model; $NS(X)$ for the N\'eron--Severi lattice of $X_{\Qbar}$ and $T(X)=NS(X)^\perp\subset H^2(X,\Z)$ for the transcendental lattice. A full notation table, including explicit warnings against the conflations most likely to arise ($X$ vs.\ $V$; $NS$ vs.\ $T$; $a_p(E)$ vs.\ $a_p(f)$; geometric vs.\ arithmetic Picard rank), is given in Appendix~\ref{app:notation}.
+
+\section{The character-sum reduction}
+\label{sec:reduction}
+
+\begin{lemma}[Projective reduction]
+\label{lem:sigmaI}
+For every odd prime $p$, $\Sigma_I(p)=(p-1)\,S(p)$.
+\end{lemma}
+
+\begin{proof}
+Write $P(x_0,x_1,x_2)=x_0x_1x_2(x_0+x_1)(x_0+x_2)(x_1+x_2)$, homogeneous of degree $6$. For $z\in\Fp^\times$, $P(zv)=z^6P(v)$, and $z^6=(z^3)^2$ is a nonzero square, so $\chi(P(zv))=\chi(P(v))$: the value of $\chi\circ P$ is constant on each punctured line through the origin in $\Fp^3$. The origin itself contributes $\chi(0)=0$. Every line not contained in the hyperplane $x_0=0$ has a unique representative of the form $(1,x,t)$, and
+\[
+P(1,x,t)=1\cdot x\cdot t\cdot(1+x)(1+t)(x+t)=x(x+1)\,t(t+1)\,(x+t),
+\]
+the summand of $S(p)$; there are exactly $p^2$ such lines, one for each $(x,t)\in\Fp^2$, with no omission or repetition (distinct $(x,t)$ give distinct representatives since the leading coordinate is fixed at $1$). Every line contained in $x_0=0$ has $P(0,x_1,x_2)=0$ identically, contributing $\chi(0)=0$; these lines are correctly accounted for as zero-contributing, not omitted. Each punctured line has $p-1$ nonzero points, all giving the same character value, so
+\[
+\Sigma_I(p)=\sum_{v\in\Fp^3}\chi(P(v)) = (p-1)\sum_{\text{lines}}\chi(P(v_\ell)) = (p-1)\Bigl(S(p)+0\Bigr)=(p-1)S(p).\qedhere
+\]
+\end{proof}
+
+\begin{lemma}[Affine point-count realization]
+\label{lem:V}
+$\#V(\Fp)=p^2+S(p)$.
+\end{lemma}
+
+\begin{proof}
+For $c\in\Fp$, $\#\{y\in\Fp: y^2=c\}=1+\chi(c)$, valid at $c=0$ as well. Summing over $(X,T)\in\Fp^2$,
+\[
+\#V(\Fp)=\sum_{X,T\in\Fp}\bigl(1+\chi(X(X+1)T(T+1)(X+T))\bigr)=p^2+S(p).\qedhere
+\]
+\end{proof}
+
+The problem of evaluating $\Sigma_I(p)$ is thus reduced, exactly, to the problem of evaluating the point count $\#V(\Fp)$ of an explicit affine surface.
+
+\section{The elliptic K3 model}
+\label{sec:K3}
+
+Substituting $X=X$, $T=t$, and dividing the affine equation by the appropriate power of $t(t+1)$ realizes $V$, for fixed $t$, as (a twist of) the Legendre family $y^2=x(x+1)(x+t)$. The resulting minimal Weierstrass model over $\Q(t)$ is
+\[
+Y^2 = X^3 + a_2(t)X^2+a_4(t)X,\qquad a_2(t)=t(t+1)^2,\quad a_4(t)=t^3(t+1)^2,\quad a_6=0.
+\]
+
+\begin{proposition}[Elliptic K3 model]
+\label{prop:X}
+The smooth minimal relatively-minimal model $X\to\mathbb P^1_t$ of the above Weierstrass equation is a K3 surface, with Kodaira fibers exactly of type $I_2^*$ at $t=0$, $I_2$ at $t=1$, $I_0^*$ at $t=-1$, and $I_2^*$ at $t=\infty$, and smooth fibers elsewhere.
+\end{proposition}
+
+\begin{proof}[Proof sketch (full calculation in Appendix~\ref{app:kodaira})]
+The standard invariants are
+\[
+c_4=16t^2(t+1)^2(t^2-t+1),\quad c_6=-32t^3(t-2)(t+1)^4(2t-1),\quad \Delta=16t^8(t-1)^2(t+1)^6.
+\]
+Classifying $(\mathrm{ord}_t c_4,\mathrm{ord}_t c_6,\mathrm{ord}_t\Delta)$ against Tate's algorithm's valuation table gives $(2,3,8)$ at $t=0$ (type $I_2^*$), $(0,0,2)$ at $t=1$ (type $I_2$), $(2,4,6)$ at $t=-1$ (type $I_0^*$), and (using the weight-$(4,6,12)$ scaling appropriate to a degree-$2$ elliptic surface, $\deg c_4=6$, $\deg c_6=9$, $\deg\Delta=16$) $(2,3,8)$ at $t=\infty$ (type $I_2^*$). The sum of the $\Delta$-orders over the bad fibers, $8+2+6+8=24$, equals the Euler number of $X$. Since the base curve $\mathbf P^1$ has genus $0$, the irregularity $q(X)$ of any elliptic surface with section over it is automatically $0$; combined with $\chi(\mathcal O_X)=e(X)/12=2$ this gives $p_g(X)=\chi(\mathcal O_X)-1+q(X)=1$, and $(q,p_g)=(0,1)$ with trivial canonical bundle is the standard characterization of a K3 surface, confirming the classification ($e(X)=24$, not $12$, also rules out the rational-elliptic-surface alternative).
+\end{proof}
+
+\section{The exact point-count correction}
+\label{sec:pointcount}
+
+Write $N_{I_2^*}(p)$, $N_{I_2}(p)$, $N_{I_0^*}(p)$ for the number of $\Fp$-points of the resolved fiber at $t=0,\infty$; $t=1$; $t=-1$ respectively.
+
+\begin{proposition}[Bad-fiber point counts]
+\label{prop:fibers}
+For every odd prime $p$,
+\[
+N_{I_2^*}(p)=7p+1,\qquad N_{I_0^*}(p)=5p+1,\qquad
+\boxed{N_{I_2}(p)=2p+1-\chi(-2)}.
+\]
+\end{proposition}
+
+The first two formulas follow from the standard union-of-components count for a \emph{tree} dual graph, once every component is shown individually $\Fp$-rational and every intersection point individually $\Fp$-rational (Appendix~\ref{app:fibers}; every rationality claim there is established either by ternary-quadratic-form isotropy of an explicit, nondegenerate local equation, or by an explicit nonzero \emph{integer} implicit-derivative computation — in neither case does any character value enter). The $I_2$ formula requires more care, because the $I_2$ fiber's dual graph is a \emph{$2$-cycle}, not a tree, and its two intersection points are \emph{not} unconditionally rational.
+
+\begin{proof}[Proof of the $N_{I_2}(p)$ formula]
+At $t=1$, setting $X=X'-2$, the surface is $Y^2=X'(X'-2)(X'+8\varepsilon)$, $\varepsilon=t-1$; at $\varepsilon=0$ this is the nodal cubic $Y^2=X'^2(X'-2)$, node at $X'=Y=0$. Its normalization $C_1$, parametrized by $X'=s^2+2,\ Y=s(s^2+2)$, is a $\mathbb P^1$ with $p+1$ points, and the node's two branches lift to the two preimages $s=\pm\sqrt{-2}$. Blowing up the node (weighted substitution $X'=\varepsilon u,\ Y=\varepsilon w$) gives, at $\varepsilon=0$, the exceptional conic $C_2:\ W^2=-2u(u+8)$, also a $\mathbb P^1$ with $p+1$ points (affine part $p-\chi(-2)$, points at infinity $1+\chi(-2)$, summing unconditionally to $p+1$). Dividing $C_2$'s equation by $u^2$ as $u\to\infty$ gives $(W/u)^2\to-2$: the two points at infinity of $C_2$ are exactly the two directions $W=\pm u\sqrt{-2}$ — the same locus as $C_1$'s two branch-preimages $s=\pm\sqrt{-2}$, this being the general fact that the exceptional curve of a blown-up node meets the strict transform precisely along the node's own tangent directions. Hence $C_1\cap C_2$ consists of exactly these $2$ points, individually $\Fp$-rational if and only if $\chi(-2)=1$ (i.e.\ $-2$ is a square mod $p$), and forming a single Galois-conjugate pair (contributing $0$ rational points) if $\chi(-2)=-1$. By inclusion--exclusion,
+\[
+N_{I_2}(p)=\#C_1(\Fp)+\#C_2(\Fp)-\#(C_1\cap C_2)(\Fp)=(p+1)+(p+1)-(1+\chi(-2))=2p+1-\chi(-2).\qedhere
+\]
+\end{proof}
+
+\begin{proposition}[Global point-count correction]
+\label{prop:ledger}
+For every odd prime $p$,
+\[
+\boxed{\#X(\Fp)=\#V(\Fp)+19p+1.}
+\]
+\end{proposition}
+
+\begin{proof}
+Summing $\#X(\Fp)=\sum_{t\in\mathbb P^1(\Fp)}\#X_t(\Fp)$ fiber by fiber and comparing to the naive affine count $V_t^{\mathrm{naive}}(\Fp)$ (the literal solution count of $Y^2=t(t+1)X(X+1)(X+t)$ at that $t$, without resolving any singularity), each of the $p-3$ good fibers contributes exactly one extra point (the point at infinity of the corresponding Weierstrass curve), and:
+\begin{itemize}
+\item $t=0$: naive count is $p$ (the equation degenerates to $Y=0$); resolved count is $7p+1$; contribution $6p+1$.
+\item $t=1$: naive count is $p-\chi(-2)$ (a direct character-sum evaluation, Appendix~\ref{app:fibers}); resolved count is $2p+1-\chi(-2)$ (Proposition~\ref{prop:fibers}); contribution $p+1$.
+\item $t=-1$: naive count is $p$; resolved count is $5p+1$; contribution $4p+1$.
+\item $t=\infty$: not part of the affine surface $V$ at all; contributes wholesale, $7p+1$.
+\end{itemize}
+Summing: $(p-3)\cdot1+(6p+1)+(p+1)+(4p+1)+(7p+1)=19p+1$, with the constant terms $-3+1+1+1+1=1$ — the $\chi(-2)$-dependence present in the $t=1$ row's naive/resolved comparison cancels exactly, leaving a constant, character-free total.
+\end{proof}
+
+\section{Picard rank and lattices}
+\label{sec:lattices}
+
+Let $\mathrm{Triv}(X)=U\oplus D_6\oplus A_1\oplus D_4\oplus D_6$ be the trivial lattice (general fiber and zero section, plus the non-identity components at $t=0,1,-1,\infty$); one checks $\rk\Triv(X)=2+6+1+4+6=19$, and (Appendix~\ref{app:fibers}) every one of these $19$ generators is defined by an explicit rational-coefficient equation, hence individually $\Q$-rational.
+
+\begin{lemma}[Mordell--Weil torsion]
+\label{lem:torsion}
+$\mathrm{MW}(X/\Qbar(t))_{\mathrm{tors}}\cong(\Z/2)^2$.
+\end{lemma}
+
+\begin{proof}
+The generic fiber is $E_t:Y^2=X\bigl(X^2+a_2X+a_4\bigr)$, and $X^2+a_2X+a_4=X^2+t(t+1)^2X+t^3(t+1)^2$ has discriminant $t^2(t+1)^4-4t^3(t+1)^2=t^2(t+1)^2\bigl[(t+1)^2-4t\bigr]=t^2(t+1)^2(t-1)^2=\bigl(t(t+1)(t-1)\bigr)^2$, a perfect square. Hence $X^2+a_2X+a_4$ splits completely already over $\Q(t)$, so $E_t[2]$ — all four points, $O$ together with the three nonzero roots of $X(X^2+a_2X+a_4)$ — is $\Q(t)$-rational, giving $\mathrm{MW}(X/\Q(t))_{\mathrm{tors}}\supseteq E_t[2]\cong(\Z/2)^2$.
+
+For the reverse inclusion, we use the standard fact (Shioda \cite{Shioda1990}; see also Miranda--Persson \cite{MirandaPersson1989} for the general theory of torsion groups of elliptic surfaces) that the product of the specialization maps at the bad fibers,
+\[
+\psi:\mathrm{MW}(X/\Qbar(t))_{\mathrm{tors}}\longrightarrow\bigoplus_v\Phi_v,
+\]
+is injective, where $\Phi_v$ is the component group of the fiber at $v$. Here the four bad fibers are $I_2^*(0)$, $I_2(1)$, $I_0^*(-1)$, $I_2^*(\infty)$, with component groups $\Phi(I_2^*)\cong(\Z/2)^2$, $\Phi(I_2)\cong\Z/2$, $\Phi(I_0^*)\cong(\Z/2)^2$, $\Phi(I_2^*)\cong(\Z/2)^2$ respectively (standard: $\Phi(I_n)\cong\Z/n$; $\Phi(I_n^*)\cong(\Z/2)^2$ for $n$ even, as here in all three additive fibers). Each $\Phi_v$ above therefore has exponent dividing $2$, so $\bigoplus_v\Phi_v$ does too, and since $\psi$ is injective, $\mathrm{MW}(X/\Qbar(t))_{\mathrm{tors}}$ has exponent dividing $2$ as well. An element of $\mathrm{MW}(X/\Qbar(t))$ of order dividing $2$ is, tautologically, a $2$-torsion point of the generic fiber $E_t$ (the Mordell--Weil group $\mathrm{MW}(X/\Qbar(t))$ \emph{is} $E_t(\Qbar(t))$ by definition), so $\mathrm{MW}(X/\Qbar(t))_{\mathrm{tors}}\subseteq E_t[2]$. Since $E_t[2]$ has order exactly $4$ (any elliptic curve in characteristic $0$), combining both inclusions gives $\mathrm{MW}(X/\Qbar(t))_{\mathrm{tors}}=E_t[2]\cong(\Z/2)^2$ exactly.
+\end{proof}
+
+This also settles the torsion over every field between $\Q(t)$ and $\Qbar(t)$ used in this paper (in particular over $\Q(i)(t)$, needed below):
+\[
+(\Z/2)^2\subseteq\mathrm{MW}(X/\Q(t))_{\mathrm{tors}}\subseteq\mathrm{MW}(X/\Q(i)(t))_{\mathrm{tors}}\subseteq\mathrm{MW}(X/\Qbar(t))_{\mathrm{tors}}=(\Z/2)^2,
+\]
+forcing equality throughout.
+
+Consider the point $P_1=(X,Y)=\bigl(-(t+1),\ i\,(t-1)(t+1)^2\bigr)$ on $X$, defined over $\Q(i)(t)$.
+
+\begin{proposition}[Picard rank and lattices]
+\label{prop:picard}
+$P_1$ lies on $X$, has canonical height $\hat h(P_1)=1$, and is non-torsion. Consequently
+\[
+\rho(X_{\Qbar})=20,\qquad |\disc\,NS(X)|=8,\qquad T(X)\cong\begin{pmatrix}2&0\\0&4\end{pmatrix}.
+\]
+\end{proposition}
+
+\begin{proof}
+Direct substitution confirms $Y^2\equiv X^3+a_2X^2+a_4X$ identically (Appendix~\ref{app:height}). Evaluating $x_1(t)=-(t+1)$ at each bad fiber and consulting the standard Shioda local height-contribution table for the fiber type met (Appendix~\ref{app:height}) gives contributions $0$ ($t=0$, identity), $0.5$ ($t=1$, $I_2$ non-identity), $1$ ($t=-1$, $I_0^*$ outer), $1.5$ ($t=\infty$, $I_2^*$ far component). Since $x_1$ is a polynomial (no pole, including at $t=\infty$), $P_1\cdot O=0$. Shioda's height formula for a K3 ($\chi=2$) gives $\hat h(P_1)=2\cdot2+2\cdot0-(0+0.5+1+1.5)=4-3=1$. Since $\hat h=0$ iff torsion, $P_1$ is non-torsion.
+
+By Shioda--Tate over $\Qbar(t)$, $\rho(X_{\Qbar})=19+\rk MW(X/\Qbar(t))\ge19+1=20$; since every K3 surface satisfies $\rho\le20$, equality holds, forcing $\rk MW(\Qbar(t))=1$ exactly. The Mordell--Weil lattice discriminant formula (with $|\disc\,\Triv(X)|=1\cdot4^2\cdot2\cdot4=128$ and the torsion-correction factor $|\mathrm{MW}_{\mathrm{tors}}|^2=16$, now exactly $16$ by Lemma~\ref{lem:torsion}, not merely a lower bound) gives $|\disc\,NS(X)|=128\cdot1/16=8$. Since $NS(X)^\perp=T(X)$ in the unimodular K3 lattice, $T(X)$ is positive-definite, even, rank $2$, discriminant $8$; since $\Z[\sqrt{-2}]$ has class number $1$, this lattice is unique up to isomorphism, namely $\mathrm{diag}(2,4)$.
+\end{proof}
+
+No $\Q(t)$-rational point of height $1$ exists (an exhaustive elimination over the finitely many admissible fiber-component patterns); $P_1$ realizes this height only over the quadratic extension $\Q(i)(t)$.
+
+\section{Frobenius traces on \texorpdfstring{$NS(X)$}{NS(X)} and \texorpdfstring{$T(X)$}{T(X)}}
+\label{sec:trace}
+
+\begin{proposition}[Algebraic Frobenius trace]
+\label{prop:trns}
+For every odd prime $p$, $\Tr(F_p\mid NS(X))=(19+\chi(-1))p$.
+\end{proposition}
+
+\begin{proof}
+$NS(X)\otimes\Q_\ell=\Triv(X)\otimes\Q_\ell\oplus\langle P_1\rangle\otimes\Q_\ell$. The $19$ trivial-lattice generators are individually $\Q$-rational, each contributing eigenvalue $p$ (Tate twist of the trivial character), total $19p$. The $20$th class, generated by $P_1$, is defined exactly over $\Q(i)$ and not over $\Q$ (its $Y$-coordinate genuinely requires $i$, and no $\Q(t)$-rational height-$1$ point exists). Complex conjugation $\sigma:i\mapsto-i$ sends $P_1=(x_1,iq_1)\mapsto(x_1,-iq_1)=-P_1$, verified by direct substitution. Hence, for a prime $p$: if $p$ splits in $\Q(i)$ ($\chi(-1)=1$), $\mathrm{Frob}_p$ acts trivially on the class, eigenvalue $+p$; if $p$ is inert ($\chi(-1)=-1$), $\mathrm{Frob}_p$ acts as $\sigma$, eigenvalue $-p$. In both cases the eigenvalue is $\chi(-1)p$, giving $\Tr(F_p\mid NS)=19p+\chi(-1)p$.
+\end{proof}
+
+\begin{proposition}[Transcendental modular trace]
+\label{prop:trt}
+For every odd prime $p$, $\Tr(F_p\mid T(X))=\chi(-1)\,a_p(f)$.
+\end{proposition}
+
+\begin{proof}
+By Livn\'e's modularity theorem for singular K3 surfaces (Theorem~\ref{thm:livne} below), since $\disc\,T(X)=8$ and $h(-8)=1$, there is a fixed quadratic character $\chi_0$ with $T(X)\otimes\Q_\ell\cong\rho_{f,\ell}\otimes\chi_0$. Both $X$ (bad reduction only at $p=2$: $\disc(E)\propto2^5$, and the four bad $t$-values $0,1,-1,\infty$ collide only mod $2$) and $f$ (level $8$) are unramified outside $\{2\}$, so $\chi_0$ is unramified outside $\{2,\infty\}$: $\chi_0\in\{1,\chi(-1),\chi(2),\chi(-2)\}$, the exhaustive list of fundamental discriminants supported at $2$ alone. Since $a_p(f)=0$ at every prime inert in $\Q(\sqrt{-2})$ (CM vanishing) and $\chi(-1)\chi(2)=\chi(-2)$ (Legendre multiplicativity), the characters $1,\chi(-2)$ give one trace function, $a_p(f)$.
+The remaining two, $\chi(-1)$ and $\chi(2)$, give another, $\chi(-1)a_p(f)$ — only two possibilities in total. At $p=3$: $\chi(-1)(3)=-1$, $S(3)=-1$ (direct computation), $a_3(f)=-2$ (\texttt{8.3.d.a}, LMFDB). The first candidate would (via Theorem~\ref{thm:main}'s derivation, run with $\Tr_T=a_p(f)$) force
+\[
+S(3)=a_3(f)+\chi(-1)(3)\cdot3=-2-3=-5\neq-1,
+\]
+a contradiction; the second gives $S(3)=\chi(-1)(3)\bigl(a_3(f)+3\bigr)=(-1)(1)=-1$, matching exactly. Since the true trace function is, a priori, exactly one of the two candidates (an isomorphism of Galois representations forces exact trace equality at every good prime, not merely approximate agreement), this single prime rules out the first and confirms the second.
+\end{proof}
+
+\begin{remark}[Relation to Ahlgren--Ono--Penniston]
+\label{rem:aop}
+Ahlgren--Ono--Penniston's elliptic curve at $\lambda=1$, $E_1:y^2=(x-1)(x^2-\tfrac12)$, is related to $E$ by an \emph{exact, explicit isomorphism defined over $\Q(\sqrt2)$}, not over $\Q$: the map
+\[
+x'=\tfrac x2+1,\qquad y'=\frac{y}{2\sqrt2},\qquad\text{with inverse}\qquad x=2(x'-1),\quad y=2\sqrt2\,y',
+\]
+sends $E$ to $E_1$ exactly, i.e.\ $y'^2-\bigl((x'-1)(x'^2-\tfrac12)\bigr)=\tfrac18\bigl(y^2-(x^3+4x^2+2x)\bigr)$ identically (verified symbolically); equivalently, in short Weierstrass form, $E$ and $E_1$ have $(A,B)$-pairs related by $(A_{E_1},B_{E_1})=(u^4A_E,u^6B_E)$ with $u^2=\tfrac12$ (so $u\notin\Q$), and both curves share $j$-invariant $8000$. \textbf{This makes $E_1$ the quadratic twist of $E$ by $2$, not by $-1$}: consequently $a(1,p)=-\sum_{x\in\Fp}\chi\bigl((x-1)(x^2-\tfrac12)\bigr)$ satisfies the exact identity $a(1,p)=\chi(2)(p)\,a_p(E)$ for every odd prime $p$ (not merely a numerically-checked coincidence, but a consequence of the twist relation just exhibited). Substituting into Ahlgren--Ono--Penniston's formula $A(1,p)=\chi(2)\bigl(a(1,p)^2-p\bigr)$ and using $\chi(2)^2=1$ gives $A(1,p)=\chi(2)\bigl(a_p(E)^2-p\bigr)=\chi(2)a_p(E)^2-\chi(2)p$. This matches $S(p)=-\chi(2)p+\chi(-1)a_p(E)^2$ (Theorem~\ref{thm:main} below) precisely because $\chi(2)$ and $\chi(-1)$ agree exactly wherever $a_p(E)\ne0$: at a prime split in $\Q(\sqrt{-2})$ (where $a_p(E)\ne0$), $\chi(-1)\chi(2)=\chi(-2)=1$ forces $\chi(-1)=\chi(2)$; at an inert prime $a_p(E)=0$ and the discrepancy is moot. \emph{The $\chi(-1)$ twist appearing in Theorem~\ref{thm:main} itself is established independently in Section~\ref{sec:trace} via the $\Q(i)$-rationality of $P_1$, unrelated to this $E$--$E_1$ comparison} — the two routes agree because of this character identity, not because they involve the same twist of the same object. See Section~\ref{sec:methods}.
+\end{remark}
+
+\begin{theorem}[Livn\'e, modularity of singular K3 surfaces]
+\label{thm:livne}
+Every singular K3 surface $X/\Q$ is modular: the $L$-series of $T(X)$ is the Mellin transform of a weight-$3$ Hecke eigenform with complex multiplication by $K=\Q(\sqrt{d})$, $d=\disc\,T(X)<0$, this eigenform being well-defined only up to quadratic twist.
+\end{theorem}
+
+See the References for the precise citation; Theorem~\ref{thm:livne} applies regardless of whether $NS(X)$ is generated by classes defined over $\Q$ (our situation: $\rho(X/\Q)=19<20$).
+
+\section{The character-sum identity}
+\label{sec:main}
+
+The following evaluation agrees with, and was first established by, the character-sum identity of Ahlgren, Ono, and Penniston \cite[Thm.\ 2.1]{AOP2002} (specialized to $\lambda=1$, via the elliptic-curve identification of Remark~\ref{rem:aop}). We derive it here independently, from the singular K3 model $X$ that the hypercuboid reduction of Section~\ref{sec:reduction} naturally produces, via Propositions~\ref{prop:ledger}, \ref{prop:trns}, and \ref{prop:trt} above.
+
+\begin{theorem}[Character-sum identity; cf.\ \cite{AOP2002}, Thm.\ 2.1]
+\label{thm:main}
+For every odd prime $p$,
+\[
+S(p)=\chi(-1)\bigl(a_p(f)+p\bigr)=-\chi(2)\,p+\chi(-1)\,a_p(E)^2.
+\]
+\end{theorem}
+
+\begin{proof}
+By the Grothendieck--Lefschetz trace formula for the smooth projective K3 surface $X$, $\#X(\Fp)=1+p^2+\Tr(F_p\mid H^2(X))=1+p^2+\Tr(F_p\mid NS(X))+\Tr(F_p\mid T(X))$. Combining Propositions~\ref{prop:ledger}, \ref{prop:trns}, \ref{prop:trt} with Lemma~\ref{lem:V}:
+\[
+p^2+S(p)+19p+1 = 1+p^2+(19+\chi(-1))p+\chi(-1)a_p(f).
+\]
+Cancelling $1+p^2$ and then $19p$ from both sides gives $S(p)=\chi(-1)p+\chi(-1)a_p(f)=\chi(-1)(a_p(f)+p)$.
+
+For the second identity, the symmetric-square decomposition for the CM curve $E$ (Frobenius eigenvalues $\alpha,\beta$ with $\alpha+\beta=a_p(E)$, $\alpha\beta=p$; $\mathrm{Sym}^2$ trace $\alpha^2+\alpha\beta+\beta^2=a_p(E)^2-p$, splitting as $a_p(f)+\chi(-2)p$ by the classical CM symmetric-square decomposition \cite{CMtheory}) gives $a_p(f)=a_p(E)^2-p(1+\chi(-2))$. Substituting,
+\begin{align*}
+S(p) &= \chi(-1)\bigl(a_p(E)^2-p(1+\chi(-2))+p\bigr) = \chi(-1)\bigl(a_p(E)^2-p\chi(-2)\bigr)\\
+&= \chi(-1)a_p(E)^2-\underbrace{\chi(-1)\chi(-2)}_{=\,\chi(2)}\,p,
+\end{align*}
+using $\chi(-1)\chi(-2)=\chi(-1)^2\chi(2)=\chi(2)$.
+\end{proof}
+
+\section{Comparison with the Ahlgren--Ono--Penniston proof}
+\label{sec:methods}
+
+The two derivations of Theorem~\ref{thm:main} are structurally different, not merely differently packaged:
+
+\begin{center}
+\begin{tabular}{l p{5.3cm} p{5.3cm}}
+& \textbf{Ahlgren--Ono--Penniston \cite{AOP2002}} & \textbf{This paper} \\\hline
+Starting object & the character sum $A(\lambda,q)$ directly & the hypercuboid sum $\Sigma_I(p)$, reduced to $S(p)=A(1,p)$ \\
+Principal transformation & repeated Jacobi-sum manipulation (their Lemma 2.2 and the expansion of $g(\lambda)^2$, an intricate but elementary $10$-step computation) & realize $S(p)$ as $\#V(\Fp)-p^2$ for an explicit surface, compactify to a K3 $X$ \\
+Geometric ingredient & an explicit double cover of $\mathbf P^2$ branched over six lines, and Shioda's combinatorial rank formula, giving $\rho\ge19$ directly & an explicit elliptic fibration, an explicit $\Q(i)(t)$-rational Mordell--Weil generator $P_1$, and Shioda's height pairing, giving $\rho=20$ via $19+1$ \\
+Modular/CM ingredient & the $j$-invariant class-number-$1$ classification of $E_\lambda$, plus Ribet's large-image theorem to rule out non-exceptional $\lambda$ & Livn\'e's modularity theorem plus an explicit ramification/degeneracy elimination pinning down the twist \\
+Final identity & $A(\lambda,q)=\chi(\lambda+1)(a(\lambda,q)^2-q)$, general $\lambda$ & $S(p)=-\chi(2)p+\chi(-1)a_p(E)^2$, the $\lambda=1$ case
+\end{tabular}
+\end{center}
+
+\textbf{Assessment}: the present proof is a \emph{genuine geometric reinterpretation} of the same fact, not a repackaging of \cite{AOP2002}'s argument — at no point does our proof perform, or implicitly reconstruct, their Jacobi-sum expansion, and at no point does their proof construct or need an explicit Mordell--Weil generator or a height-pairing computation. It is not, however, a proof that the character-sum identity was previously unattainable by elementary means: \cite{AOP2002} already gives such a proof, for the general one-parameter family, of which $\lambda=1$ is one case among seven singular specializations. The independent value of the present route is methodological (an explicit worked example of the singular-K3/Mordell--Weil-lattice method applied to a sum arising from a genuinely different, combinatorial motivation) rather than evaluative.
+
+\section{Closed forms for Classes I and II}
+\label{sec:corollaries}
+
+The formulas below are corollaries: Corollary~\ref{cor:classI} combines the elementary hypercuboid reduction of Lemma~\ref{lem:sigmaI} with the character-sum identity of Theorem~\ref{thm:main} (itself, as discussed, recovering \cite{AOP2002}). The genuinely hypercuboid-specific content in this section is Proposition~\ref{prop:gateway}, the Gateway relation connecting $\Sigma_I$ and $\Sigma_{II}$ — a fact with no analogue in \cite{AOP2002}, which has no notion of a second, related character-sum class — from which Corollary~\ref{cor:classII} follows without any further arithmetic input.
+
+\begin{corollary}[Class I]
+\label{cor:classI}
+For every odd prime $p$,
+\[
+\boxed{\Sigma_I(p)=(p-1)\Bigl[-\chi(2)\,p+\chi(-1)\,a_p(E)^2\Bigr].}
+\]
+\end{corollary}
+
+\begin{proof}
+Immediate from Lemma~\ref{lem:sigmaI} and Theorem~\ref{thm:main}.
+\end{proof}
+
+\begin{proposition}[Gateway relation]
+\label{prop:gateway}
+$\Sigma_{II}(p)=\chi(-1)\,\Sigma_I(p)$ for every odd prime $p$.
+\end{proposition}
+
+\begin{proof}
+For the $4$-cycle $\pi=(1\,2\,3\,4)$ permuting $A_1,\dots,A_4$, the induced coordinate substitution $T$ satisfies $P_I(Tx)=-P_{II}(x)$ identically (a literal integer scalar $-1$ multiplying the defining product). Since $T$ is a bijection of $\Fp^3$, relabeling gives $\Sigma_I(p)=\sum_x\chi(P_I(Tx))=\sum_x\chi(-P_{II}(x))=\chi(-1)\Sigma_{II}(p)$, and multiplying by $\chi(-1)$ (using $\chi(-1)^2=1$) gives the claim.
+\end{proof}
+
+\begin{corollary}[Class II]
+\label{cor:classII}
+For every odd prime $p$,
+\[
+\boxed{\Sigma_{II}(p)=(p-1)\bigl(a_p(f)+p\bigr).}
+\]
+\end{corollary}
+
+\begin{proof}
+By Proposition~\ref{prop:gateway} and Corollary~\ref{cor:classI}, $\Sigma_{II}(p)=\chi(-1)(p-1)\bigl[-\chi(2)p+\chi(-1)a_p(E)^2\bigr]=(p-1)\bigl[a_p(E)^2-\chi(-2)p\bigr]$, and $a_p(E)^2-\chi(-2)p=a_p(f)+p(1+\chi(-2))-\chi(-2)p=a_p(f)+p$.
+\end{proof}
+
+\begin{table}[h]
+\centering
+\caption{Character values and closed forms by residue class mod $8$.}
+\label{tab:mod8}
+\begin{tabular}{c|ccc|cc}
+$p\bmod 8$ & $\chi(-1)$ & $\chi(2)$ & $\chi(-2)$ & $S(p)$ & $\Sigma_{II}(p)$ \\\hline
+$1$ & $+1$ & $+1$ & $+1$ & $a_p(E)^2-p$ & $(p-1)(a_p(E)^2-p)$ \\
+$3$ & $-1$ & $-1$ & $+1$ & $p-a_p(E)^2$ & $(p-1)(p-a_p(E)^2)$ \\
+$5$ & $+1$ & $-1$ & $-1$ & $p$ & $p(p-1)$ \\
+$7$ & $-1$ & $+1$ & $-1$ & $-p$ & $p(p-1)$
+\end{tabular}
+\end{table}
+
+At $p\equiv5,7\pmod8$ (inert in $\Q(\sqrt{-2})$), $a_p(f)=a_p(E)=0$ and Table~\ref{tab:mod8} recovers the transparent, purely elementary-looking identity $\Sigma_{II}(p)=p(p-1)$ in both residue classes, now exhibited as a special case of Corollary~\ref{cor:classII} rather than a separate observation.
+
+\section{Class III: the genuine open problem}
+\label{sec:classIII}
+
+Unlike Classes I and II (Section~\ref{sec:corollaries}), Class III has no
+counterpart at all in Ahlgren--Ono--Penniston \cite{AOP2002}, whose
+family carries no analogue of a third residual symmetry class. Its
+resolution, partial or complete, would therefore be new in a sense that
+Sections~\ref{sec:main}--\ref{sec:corollaries} are not.
+
+\begin{proposition}[Class III vanishing]
+\label{prop:classIII}
+$\Sigma_{III}(p)=0$ for every prime $p\equiv3\pmod4$.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+$\Sigma_{III}(p)$ omits the one remaining form, associated to the double transposition $\pi=(1\,3)(2\,4)$; the induced coordinate map $T$ (an involution, $T^2=\mathrm{id}$) satisfies $P_{III}(Tx)=-P_{III}(x)$ identically, and $T$'s fixed locus is contained in the zero locus of $P_{III}$ (checked directly: $P_{III}$ restricted to the fixed line is the zero polynomial, the only value consistent with the sign identity at a fixed point). Relabeling gives $\Sigma_{III}(p)=\chi(-1)\Sigma_{III}(p)$; when $\chi(-1)=-1$ ($p\equiv3\bmod4$), this forces $\Sigma_{III}(p)=0$.
+\end{proof}
+
+This argument is entirely independent of \S\ref{sec:reduction}--\ref{sec:trace} and uses none of that machinery.
+
+\begin{openproblem}
+The value of $\Sigma_{III}(p)$ for $p\equiv1\pmod4$ is not addressed by Proposition~\ref{prop:classIII} (the relation $\Sigma_{III}(p)=\chi(-1)\Sigma_{III}(p)$ is vacuous when $\chi(-1)=1$), is not addressed by \cite{AOP2002} (which has no Class III analogue), and is not addressed by the present paper's own K3-geometric methods, which are specific to Classes I and II. No relation connecting $\Sigma_{III}(p)$ to $\Sigma_I(p)$ or $\Sigma_{II}(p)$ is known to exist. We leave this sector open as the most promising direction for further work on this hypercuboid system.
+\end{openproblem}
+
+\section{Discussion}
+\label{sec:discussion}
+
+The evaluation obtained here illustrates, in a fully worked example, how an elementary-looking finite-field character sum can be controlled exactly once it is recognized as a point count on an algebraic surface with extra structure — and, independently, that the same sum was already controlled by Ahlgren--Ono--Penniston's direct elementary methods, without any geometry at all. Four features of the present family seem worth recording. First, the residual sum $S(p)$, after an entirely elementary reduction, is governed by a rank-$2$ \emph{transcendental} Galois representation (in the precise cohomological sense of \S\ref{sec:prelim}) rather than by anything reducible to elementary or purely algebraic-cycle considerations; its exact evaluation genuinely requires the modularity of singular K3 surfaces. Second, the mod-$8$ behavior recorded in Table~\ref{tab:mod8} is a direct manifestation of the complex-multiplication vanishing of $a_p(f)$ (equivalently $a_p(E)$) at primes inert in the CM field, combined with the two independent quadratic characters $\chi(-1)$ and $\chi(2)$ that separately govern the field of definition of the extremal Mordell--Weil section (\S\ref{sec:lattices}) and the splitting of the elliptic curve's own $2$-torsion. Third, the exact global point-count identity of Proposition~\ref{prop:ledger} depends, in an essential way, on correctly tracking the $\Fp$-rationality of a single pair of intersection points in the $I_2$ fiber (Proposition~\ref{prop:fibers}); an incorrect (unconditional) treatment of this pair produces a formula that is numerically indistinguishable from the correct one at any single prime but fails to be internally consistent with the rest of the Frobenius-trace bookkeeping once all pieces are assembled. We do not present this as an instance of a general "progressive constraint" phenomenon; it is offered as a specific, verified structural observation about this family, not a claim about finite-field character sums in general. Fourth, and most important for how this paper should be read: the character-sum identity itself is, as established in Section~\ref{sec:main}, not new. What the present K3-geometric route contributes is an independent confirmation and a structurally different derivation, tied specifically to the hypercuboid construction that motivated it — the interest of Sections~\ref{sec:K3}--\ref{sec:trace} lies in how the identity is reached, not in the fact that it is true.
+
+\section{Limitations}
+\label{sec:limitations}
+
+This paper does not resolve the classical integer perfect-hypercuboid problem, to which the underlying finite-field system is only a motivating, logically separate construction. The central character-sum identity (Theorem~\ref{thm:main}) recovers Ahlgren--Ono--Penniston \cite{AOP2002}, Theorem 2.1 at $\lambda=1$, and is not claimed as a new evaluation; the paper's independent content is the hypercuboid reduction (Section~\ref{sec:reduction}), the Gateway relation (Proposition~\ref{prop:gateway}), and the K3-geometric proof method (Sections~\ref{sec:K3}--\ref{sec:methods}). It does not evaluate $\Sigma_{III}(p)$ for $p\equiv1\pmod4$, which is not addressed by \cite{AOP2002} either and remains, in the present state of this project, genuinely open. Every non-elementary step relies on standard, classical results in the theory of elliptic surfaces, singular K3 surfaces, and modular forms (see the References); we make no claim to any new general theorem in those areas. We make no claim that the methods here extend to other members of the same combinatorial family (larger $n$, or the other zero-sector classes for $n=4$) without further, separate work.
+
+\section*{Acknowledgments}
+AI systems were used for symbolic checking, code-assisted verification, literature organization, adversarial proof review, and manuscript drafting. All mathematical claims were independently checked within the workflow described in the accompanying repository, and final responsibility for the content belongs to the author.
+
+\appendix
+
+\section{Weierstrass model and Kodaira classification}
+\label{app:kodaira}
+
+For $a_1=a_3=0$, $a_2=a_2(t)=t(t+1)^2$, $a_4=a_4(t)=t^3(t+1)^2$, $a_6=0$, the standard invariants
+$b_2=4a_2$, $b_4=2a_4$, $b_6=4a_6=0$, $b_8=4a_2a_6-a_4^2=-a_4^2$ give
+\[
+c_4=b_2^2-24b_4=16a_2^2-48a_4,\qquad c_6=-b_2^3+36b_2b_4-216b_6=-64a_2^3+288a_2a_4,
+\]
+\[
+\Delta=\frac{c_4^3-c_6^2}{1728}.
+\]
+Expanding with $a_2=t(t+1)^2$, $a_4=t^3(t+1)^2$:
+\[
+c_4=16t^2(t+1)^4-48t^3(t+1)^2=16t^2(t+1)^2\bigl[(t+1)^2-3t\bigr]=16t^2(t+1)^2(t^2-t+1),
+\]
+and, after clearing the resulting common factors in $c_4^3-c_6^2$,
+\[
+c_6=-32t^3(t-2)(t+1)^4(2t-1),\qquad \Delta=16t^8(t-1)^2(t+1)^6.
+\]
+
+\emph{Bad-fiber classification.} Tate's algorithm classifies the fiber at $t=t_0$ by
+$(\mathrm{ord}_{t_0}c_4,\mathrm{ord}_{t_0}c_6,\mathrm{ord}_{t_0}\Delta)$:
+\begin{itemize}
+\item $t_0=0$: $c_4=16t^2(\cdots)$ has $\mathrm{ord}=2$; $c_6=-32t^3(\cdots)$ has $\mathrm{ord}=3$; $\Delta=16t^8(\cdots)$ has $\mathrm{ord}=8$. An even $\Delta$-order $\ge6$ with $\mathrm{ord}\,c_4\ge2$, $\mathrm{ord}\,c_6\ge3$ is type $I_n^*$ with $n=\mathrm{ord}\,\Delta-6=2$.
+\item $t_0=1$: $c_4(1)=16\cdot1\cdot4\cdot1=64\ne0$, so $\mathrm{ord}\,c_4=0$; multiplicative reduction, type $I_n$ with $n=\mathrm{ord}\,\Delta=\mathrm{ord}_{t=1}\bigl[16t^8(t-1)^2(t+1)^6\bigr]=2$.
+\item $t_0=-1$: $(t+1)^2\mid c_4$ so $\mathrm{ord}\,c_4=2$; $(t+1)^4\mid c_6$ so $\mathrm{ord}\,c_6=4$; $(t+1)^6\mid\Delta$ so $\mathrm{ord}\,\Delta=6$. Type $I_n^*$, $n=6-6=0$.
+\item $t_0=\infty$: with $\deg_tc_4=6$, $\deg_tc_6=9$, $\deg_t\Delta=16$, and the surface being a degree-$2$ (i.e.\ $12n$, $n=2$) elliptic surface, the weights at infinity are $(4n,6n,12n)=(8,12,24)$, giving $\mathrm{ord}_\infty c_4=8-6=2$, $\mathrm{ord}_\infty c_6=12-9=3$, $\mathrm{ord}_\infty\Delta=24-16=8$ — again type $I_2^*$.
+\end{itemize}
+Sum of $\Delta$-orders over the four bad fibers: $8+2+6+8=24$, equal to the Euler number of a K3 surface (and not equal to $12$, ruling out the rational-elliptic-surface alternative), confirming Proposition~\ref{prop:X}.
+
+\section{Local fiber-component and point-count calculations}
+\label{app:fibers}
+
+\subsection*{The \texorpdfstring{$I_2^*$}{I2*} fiber at \texorpdfstring{$t=0$}{t=0} (and, by the surface's \texorpdfstring{$t\leftrightarrow1/t$}{t <-> 1/t} self-duality, at \texorpdfstring{$t=\infty$}{t=infinity})}
+
+Resolving the total space's singularity above $t=0$ by successive ordinary blow-ups produces exactly seven components, each an explicit rational curve, tabulated with its defining equation and field of definition:
+
+\begin{center}
+\begin{tabular}{l l l l}
+component & origin & defining equation & field \\\hline
+identity & normalization of the naive curve & $v=u^3-\cdots$ & $\Q$ \\
+$N$ & blow-up at $x_1=-1$ & $-t^2-tw+y_1^2=0$ & $\Q$ \\
+$C_1$ & first blow-up & $\{t=0,\,y_1=0\}$ ($x_1$ free) & $\Q$ \\
+$C_3$ & blow-up of $C_2$'s $A=\infty$ point & $Y'^2=T'X'$ & $\Q$ \\
+$C_2$ & second blow-up & $\{t=0,\,B=0\}$ ($A$ free) & $\Q$ \\
+$F_1$ & blow-up at $A=0$ & $B^2-tA=0$ & $\Q$ \\
+$F_2$ & blow-up at $A=-1$ & $t^2+tw_3+B^2=0$ & $\Q$
+\end{tabular}
+\end{center}
+
+Every one of the seven equations has rational (in fact integer) coefficients, so every component is individually $\Q$-rational. The dual graph, read off the explicit intersections, is the tree
+\[
+\{\text{identity},N\}-C_1-C_3-C_2-\{F_1,F_2\},
+\]
+$7$ vertices, $6$ edges, matching the affine-$D_6$ shape and component group $(\Z/2)^2$. Multiplicities $(1,1,2,2,2,1,1)$ are obtained by tracking the order of vanishing of the pulled-back base coordinate $t$ along each component (e.g.\ $t=\varepsilon^2X'T'$ near a blow-up gives order $2$). The curve $C_3\cong\mathbf P^1$ is smooth with Hessian determinant $-2$ for its defining quadratic form, hence unconditionally $\Fp$-rational for every odd $p$ by isotropy of a nondegenerate ternary quadratic form over a finite field (Chevalley--Warning). Every junction point ($t=0$, $A=0$, $A=-1$, $x_1=-1$, $x_1=\infty$) is likewise $\Fp$-rational for every odd $p$: no character value enters anywhere in this fiber. The tree union-count is
+\[
+N_{I_2^*}(p) = \sum_{i=1}^7\#C_i(\Fp) - \sum_{\text{6 edges}}1 = 7(p+1)-6=7p+1.
+\]
+The Euler-number check $2\cdot7-6=8=\mathrm{ord}_0\Delta$ (Appendix~\ref{app:kodaira}) and the component-group check $(\Z/2)^2$ both pass without adjustment.
+
+\subsection*{The \texorpdfstring{$I_0^*$}{I0*} fiber at \texorpdfstring{$t=-1$}{t=-1}}
+
+Five components: one central component of multiplicity $2$ and four outer components of multiplicity $1$ (one of which is the identity), in a star graph (4 edges). Each outer-component's local defining equation, after the appropriate blow-up, has the form $K(\varepsilon,U)=0$ with $\partial K/\partial U$ a nonzero \emph{integer} (specifically $1$ or $-2$) identically — an implicit-function-theorem argument, character-free, giving unconditional smoothness and $\Q$-rationality for every component, including each component's own point at infinity (checked separately, and found smooth by the same mechanism). The union count is
+\[
+N_{I_0^*}(p) = 5(p+1)-4 = 5p+1.
+\]
+
+\subsection*{The \texorpdfstring{$I_2$}{I2} fiber at \texorpdfstring{$t=1$}{t=1}: the naive count}
+
+The direct character-sum evaluation of the naive (unresolved) count used in Proposition~\ref{prop:ledger}: at $t=1$, the defining equation is $y^2=2x(x+1)^2$. For $x\ne-1$, $(x+1)^2$ is a nonzero square, so $\chi(2x(x+1)^2)=\chi(2x)$; at $x=-1$ the right side is $0$. Hence
+\begin{align*}
+\#\{(x,y):y^2=2x(x+1)^2\} &= \sum_{x\ne-1}\bigl(1+\chi(2x)\bigr) + 1 = (p-1)+\sum_{x\ne-1}\chi(2x)+1 \\
+&= p+\Bigl[\sum_{x\in\Fp}\chi(2x)-\chi(-2)\Bigr]=p-\chi(-2),
+\end{align*}
+using $\sum_{x\in\Fp}\chi(2x)=0$ (as $x\mapsto2x$ is a bijection of $\Fp$ and $\sum\chi=0$ over the whole field). The full resolved-count derivation ($N_{I_2}(p)=2p+1-\chi(-2)$) is given in the proof of Proposition~\ref{prop:fibers} in the main text.
+
+\section{Height computation for \texorpdfstring{$P_1$}{P1}}
+\label{app:height}
+
+With $X_1=-(t+1)$, $Y_1=i(t-1)(t+1)^2$, $a_2=t(t+1)^2$, $a_4=t^3(t+1)^2$, direct symbolic expansion gives
+\[
+X_1^3+a_2X_1^2+a_4X_1 = -(t+1)^3+t(t+1)^4-t^3(t+1)^3 = -(t-1)^2(t+1)^4,
+\]
+which matches $Y_1^2=i^2(t-1)^2(t+1)^4=-(t-1)^2(t+1)^4$ exactly, so
+\[
+Y_1^2-\bigl(X_1^3+a_2X_1^2+a_4X_1\bigr)\equiv0
+\]
+identically in $t$ — $P_1$ lies on $X$ for every $t$.
+
+\emph{Galois action.} Complex conjugation $\sigma$ fixes $t$ (it acts only on the coefficient field $\Q(i)$) and sends $i\mapsto-i$: $\sigma(Y_1)=-i(t-1)(t+1)^2=-Y_1$, while $\sigma(X_1)=X_1$ (no $i$ present). Since $(X_1,-Y_1)=-P_1$ under the standard Weierstrass group law (for $a_1=a_3=0$, the inverse of $(x,y)$ is $(x,-y)$), $\sigma(P_1)=-P_1$ exactly.
+
+\emph{Local heights.} Evaluating $x_1(t)=-(t+1)$:
+\begin{itemize}
+\item $t=0$: $x_1(0)=-1\ne0$. Not a $2$-torsion $x$-coordinate at this fiber ($I_2^*$'s identity component is met by any section with a finite, non-special $x$-value) — contribution $0$.
+\item $t=1$: $x_1(1)=-2$. The $I_2$ fiber's nodal cubic $Y^2=X'^2(X'-2)$ (Appendix~\ref{app:fibers} of the main text) has its unique non-identity component met here; the standard $I_n$ contribution for a section meeting the component indexed $i$ (of $n$) is $i(n-i)/n$; here $n=2,i=1$, giving $1\cdot1/2=0.5$.
+\item $t=-1$: $x_1(-1)=0$, matching one of the three named outer components of $I_0^*$ (not the identity); the standard $I_0^*$ contribution for a non-identity outer component is $1$.
+\item $t=\infty$: $\deg_tx_1=1\le2$; among $I_2^*$'s two possible "far" components $F_1,F_2$, the leading behavior of $x_1(t)/t^2\to0$ identifies the specific far component met; the standard $I_m^*$ contribution for a far component is $1+m/4$, here $m=2$, giving $1.5$.
+\end{itemize}
+Since $x_1(t)$ is a polynomial (finite at every $t$, including $t=\infty$), $P_1$ never meets the zero section at a pole of the curve, so $P_1\cdot O=0$ (Shioda 1990's standard sufficient condition). Shioda's height formula for a K3 surface ($\chi(\mathcal O_X)=2$):
+\[
+\hat h(P_1) = 2\cdot2+2\cdot0-(0+0.5+1+1.5) = 4-3 = 1.
+\]
+Since canonical height vanishes exactly on torsion points, $\hat h(P_1)=1\ne0$ proves $P_1$ is non-torsion. No numerical approximation is used at any step; every quantity above is an exact rational number from an exact table lookup.
+
+\section{Modularity and twist verification}
+\label{app:twist}
+
+\subsection*{Livn\'e's theorem, verified against the primary source}
+
+Theorem~\ref{thm:livne} is attributed by Schütt (\emph{K3 surfaces with Picard rank 20}, arXiv:0804.1558, Theorem~4) to Livné (Israel J. Math.\ \textbf{92}, 1995). The source was fetched and read directly (not relied on from memory or a secondhand summary) to confirm: (a) the theorem applies whether or not $NS(X)$ is generated by $\Q$-rational classes, covering our $\rho(X/\Q)=19$ situation explicitly; (b) the resulting eigenform is well-defined only up to quadratic twist (Schütt's Theorem~6, itself building on the classification of rational-coefficient CM newforms); (c) $L$-series equality, as an equality of Euler products of matching local degree, forces identical local (Frobenius-trace) factors at every unramified prime — not merely "for almost all $p$" in some averaged sense, since two Dirichlet series with prescribed Euler-product shape that are equal as formal series must agree prime by prime.
+
+\subsection*{Ramification restricting the twist}
+
+$X$'s Weierstrass coefficients $a_2(t),a_4(t)$ have integer coefficients with the only recurring prime factor being $2$ (from $t(t+1)^2$, $t^3(t+1)^2$, and the discriminant $\Delta=16t^8(t-1)^2(t+1)^6$, whose numerical constant is $16=2^4$); separately, $\mathrm{disc}(E)$ for $E:y^2=x(x^2+4x+2)$ (roots $0,-2\pm\sqrt2$) is proportional to $\bigl[(2-\sqrt2)(2+\sqrt2)(2\sqrt2)\bigr]^2=2^5$. Both $X$ and $f$ (level $8=2^3$) are thus unramified outside $\{2\}$. A quadratic twist $\chi_0$ relating $T(X)\otimes\Q_\ell$ and $\rho_{f,\ell}$ must itself be unramified outside $\{2,\infty\}$: if inertia at a prime $q\ne2$ acts trivially on both $V=T(X)\otimes\Q_\ell$ and $V\otimes\chi_0$, then (since $\dim V\ge1$) it must act trivially via $\chi_0$ too. The fundamental discriminants supported only at $2$ are exactly $d\in\{1,-4,8,-8\}$ (the squarefree/$4\times$squarefree enumeration of \S3, Manuscript Phase~1 notes), giving $\chi_0\in\{1,\chi(-1),\chi(2),\chi(-2)\}$ — four candidates, provably complete.
+
+\subsection*{Degeneracy to two candidates}
+
+$a_p(f)=0$ at every prime $p$ inert in $\Q(\sqrt{-2})$ (standard CM vanishing). Combined with the Legendre-symbol identity $\chi(-1)(p)\chi(2)(p)=\chi(-2)(p)$ (always true): at a split prime ($\chi(-2)=1$), $\chi(-1)=\chi(2)$ automatically (their product is $1$, both $\pm1$-valued); at an inert prime ($\chi(-2)=-1$), $a_p(f)=0$ regardless of $\chi_0$. Hence $\chi_0\cdot a_p(f)$ takes only two distinct values as a function of $p$ across the four candidates: $a_p(f)$ (for $\chi_0\in\{1,\chi(-2)\}$) and $\chi(-1)(p)\,a_p(f)$ (for $\chi_0\in\{\chi(-1),\chi(2)\}$).
+
+\subsection*{The \texorpdfstring{$p=3$}{p=3} elimination, in full}
+
+$\chi(-1)(3)=-1$ (since $-1\equiv2\bmod3$ and the quadratic residues mod $3$ are $\{1\}$, so $2$ is a nonresidue). $S(3)$, by direct enumeration over $\Fp^2=\{0,1,2\}^2$ using the summand $x(x+1)t(t+1)(x+t)\bmod3$, equals $-1$. $a_3(f)=-2$ (LMFDB, \texttt{8.3.d.a}, the raw \texttt{traces} field of the API, not an AI-summarized fetch). Combined with $\Tr(F_p\mid T(X))=S(p)-\chi(-1)(p)\,p$ (an unconditional consequence of Propositions~\ref{prop:ledger} and~\ref{prop:trns}, independent of any modularity assumption): at $p=3$, $\Tr(F_3\mid T(X))=-1-(-1)(3)=-1+3=2$. The candidate $\chi_0\in\{1,\chi(-2)\}$ predicts $a_3(f)=-2\ne2$: refuted. The candidate $\chi_0\in\{\chi(-1),\chi(2)\}$ predicts $\chi(-1)(3)a_3(f)=(-1)(-2)=2$: confirmed exactly.
+
+\subsection*{Symmetric-square algebra}
+
+With $\alpha,\beta$ the Frobenius eigenvalues of $E$ at $p$ ($\alpha+\beta=a_p(E)$, $\alpha\beta=p$):
+\[
+\mathrm{Tr}\bigl(\mathrm{Sym}^2\bigr)=\alpha^2+\alpha\beta+\beta^2=(\alpha+\beta)^2-\alpha\beta=a_p(E)^2-p,\qquad \mathrm{Tr}\bigl(\Lambda^2\bigr)=\alpha\beta=p.
+\]
+$\Lambda^2\cong H^2(E)$ is always algebraic (the polarization class, eigenvalue $p$, no character). $\mathrm{Sym}^2$ (rank $3$) splits, for CM $E$, as $\rho_f\oplus(\chi_K\cdot\mathrm{cyc})$ (classical CM/Hecke-character theory \cite{CMtheory}), giving $\mathrm{Tr}(\mathrm{Sym}^2)=a_p(f)+\chi(-2)p$, hence
+\[
+a_p(f)=a_p(E)^2-p-\chi(-2)p=a_p(E)^2-p(1+\chi(-2))
+\]
+as used in the proof of Theorem~\ref{thm:main}.
+
+\section{Computational verification and reproducibility}
+\label{app:scripts}
+
+All formulas in this paper were checked computationally, as verification only (never as a logically necessary step in any proof), against brute-force finite-field enumeration for primes spanning every residue class modulo $8$, and against Hecke eigenvalues for \texttt{8.3.d.a} retrieved via the raw LMFDB API (\url{https://www.lmfdb.org/api/mf_newforms/}), not an AI-summarized fetch. Verification scripts are provided in the accompanying repository, \texttt{explorations/hypercuboid/scripts/}.
+
+\section*{Notation table}
+\label{app:notation}
+See the accompanying \texttt{NOTATION.md} in the repository for the full symbol table and conflation warnings referenced in \S\ref{sec:prelim}.
+
+\label{sec:refs}
+
+\begin{thebibliography}{99}
+
+\bibitem{AOP2002}
+S.~Ahlgren, K.~Ono, D.~Penniston, \emph{Zeta functions of an infinite family of K3 surfaces}, Amer. J. Math. \textbf{124} (2002), no.~2, 353--368. \textbf{The central prior reference for this paper}: their Theorem 2.1, specialized at $\lambda=1$, gives the character-sum identity of Theorem~\ref{thm:main}; their Theorem 1.2 independently establishes the singularity and CM field of the same surface. See Section~\ref{sec:main} and Remark~\ref{rem:aop}.
+
+\bibitem{Shioda1972}
+T.~Shioda, \emph{On elliptic modular surfaces}, J. Math. Soc. Japan \textbf{24} (1972), 20--59.
+
+\bibitem{Shioda1990}
+T.~Shioda, \emph{On the Mordell--Weil lattices}, Comment. Math. Univ. St. Paul. \textbf{39} (1990), no.~2, 211--240.
+
+\bibitem{MirandaPersson1989}
+R.~Miranda, U.~Persson, \emph{Torsion groups of elliptic surfaces}, Compositio Math. \textbf{72} (1989), no.~3, 249--267. Cited for the general theory of torsion groups of elliptic surfaces underlying Lemma~\ref{lem:torsion}, alongside \cite{Shioda1990}.
+
+\bibitem{PSS1971}
+I.~Pjateckii-\v{S}apiro, I.~R.~\v{S}afarevi\v{c}, \emph{A Torelli theorem for algebraic surfaces of type K3}, Izv. Akad. Nauk SSSR Ser. Mat. \textbf{35} (1971), 530--572 (injectivity direction of the classification of Section~\ref{sec:lattices}; predates and specializes the general theorem below). \emph{Verified against a modern authoritative source}: D.~Huybrechts, \emph{Lectures on K3 Surfaces}, Cambridge Univ. Press, 2016, Chapter 7, Theorem 5.3 (Global Torelli Theorem), p.~135, read directly (author's own posted draft): two complex K3 surfaces are isomorphic if and only if there is a Hodge isometry of their full $H^2(X,\mathbb Z)$; since such an isometry must preserve $H^{2,0}(X)\subset T(X)\otimes\mathbb C$, this is exactly an \emph{oriented} isometry of transcendental lattices, and — combined with Nikulin's primitive-embedding theory, since $NS(X)$ is forced to be the orthogonal complement of $T(X)$ for a singular K3 — specializes to the classification used here, matching it precisely (see also Sch\"utt \cite{Schutt2010}, which states this specialization directly).
+
+\bibitem{ShiodaInose1977}
+T.~Shioda, H.~Inose, \emph{On singular K3 surfaces}, in \emph{Complex Analysis and Algebraic Geometry}, Iwanami Shoten, Tokyo, 1977, pp.~119--136.
+
+\bibitem{Livne1995}
+R.~Livn\'e, \emph{Motivic orthogonal two-dimensional representations of $\mathrm{Gal}(\overline{\mathbb Q}/\mathbb Q)$}, Israel J. Math. \textbf{92} (1995), 149--156.
+
+\bibitem{Schutt2010}
+M.~Sch\"utt, \emph{K3 surfaces with Picard rank 20}, arXiv:0804.1558; and \emph{CM newforms with rational coefficients}, Ramanujan J. (2008/09), arXiv:math/0511228.
+
+\bibitem{CMtheory}
+The symmetric-square splitting $\mathrm{Sym}^2(\rho_E)\cong\rho_f\oplus(\chi_K\cdot\mathrm{cyc})$ for a CM elliptic curve $E$ (Section~\ref{sec:main}) is classical complex-multiplication theory; see G.~Shimura, \emph{Introduction to the Arithmetic Theory of Automorphic Functions}, Princeton Univ. Press, 1971, Ch.~7, and K.~Ribet, \emph{Galois representations attached to eigenforms with nebentypus}, in \emph{Modular Functions of One Variable V}, Lecture Notes in Math. \textbf{601}, Springer, 1977, pp.~17--52, whose framework covers this decomposition (Ribet's paper is more precisely the source for the converse fact, that a rational-coefficient weight-3 newform must have CM, used already in \cite{Schutt2010}; we cite it here alongside Shimura rather than as the sole source of the forward splitting itself).
+
+\bibitem{LMFDB}
+The LMFDB Collaboration, \emph{The L-functions and modular forms database}, \url{https://www.lmfdb.org}, newform \texttt{8.3.d.a}. (Database identifier/catalogue only; not cited as the source of any theorem used in this paper.)
+
+\end{thebibliography}
+
+\end{document}

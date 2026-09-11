@@ -1,0 +1,24 @@
+# LaTeX build artifacts (scoped to manuscript/ so results/*.log survives)
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.toc
+manuscript/*.bbl
+manuscript/*.blg
+manuscript/*.fls
+manuscript/*.fdb_latexmk
+manuscript/*.synctex.gz
+manuscript/*.nav
+manuscript/*.snm
+manuscript/*.vrb
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# OS cruft
+.DS_Store
+Thumbs.db

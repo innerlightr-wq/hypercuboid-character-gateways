@@ -1,0 +1,31 @@
+# Notation and Terminology — Manuscript Phase 1
+
+| Symbol | Meaning | Notes / possible confusion to avoid |
+|---|---|---|
+| `p` | An **odd** prime | `p=2` is always excluded (bad reduction of both `X` and `f`); state this once, globally, in the manuscript's standing hypotheses, not repeatedly per theorem. |
+| `\chi(a)` | The Legendre symbol of `a` mod `p` | **Always** mod the ambient `p` under discussion — never a fixed Dirichlet character evaluated at a point. When we write "`\chi(-1)`", "`\chi(2)`", "`\chi(-2)`" as if they were characters of `p` (e.g. "`\chi(-1)` is odd"), this is a harmless abuse matching standard number-theory usage (`\chi(-1)`/`\chi(2)`/`\chi(-2)` name the associated *Kronecker symbols as functions of `p`*) — flag this dual usage explicitly in the manuscript's notation section to avoid ambiguity. |
+| `\Sigma_I(p),\Sigma_{II}(p),\Sigma_{III}(p)` | The three residual symmetry classes of the original `n=4` hypercuboid zero-sector character sum | Defined via specific 6-element subsets of the 7 representative linear forms `L_J`; **not** interchangeable, and Class III's vanishing mechanism is unrelated to I/II's evaluation — never imply a shared proof. |
+| `S(p)` | `\sum_{x,t\in\mathbb F_p}\chi(x(x+1)t(t+1)(x+t))` | The single 2-variable sum Class I reduces to; **not** `\Sigma_I(p)` itself — always write the factor `(p-1)` explicitly when relating them. |
+| `V` | The **affine** surface `Y^2=X(X+1)T(T+1)(X+T)` over `\mathbb F_p` (or `\mathbb Q`) | Never write `\#V` when `\#X` is meant, or vice versa — this exact conflation was the site of the (now-corrected) Round-22–32 residual; the manuscript should state the distinction prominently, once, near Proposition 4. |
+| `X` | The smooth **projective** K3 surface (minimal resolution of `V`'s natural compactification/elliptic fibration) | See above. `X` is a K3 (Euler number `24`); `V` is a singular affine surface, not itself a K3. |
+| `E` | The elliptic curve `y^2=x^3+4x^2+2x`, CM by `\mathbb Z[\sqrt{-2}]` | Fixed throughout; `a_p(E)` denotes **its own** Frobenius trace, never to be confused with a fiber of `X`'s elliptic fibration (which are curves `y^2=\ldots(x,t)` for varying `t`, a *different* family, related to `E` only via the Sym² identity, Theorem Ledger Part IX). |
+| `f` | The weight-3, level-8, CM-by-`\mathbb Q(\sqrt{-2})` newform `8.3.d.a` | `a_p(f)` denotes its own Hecke eigenvalue. **Never write `a_p` alone** without the subscript — `a_p(E)` and `a_p(f)` are numerically different for almost every `p` (they satisfy `a_p(f)=a_p(E)^2-p(1+\chi(-2))`, not equality) and conflating them is a serious, easy-to-make error. |
+| `NS(X)` | The Néron–Severi group (lattice of algebraic divisor classes) of `X_{\overline{\mathbb Q}}$, with its intersection form | Rank `20` geometrically (`\rho(X_{\overline{\mathbb Q}})=20`); rank `19` over `\mathbb Q` specifically (`\rho(X/\mathbb Q)=19`) — **always specify the base field when quoting a Picard rank**, since both numbers appear in this project and are easy to conflate. |
+| `T(X)` | The transcendental lattice, `NS(X)^\perp$ in `H^2(X,\mathbb Z)` | Rank 2, positive-definite, even, discriminant `8`. "Transcendental" here is the **precise K3/Hodge-theoretic technical term** (the orthogonal complement of the algebraic classes) — **never** use "transcendental" informally to mean "mysterious" or "not yet understood" anywhere in the manuscript; by the time the paper states results about `T(X)`, its Frobenius trace is fully, exactly determined (`\mathrm{Tr}_T(p)=\chi(-1)a_p(f)`), so the word must not carry any residual connotation of unresolved difficulty. |
+| `\rho(X_{\overline{\mathbb Q}})` vs. `\rho(X/\mathbb Q)` | Geometric vs. arithmetic Picard rank | Geometric: rank of `NS` over `\overline{\mathbb Q}$ (`=20`). Arithmetic (over `\mathbb Q`): rank of the Galois-invariant sublattice (`=19`, since the 20th generator needs `\mathbb Q(i)`). **State this distinction explicitly once**, since the whole `\chi(-1)` mechanism in Proposition 6 depends on it. |
+| `\hat h(P)` | Shioda's canonical (Néron–Tate) height pairing on the Mordell–Weil group | Not to be confused with the geometric "height" of a point in the sense of arithmetic heights over number fields — this is the elliptic-surface-specific height pairing (Shioda 1990). |
+| `\sigma` | An element of `\mathrm{Gal}(\overline{\mathbb Q}/\mathbb Q)`, specifically **complex conjugation** (generator of `\mathrm{Gal}(\mathbb Q(i)/\mathbb Q)`) when discussing `\sigma(P_1)=-P_1` | Distinguish from `\mathrm{Frob}_p` (Frobenius at a specific prime) — the manuscript uses `\sigma` only for the archimedean/`\mathbb Q(i)`-descent statement, and `\mathrm{Frob}_p` for the mod-`p` statement; the bridge between them (Theorem Ledger Part IV) is exactly the content of Proposition 6 and must not be presented as definitionally the same object. |
+| `\mathrm{Triv}(X)` | The trivial lattice `U\oplus D_6\oplus A_1\oplus D_4\oplus D_6`, rank 19 | The lattice spanned by the general fiber, zero section, and non-identity fiber components — do not confuse with `NS(X)` itself (`\mathrm{Triv}(X)\subsetneq NS(X)$, index `=\mathrm{rank}$-1 Mordell–Weil contribution away from equality here since `\rho=20=19+1`). |
+| `\mathrm{Km}(A)`, Shioda–Inose correspondence | Background geometric context (Literature Dependencies §3) | **Not needed for, and should not appear in, the main proof** — confirmed in the Round-34 audit that the twist `\chi(-1)` is established without it; mention only in a remarks/background section if at all, to avoid implying it is load-bearing. |
+
+## A note on `\chi(-1)`, `\chi(2)`, `\chi(-2)` as *characters* vs. as *values*
+
+Throughout, `\chi(-1)`, `\chi(2)`, `\chi(-2)` denote the Legendre
+symbols `\left(\frac{-1}p\right),\left(\frac2p\right),\left(\frac{-2}p\right)`,
+**functions of `p`**. When Part IV/Theorem Ledger discusses "the
+quadratic character `\chi(-1)`" as an abstract Dirichlet/Galois
+character (e.g. "unramified outside `\{2,\infty\}`", "even/odd"), this
+is the **same object**, viewed as a character of
+`\mathrm{Gal}(\overline{\mathbb Q}/\mathbb Q)$ rather than evaluated at
+a specific `p` — the manuscript should introduce both readings once,
+explicitly, rather than let the dual usage remain implicit.
