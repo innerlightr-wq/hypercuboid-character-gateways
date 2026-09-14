@@ -326,6 +326,15 @@ a_2(T)=T(T+1)(T+2),\quad a_4(T)=T^2(T+1)^3,
 \]
 with $a_6=0$.
 
+\begin{remark}[The connecting map, made explicit]
+\label{rem:bridge}
+The summand of $T(p)$ above and the polynomial $X(X{+}1)T(T{+}1)(X{+}T{+}1)$ are related by the explicit unimodular change of variables
+\[
+X=-(t{+}1),\qquad T=x+t\qquad(\text{inverse: }t=-X-1,\ x=T+X+1),
+\]
+under which $X(X{+}1)T(T{+}1)(X{+}T{+}1)$ becomes, identically in $\Z[x,t]$, $x\,t(t{+}1)(x{+}t)(x{+}t{+}1)$ — the summand of $T(p)$ from Lemma~\ref{lem:sigmaIII}. The linear part has determinant $1$, so this is a bijection of $\Fp^2$ for every prime $p$, and the two point-counts agree exactly, with no character factor or exceptional locus entering. (This map is not needed for anything proved in this paper — $T(p)$'s value is unaffected either way — it is recorded here purely to make the passage from Lemma~\ref{lem:sigmaIII} to the equation above reconstructible without an independent search.)
+\end{remark}
+
 \subsection{Weierstrass invariants and Kodaira fibers}
 
 The standard formulas give
@@ -336,6 +345,15 @@ c_6(T) = -32T^3(T-1)(T+1)^3(T+2)(2T+1),
 \[
 \Delta(T) = 16\,T^8(T+1)^8,\qquad j(T)=c_4(T)^3/\Delta(T).
 \]
+
+\begin{remark}[Discriminant factorization]
+\label{rem:disc-factorization}
+This is the $b=1$ case of the shared family $Y^2=T(T{+}1)X(X{+}1)(X{+}T{+}b)$ studied alongside Classes I/II's own $b=0$ case in \cite{ClassesI_II}. Writing the naive (pre-clearing) equation's cubic-in-$X$ discriminant as $\operatorname{disc}_X\{0,-1,-(T{+}1)\}$, the identity
+\[
+\Delta(T)=16\,[T(T{+}1)]^6\cdot\operatorname{disc}_X\{0,-1,-(T{+}1)\}
+\]
+holds identically in $\Z[T]$ (the scaling law $\operatorname{disc}(kr_1,kr_2,kr_3)=k^6\operatorname{disc}(r_1,r_2,r_3)$, $k=T(T{+}1)$, applied to $\Delta=16a_4^2(a_2^2{-}4a_4)$): unlike Classes I/II, where the moving root $-t$ collides with only one of the two fixed roots $\{0,-1\}$ at a time, here the moving root $-(T{+}1)$ collides with \emph{both} $0$ (at $T=-1$) and $-1$ (at $T=0$) exactly where the shared prefactor $T(T{+}1)$ already vanishes — the mechanism behind this paper's three \emph{uniform} $I_2^*$ fibers, as opposed to Classes I/II's four \emph{mixed} ones (\cite{ClassesI_II}, Appendix on Kodaira classification). This identifies bad-fiber locations and $\Delta$-orders only, not Kodaira type, which the proof below still establishes independently.
+\end{remark}
 
 \begin{proposition}[Three $I_2^*$ fibers]
 \label{prop:fibers}
@@ -373,6 +391,11 @@ relatively minimal model of $V_{\rm III}$ over the $T$-line) is indeed a
 K3 surface.
 \end{proof}
 
+\begin{remark}[Validity at every odd prime]
+\label{rem:char-p}
+Unlike Classes I/II (\cite{ClassesI_II}, Appendix on Kodaira classification and its Remark on validity at every odd prime), none of this paper's three bad fibers is a potentially-\emph{good} reduction fiber landing on the extra-automorphism locus $j\in\{0,1728\}$ — all three are potentially \emph{multiplicative} ($v(j)=3v(c_4)-v(\Delta)=-2$ at each, checked directly from the formulas above), stabilized by a ramified quadratic extension (a twist of a Tate curve, automorphism group exactly $\{\pm1\}$), hence tame — and the type unaffected — at every $p\ne2$. No $j=0,1728$ subtlety therefore arises here at all, and no case-by-case Step-$6$ verification (as \cite{ClassesI_II} needed for its one potentially-good fiber) is required: the classification above holds at every odd prime without modification. $p=2$ is excluded for the reason already given in \S\ref{sec:badprimes}.
+\end{remark}
+
 \subsection{Trivial lattice and Picard rank}
 
 \begin{proposition}
@@ -394,6 +417,11 @@ the sense of Shioda--Inose), and the Shioda--Tate formula
 $\rk\NS(X_{\rm III}) = 2+\sum_v(m_v-1)+\rk\mathrm{MW}$ forces
 $\rk\mathrm{MW}=0$.
 \end{proof}
+
+\begin{remark}[No base-field subtlety here]
+\label{rem:rank-field}
+This rank-$0$ conclusion needs no generator search and no base-field argument distinct from the geometric one: since $\rk\Triv(X_{\rm III})=20$ already saturates the universal K3 ceiling $\rho\le20$, and rank over any subfield of $\overline\Q(T)$ cannot exceed the geometric rank, $\rk\mathrm{MW}(X_{\rm III}/\Q(T))=0$ follows immediately from $\rk\mathrm{MW}(X_{\rm III}/\overline\Q(T))=0$ — with no analogue of the Galois-descent argument \cite{ClassesI_II} needs for its own rank-$1$ surface, whose geometric rank is realized only over a proper extension of $\Q(T)$ (see \cite{ClassesI_II}, Appendix on Class II's own model, for the contrasting case where the two base fields genuinely disagree).
+\end{remark}
 
 \subsection{Full rational $2$-torsion}
 

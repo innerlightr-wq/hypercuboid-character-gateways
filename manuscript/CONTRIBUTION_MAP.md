@@ -148,3 +148,47 @@ record the resulting exact hypercuboid formulas as corollaries. The
 third symmetry class is shown to vanish for `p\equiv3\pmod4` by an
 unrelated, self-contained argument; its value for `p\equiv1\pmod4`
 remains open."*
+
+---
+
+## September 2026 addendum: the sector-signature integration round
+
+Five new remarks and one new appendix were added, none changing any
+previously-stated theorem or its proof — all are explanatory additions or
+omitted-justification repairs, fully elementary (classified `E` in
+`PROOF_DEPENDENCY.md`), each independently verified by exact symbolic
+computation (`scripts/verify_char3_fiber_and_rank.py`), not by any Lean
+formalization (none exists in this repository; Lean work, if ever
+undertaken, is explicitly deferred to a separate session):
+
+1. **The Class III coordinate bridge** (`\cite{ClassIII}`'s own Remark
+   `rem:bridge`) — an explicit unimodular map connecting that paper's
+   projective-reduction lemma to its stated affine model, previously
+   unexhibited.
+2. **The discriminant-factorization identity** (`rem:disc-factorization`,
+   both papers) — `\Delta=16[t(t+1)]^6\cdot\operatorname{disc}_X\{0,-1,-(t+b)\}`,
+   explaining Classes I/II's four *mixed* vs. `\cite{ClassIII}`'s three
+   *uniform* bad fibers from where the moving root collides with the
+   shared prefactor's own zero locus.
+3. **Validity of the Kodaira classification at every odd prime**
+   (`rem:char-p`, both papers) — going beyond a node/cusp shortcut to
+   Tate's algorithm's actual Step 6 at the one delicate (`j=1728`) fiber,
+   resolving a genuine characteristic-3 subtlety this round found and
+   closed rather than sidestepped.
+4. **The fiber-to-rank structural explanation** (`rem:fiber-to-rank` /
+   `rem:rank-field`) — why Classes I/II's rank-1 claim needs an explicit
+   Mordell–Weil generator while `\cite{ClassIII}`'s rank-0 claim needs
+   only the Hodge-theoretic ceiling.
+5. **Class II's own quadratic-twist identification and field-specific
+   rank** (`rem:class2-twist`, Appendix `app:class2`) — Class II's own
+   Weierstrass model (not merely an abstract construction) is proved,
+   via the exact `(c_4,c_6,\Delta)$` twist law and an explicit
+   translation, to be the `-1`-twist of `X`; a Galois-descent argument
+   then gives `\rk\mathrm{MW}(X/\Q(t))=0$` while the transported section
+   gives `\rk\mathrm{MW}(X_{II}/\Q(t))=1$` — the two surfaces, isomorphic
+   over `\Q(i)(t)$`, are genuinely different over `\Q(t)$` itself.
+
+Full derivations, source locations, and the computational verification
+underlying each point are recorded in
+`explorations/sector_signature_proof_closure_2026-09-14/PROOF_CLOSURE.md`
+and the three preceding exploration rounds it closes out.
