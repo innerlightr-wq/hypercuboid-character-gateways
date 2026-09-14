@@ -1,8 +1,18 @@
 # Claim Ledger — `hypercuboid_character_sums.tex`
 
-**Updated Manuscript Phase 4.** Every substantive claim, its status, and
-where it is verified — now including the Ahlgren–Ono–Penniston (2002)
-attribution and the completed Mordell–Weil torsion lemma.
+**Updated Manuscript Phase 4, then the September 2026 sector-signature
+integration round.** Every substantive claim, its status, and where it is
+verified — now including the Ahlgren–Ono–Penniston (2002) attribution,
+the completed Mordell–Weil torsion lemma, and five new remarks (the
+discriminant-factorization identity, validity of the Kodaira
+classification at every odd prime, the fiber-to-rank structural
+explanation, and the Class II quadratic-twist / field-specific rank
+results with their full derivation in new Appendix D). Source of truth
+for the integration-round additions:
+`explorations/sector_signature_proof_closure_2026-09-14/PROOF_CLOSURE.md`
+and `INSERTIONS_FINAL.md`; verification is mathematical argument plus the
+computational checks in `scripts/verify_char3_fiber_and_rank.py` — **not**
+Lean kernel verification (none is used anywhere in this repository).
 
 | Manuscript label | Claim | Status | Verified |
 |---|---|---|---|
@@ -24,6 +34,11 @@ attribution and the completed Mordell–Weil torsion lemma.
 | Table `tab:mod8` | mod-8 corollary table | Derived from the Main Theorem, regenerated directly | — |
 | Prop. `prop:classIII` | `\Sigma_{III}(p)=0` at `p\equiv3\bmod4` | PROVED — self-contained, independent mechanism, **not addressed by AOP (no Class III analogue) — genuinely outside their scope** | In-text proof sketch |
 | Open Problem | `\Sigma_{III}(p)` at `p\equiv1\bmod4` | **OPEN** — explicitly the paper's genuine remaining frontier, emphasized as such (Section 11 title: "Class III: the genuine open problem") | — |
+| **Remark `rem:disc-factorization` (NEW, integration round)** | `\Delta(t)=16[t(t+1)]^6\cdot\operatorname{disc}_X\{0,-1,-t\}` | PROVED — elementary identity, self-contained; explanatory, does not replace the existing Kodaira classification | `scripts/verify_char3_fiber_and_rank.py` §2 |
+| **Remark `rem:char-p` (NEW)** | The Kodaira classification of Appendix A is valid at every odd prime, not only characteristic 0 | PROVED — Tate's algorithm Step 2 (multiplicative point, unconditional); potentially-multiplicative-reduction theorem (tame iff `p≠2`); explicit Tate Step 6 at the one potentially-good (`j=1728`) point, reducing to the fixed integer `disc(Y^3-Y)=4` | `scripts/verify_char3_fiber_and_rank.py` §3 |
+| **Remark `rem:fiber-to-rank` (NEW)** | Structural reason Class I/II's rank-1 claim needs an explicit generator while `\cite{ClassIII}`'s rank-0 claim does not | PROVED — direct consequence of `\rk\Triv=19` vs. `20` against the shared ceiling `\rho\le20` | In-text |
+| **Remark `rem:class2-twist` (NEW)** | Class II's own model is the quadratic twist by `-1` of `X`; `\rk\mathrm{MW}(X/\Q(t))=0`; `\rk\mathrm{MW}(X_{II}/\Q(t))=1` | PROVED — Galois descent on `\mathrm{MW}\otimes\Q` (`\sigma(P_1)=-P_1`, already in Appendix C) for the rank-0 half; explicit `\Q(t)`-isomorphism and transported non-torsion point (Appendix D) for the rank-1 half | Appendix D; `scripts/verify_char3_fiber_and_rank.py` §§4–6 |
+| **Appendix `app:class2` (NEW)** | Full coordinate chain: Class II's own quintic → completed model → invariant match with the `-1`-twist → explicit translation → transported section | PROVED — see `explorations/sector_signature_proof_closure_2026-09-14/PROOF_CLOSURE.md` §3 for the derivation this appendix condenses | `scripts/verify_char3_fiber_and_rank.py` §§4–5 |
 
 ## What changed this phase
 

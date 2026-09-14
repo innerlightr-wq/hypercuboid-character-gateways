@@ -24,6 +24,7 @@
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\disc}{disc}
 \DeclareMathOperator{\rk}{rank}
+\DeclareMathOperator{\Gal}{Gal}
 
 \title{Finite-Field Hypercuboid Character Sums and a Discriminant-8 Singular K3 Surface}
 
@@ -234,6 +235,11 @@ By Shioda--Tate over $\Qbar(t)$, $\rho(X_{\Qbar})=19+\rk MW(X/\Qbar(t))\ge19+1=2
 
 No $\Q(t)$-rational point of height $1$ exists (an exhaustive elimination over the finitely many admissible fiber-component patterns); $P_1$ realizes this height only over the quadratic extension $\Q(i)(t)$.
 
+\begin{remark}[Why this rank needs a generator, and \cite{ClassIII}'s does not]
+\label{rem:fiber-to-rank}
+In both this paper and \cite{ClassIII}, $\rho(X_{\overline\Q})\le20$ is the universal Hodge-theoretic bound for any K3 surface, and $\rho=\rk\Triv(X)+\rk\mathrm{MW}(X/\overline\Q(t))$ by Shioda--Tate. Here $\rk\Triv(X)=19$ leaves one degree of freedom the ceiling alone cannot resolve — it bounds $\rk\mathrm{MW}\le1$ but not $\ge1$ — so the explicit point $P_1$ and its height computation above are the genuinely necessary additional ingredient. In \cite{ClassIII}, by contrast, $\rk\Triv(X_{\rm III})=20$ already saturates the ceiling, forcing $\rk\mathrm{MW}=0$ from the upper bound alone, with no generator search logically necessary — and since rank over any subfield cannot exceed the geometric rank, this already forces rank $0$ over $\Q(t)$ as well (Remark~\ref{rem:class2-twist} below), with no separate base-field argument needed. Even $P_1$'s own existence here only establishes the rank over $\Q(i)(t)$, not $\Q(t)$ itself — see Remark~\ref{rem:class2-twist}.
+\end{remark}
+
 \section{Frobenius traces on \texorpdfstring{$NS(X)$}{NS(X)} and \texorpdfstring{$T(X)$}{T(X)}}
 \label{sec:trace}
 
@@ -348,6 +354,17 @@ $\Sigma_{II}(p)=\chi(-1)\,\Sigma_I(p)$ for every odd prime $p$.
 For the $4$-cycle $\pi=(1\,2\,3\,4)$ permuting $A_1,\dots,A_4$, the induced coordinate substitution $T$ satisfies $P_I(Tx)=-P_{II}(x)$ identically (a literal integer scalar $-1$ multiplying the defining product). Since $T$ is a bijection of $\Fp^3$, relabeling gives $\Sigma_I(p)=\sum_x\chi(P_I(Tx))=\sum_x\chi(-P_{II}(x))=\chi(-1)\Sigma_{II}(p)$, and multiplying by $\chi(-1)$ (using $\chi(-1)^2=1$) gives the claim.
 \end{proof}
 
+\begin{remark}[The Gateway relation as a quadratic twist, and both surfaces' rank over $\Q(t)$]
+\label{rem:class2-twist}
+Dehomogenizing $P_{II}$ via $x_1{=}1$ (available since $L_2=x_1$ is one of Class II's own six defining forms) and completing the cube exactly as in Proposition~\ref{prop:X}'s own procedure, applied verbatim to Class II's own quintic, gives Class II's own minimal model. Its invariants satisfy, exactly,
+\[
+c_4^{II}=c_4^{I},\qquad c_6^{II}=-c_6^{I},\qquad \Delta^{II}=\Delta^{I},
+\]
+precisely the classical transformation law for a quadratic twist by $-1$. An explicit translation in Class II's own completed coordinate identifies its model, over $\Q(t)$ itself with no further field extension, with the standard twist $Y^2=-(X^3+a_2X^2+a_4X)$ of $X$. Full details — the affine bridge, the invariant computation, and the explicit translation — are given in Appendix~\ref{app:class2}.
+
+This identification resolves the base-field rank question left implicit by Proposition~\ref{prop:picard}: since $\sigma(P_1)=-P_1$ (Appendix~\ref{app:height}, group-law statement), $\mathrm{MW}(X/\overline\Q(t))\otimes\Q$ — one-dimensional, spanned by $[P_1]$ — has $\sigma\in\Gal(\Q(i)/\Q)$ acting by $-1$, so its $\sigma$-invariants vanish: $\rk\mathrm{MW}(X/\Q(t))=0$ exactly (Appendix~\ref{app:class2}), sharpening \S\ref{sec:lattices}'s remark that no $\Q(t)$-rational point of height $1$ exists to a statement covering every height — $\mathrm{MW}(X/\Q(t))\cong(\Z/2)^2$ exactly (Lemma~\ref{lem:torsion}'s torsion, no free part). Transporting $P_1$ through the twist identification above instead gives, in Class II's own native coordinates, a point with \emph{no $i$ in either coordinate} — genuinely $\Q(t)$-rational — of the same height $1$ as $P_1$ (height is preserved by the $\Q(t)$-isomorphism just exhibited), hence non-torsion. Consequently $\rk\mathrm{MW}(X_{II}/\Q(t))=1$ exactly, the \emph{opposite} of $X$'s own rank $0$ over the same field: the two surfaces, isomorphic over $\Q(i)(t)$, are genuinely different over $\Q(t)$ itself.
+\end{remark}
+
 \begin{corollary}[Class II]
 \label{cor:classII}
 For every odd prime $p$,
@@ -434,6 +451,15 @@ and, after clearing the resulting common factors in $c_4^3-c_6^2$,
 c_6=-32t^3(t-2)(t+1)^4(2t-1),\qquad \Delta=16t^8(t-1)^2(t+1)^6.
 \]
 
+\begin{remark}[Discriminant factorization]
+\label{rem:disc-factorization}
+Write the naive (pre-clearing-of-denominators) affine equation as $Y^2=t(t{+}1)\cdot X(X{+}1)(X{+}t{+}b)$ — the $b=0$ case of the one-parameter family $Y^2=T(T{+}1)X(X{+}1)(X{+}T{+}b)$ shared with \cite{ClassIII} ($b=1$ there). Its discriminant, as a cubic in $X$ for fixed $t$, is $\operatorname{disc}_X\{0,-1,-(t{+}b)\}$. The minimal Weierstrass model's discriminant above satisfies, identically in $\Z[t]$,
+\[
+\Delta(t)=16\,[t(t{+}1)]^6\cdot\operatorname{disc}_X\{0,-1,-(t{+}b)\},
+\]
+a direct consequence of $\Delta=16a_4^2(a_2^2{-}4a_4)$ together with the elementary scaling law $\operatorname{disc}(kr_1,kr_2,kr_3)=k^6\operatorname{disc}(r_1,r_2,r_3)$, $k=t(t{+}1)$: the shared prefactor $t(t{+}1)$ contributes a $t$-independent factor of $6$ to every bad-fiber order, and the remaining, sector-specific order comes entirely from where the moving root $-(t{+}b)$ collides with the fixed roots $0,-1$. This identifies bad-fiber \emph{locations and $\Delta$-orders} only — the Kodaira \emph{type} at each point still requires the $(\operatorname{ord}c_4,\operatorname{ord}c_6,\operatorname{ord}\Delta)$ classification and minimality check below, unchanged.
+\end{remark}
+
 \emph{Bad-fiber classification.} Tate's algorithm classifies the fiber at $t=t_0$ by
 $(\mathrm{ord}_{t_0}c_4,\mathrm{ord}_{t_0}c_6,\mathrm{ord}_{t_0}\Delta)$:
 \begin{itemize}
@@ -443,6 +469,15 @@ $(\mathrm{ord}_{t_0}c_4,\mathrm{ord}_{t_0}c_6,\mathrm{ord}_{t_0}\Delta)$:
 \item $t_0=\infty$: with $\deg_tc_4=6$, $\deg_tc_6=9$, $\deg_t\Delta=16$, and the surface being a degree-$2$ (i.e.\ $12n$, $n=2$) elliptic surface, the weights at infinity are $(4n,6n,12n)=(8,12,24)$, giving $\mathrm{ord}_\infty c_4=8-6=2$, $\mathrm{ord}_\infty c_6=12-9=3$, $\mathrm{ord}_\infty\Delta=24-16=8$ — again type $I_2^*$.
 \end{itemize}
 Sum of $\Delta$-orders over the four bad fibers: $8+2+6+8=24$, equal to the Euler number of a K3 surface (and not equal to $12$, ruling out the rational-elliptic-surface alternative), confirming Proposition~\ref{prop:X}.
+
+\begin{remark}[Validity at every odd prime, characteristic $3$ treated in full]
+\label{rem:char-p}
+The classification above extends, fiber by fiber, to every odd prime $p$, by three separate arguments, none a prime-by-prime search. The $I_2$ fiber at $t=1$ is multiplicative reduction (Tate's algorithm, Step 2: $b_2=4a_2$ is a unit there), valid at every residue characteristic unconditionally. The $I_2^*$ fibers at $t=0,\infty$ are potentially multiplicative reduction ($v(j)=3v(c_4)-v(\Delta)=-2$ at both, checked directly), stabilized by a ramified \emph{quadratic} extension — because the reduction is a twist of a Tate curve, whose automorphism group over the algebraic closure is exactly $\{\pm1\}$ — hence tame, and unaffected in type, at every $p\ne2$. The $I_0^*$ fiber at $t=-1$ has $j(-1)=1728$ exactly (an identity of the specialized value at this one parameter point, not of the family; it lands on the extra-automorphism locus $\operatorname{Aut}=\Z/4$, where the standard shortcut table for curves $y^2=x^3+Ax$ is stated only for $p>3$ and does not apply here without independent verification). Resolved by running Tate's algorithm's own Step $6$ directly rather than that shortcut: with $a_2,a_4$ both vanishing to order $2$ at $t=-1$ already (so the origin is already the singular point) and $a_6=0$, the discriminating cubic is
+\[
+P(Y)=Y^3+\frac{a_2}{(t+1)}Y^2+\frac{a_4}{(t+1)^2}Y\Bigg|_{t=-1}=Y^3-Y=Y(Y-1)(Y+1),
+\]
+with $\operatorname{disc}(P)=4$, the \emph{same fixed integer} at every field of definition. Since $4$ is nonzero at every odd prime, $P$ has distinct roots at every odd $p$, so Tate's algorithm terminates at Step $6/7$ with type $I_0^*$ unconditionally — the $j=1728$ concern is resolved by the algorithm itself, not sidestepped. In every case $\operatorname{ord}(\Delta)$, minimality (Kraus's criterion is never triggered, since $\operatorname{ord}(\Delta)=6<12$ regardless of $c_4,c_6$), and the type itself are unaffected at $p=3$ specifically — even though $\operatorname{ord}(c_4),\operatorname{ord}(c_6)$ individually shift there (from $2,4$ to $4,6$ at $t=-1$, a coincidence of the auxiliary factors $t^2{-}t{+}1$ and $t{-}2$ both collapsing onto $(t{+}1)$ mod $3$ specifically — an artifact of this family's auxiliary quantities, not of the classification). All four of this paper's own bad fibers are therefore unaffected in type at every odd prime; the analogous statement for \cite{ClassIII}'s three bad fibers (all potentially multiplicative, no $j=0,1728$ subtlety) holds identically. $p=2$ remains outside this remark's scope, excluded for the reasons already given in \S\ref{sec:prelim} (bad-fiber-location collision; the ramification-index-$2$ twists used above are wild, not tame, at $p=2$).
+\end{remark}
 
 \section{Local fiber-component and point-count calculations}
 \label{app:fibers}
@@ -518,6 +553,52 @@ Since $x_1(t)$ is a polynomial (finite at every $t$, including $t=\infty$), $P_1
 \]
 Since canonical height vanishes exactly on torsion points, $\hat h(P_1)=1\ne0$ proves $P_1$ is non-torsion. No numerical approximation is used at any step; every quantity above is an exact rational number from an exact table lookup.
 
+\section{Class II's own Weierstrass model, and Mordell--Weil rank over \texorpdfstring{$\Q(t)$}{Q(t)}}
+\label{app:class2}
+
+\subsection*{Class II's own quintic and its completed model}
+Dehomogenizing $P_{II}$ via $x_1{=}1$ gives $Q_{II}(u,v)=v(u{+}1)(u{+}v)(v{+}1)(u{+}v{+}1)$ in Class II's own native coordinates $(u,v)$ (renaming $x_2\mapsto v$; $u,v$ range over all of $\mathbf A^2$, no exclusion). This is related to Class I's own quintic $Q_I(x,t)=x(x{+}1)t(t{+}1)(x{+}t)$ by the explicit, unimodular substitution
+\[
+u=-(x{+}t{+}1),\qquad v=t,
+\]
+under which $Q_{II}(u,v)=-Q_I(x,t)$ identically. (This is the same affine bridge underlying the Gateway relation's alternative, quintic-level derivation; it is not itself new -- the invariant computation below is.)
+
+Splitting $Q_{II}(u,v)=\underbrace{v(v{+}1)}_{\text{prefactor}}\cdot\underbrace{(u{+}1)(u{+}v)(u{+}v{+}1)}_{\text{cubic, roots }\{-1,-v,-(v+1)\}}$ -- note the cubic has \emph{no} root at $u=0$, unlike every other cubic in this family, a genuine structural feature of Class II's own presentation, not an error -- and completing the cube by $u=u_p/[v(v{+}1)]$, $Y=Y_p/[v(v{+}1)]$ (monic-checked directly, leading coefficient $1$) gives Class II's own minimal-form coefficients
+\[
+a_2^{II}(v)=2v(v{+}1)^2,\qquad a_4^{II}(v)=v^2(v{+}1)^2(v^2{+}3v{+}1),\qquad a_6^{II}(v)=v^4(v{+}1)^4\ (\text{nonzero}).
+\]
+No base-parameter change occurs: $v=t$ throughout.
+
+\subsection*{Invariant identification: the quadratic twist, made exact}
+Computing $(c_4,c_6,\Delta)$ from $(a_2^{II},a_4^{II},a_6^{II})$ via the standard $b_2,b_4,b_6,b_8$ formulas (now with $b_6=4a_6^{II}\ne0$, $b_8=4a_2^{II}a_6^{II}-(a_4^{II})^2$, unlike every other model in this paper) gives, by direct expansion,
+\[
+c_4^{II}=c_4^{I},\qquad c_6^{II}=-c_6^{I},\qquad \Delta^{II}=\Delta^{I},
+\]
+where $c_4^I,c_6^I,\Delta^I$ are Class I's own invariants (Appendix~\ref{app:kodaira}). This is exactly the classical law $(c_4,c_6,\Delta)\mapsto(d^2c_4,d^3c_6,d^6\Delta)$ for a quadratic twist by $d=-1$ ($d^2{=}1,d^3{=}{-}1,d^6{=}1$): Class II's own completed model is the $-1$-twist of $X$, confirmed via the standard invariants rather than only the pre-completion affine correspondence.
+
+Since two $a_1{=}a_3{=}0$ Weierstrass equations with the same $(c_4,c_6)$ differ only by a translation, the explicit translation $u_p=X-v(v{+}1)^2$ (one of the three roots of Class II's own cubic, found by direct trial) gives exactly $(a_2,a_4,a_6)=(-a_2^I(v),\,a_4^I(v),\,0)$ -- matching, term for term, the standard $-1$-twist $Y^2=-(X^3+a_2^IX^2+a_4^IX)$. No further scaling or denominator is needed: the full forward chain is
+\[
+u=-(x{+}t{+}1)\ \xrightarrow{\times t(t+1)}\ u_p\ \xrightarrow{\ -t(t{+}1)^2\ }\ X=u_p+t(t{+}1)^2,
+\]
+with $Y\mapsto Y\cdot t(t{+}1)$ under the cube-completion scaling, unchanged by the translation. Every constant appearing is a polynomial in $t$ over $\Z$: no square root, no $i$, and no further twist anywhere in this chain.
+
+\subsection*{Rank $0$ over $\Q(t)$ for $X$ itself: the Galois-descent argument}
+By the group-law statement $\sigma(P_1)=-P_1$ (Appendix~\ref{app:height}), $\Gal(\Q(i)/\Q)=\{1,\sigma\}$ acts on the one-dimensional $\Q$-vector space $\mathrm{MW}(X/\Q(i)(t))\otimes\Q$ (equal to $\mathrm{MW}(X/\overline\Q(t))\otimes\Q$, both spanned by $[P_1]$, since $P_1\in\mathrm{MW}(X/\Q(i)(t))$ and the geometric rank is exactly $1$) by multiplication by $-1$ on the spanning class. The invariant subspace of "multiplication by $-1$" on a $1$-dimensional $\Q$-vector space is $\{0\}$ (as $2\ne0$ in $\Q$), so by Galois descent
+\[
+\mathrm{MW}(X/\Q(t))\otimes\Q=\bigl(\mathrm{MW}(X/\Q(i)(t))\otimes\Q\bigr)^\sigma=\{0\},\qquad\text{i.e.}\qquad \rk\mathrm{MW}(X/\Q(t))=0.
+\]
+No primitive integral generator is needed for this argument (only the $1$-dimensionality of $\mathrm{MW}\otimes\Q$ and $\sigma$'s action on it). This is a statement about the \emph{free} part only: $\mathrm{MW}(X/\Q(t))\cong(\Z/2)^2$ exactly, by Lemma~\ref{lem:torsion}'s torsion (already $\Q(t)$-rational) together with the rank-$0$ conclusion just proved -- rank zero does not mean no rational points.
+
+\subsection*{Rank $1$ over $\Q(t)$ for Class II's own model: transport $P_1$}
+Tracing the transported point $(X,Y)=(-(t{+}1),\,-t^3{-}t^2{+}t{+}1)$ on the $-1$-twist (obtained from $P_1$ by the standard twist map $(X,Y)\mapsto(X,iY)$, which cancels the $i$ in $Y(P_1)$ exactly) \emph{backward} through the complete chain above gives, in Class II's own native coordinates,
+\[
+u=\frac{-(t^2{+}t{-}1)}{t},\qquad Y_{\mathrm{native}}=\frac{-(t{-}1)(t{+}1)}{t}.
+\]
+Direct substitution confirms $Y_{\mathrm{native}}^2=Q_{II}(u,t)$ exactly (both sides equal $(t{-}1)^2(t{+}1)^2/t^2$) -- the point lies on Class II's own \emph{original} quintic and on its own completed Weierstrass model. No $i$ appears in either coordinate: the point is genuinely $\Q(t)$-rational (as an element of the function field; the pole at $t=0$ is an ordinary feature of a rational function, not an obstruction). Every map in the forward chain above is a $\Q(t)$-isomorphism (no field extension anywhere, unlike the twist map $(X,Y)\mapsto(X,iY)$ itself, which needs $\Q(i)$), so height is preserved exactly: the transported point has height $1\ne0$, hence is non-torsion. Combined with the geometric-rank ceiling (twist-invariant, $=1$):
+\[
+\rk\mathrm{MW}(X_{II}/\Q(t))=1\quad\text{exactly, attributed directly to Class II's own surface}.
+\]
+
 \section{Modularity and twist verification}
 \label{app:twist}
 
@@ -552,7 +633,7 @@ as used in the proof of Theorem~\ref{thm:main}.
 \section{Computational verification and reproducibility}
 \label{app:scripts}
 
-All formulas in this paper were checked computationally, as verification only (never as a logically necessary step in any proof), against brute-force finite-field enumeration for primes spanning every residue class modulo $8$, and against Hecke eigenvalues for \texttt{8.3.d.a} retrieved via the raw LMFDB API (\url{https://www.lmfdb.org/api/mf_newforms/}), not an AI-summarized fetch. Verification scripts are provided in the accompanying repository, \texttt{explorations/hypercuboid/scripts/}.
+All formulas in this paper were checked computationally, as verification only (never as a logically necessary step in any proof), against brute-force finite-field enumeration for primes spanning every residue class modulo $8$, and against Hecke eigenvalues for \texttt{8.3.d.a} retrieved via the raw LMFDB API (\url{https://www.lmfdb.org/api/mf_newforms/}), not an AI-summarized fetch. Verification scripts are provided in the accompanying repository, \texttt{scripts/}; the identities in Remarks~\ref{rem:disc-factorization}, \ref{rem:char-p}, and \ref{rem:class2-twist} and Appendix~\ref{app:class2} are additionally checked by \texttt{scripts/verify\_char3\_fiber\_and\_rank.py}.
 
 \section*{Notation table}
 \label{app:notation}
@@ -561,6 +642,9 @@ See the accompanying \texttt{NOTATION.md} in the repository for the full symbol 
 \label{sec:refs}
 
 \begin{thebibliography}{99}
+
+\bibitem{ClassIII}
+E.~De Jes\'us, \emph{Class III Hypercuboid Character Sums and a Discriminant-4 Singular K3 Surface}, Zenodo (2026), \url{https://doi.org/10.5281/zenodo.22713447}. The sequel paper, resolving the third residual class $\Sigma_{III}$ left open here (Section~\ref{sec:classIII}); cited in Remark~\ref{rem:disc-factorization} for the shared one-parameter family and in Remark~\ref{rem:char-p} for the parallel characteristic-$p$ argument.
 
 \bibitem{AOP2002}
 S.~Ahlgren, K.~Ono, D.~Penniston, \emph{Zeta functions of an infinite family of K3 surfaces}, Amer. J. Math. \textbf{124} (2002), no.~2, 353--368. \textbf{The central prior reference for this paper}: their Theorem 2.1, specialized at $\lambda=1$, gives the character-sum identity of Theorem~\ref{thm:main}; their Theorem 1.2 independently establishes the singularity and CM field of the same surface. See Section~\ref{sec:main} and Remark~\ref{rem:aop}.

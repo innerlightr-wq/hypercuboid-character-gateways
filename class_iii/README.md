@@ -15,6 +15,21 @@ This paper is the sequel to the repository's Classes I/II paper (see the
 top-level [`README.md`](../README.md) for that paper's citation and the
 `## Companion Papers` section comparing the two).
 
+**Revision note (September 2026)**: four new remarks were added — an
+explicit coordinate bridge connecting the projective-reduction lemma to
+the stated affine model (Remark 4.1); a discriminant-factorization
+identity shared with the companion paper, explaining this paper's three
+*uniform* bad fibers directly (Remark 4.2); a characteristic clarification
+confirming the Kodaira classification at every odd prime (Remark 4.4,
+simpler here than in the companion paper since none of this paper's
+fibers land on the $j=0,1728$ extra-automorphism locus); and a note that
+the rank-$0$ conclusion needs no base-field subtlety, unlike the companion
+paper's own rank-$1$ surface (Remark 4.6). See the top-level README's own
+revision note and
+`explorations/sector_signature_proof_closure_2026-09-14/PROOF_CLOSURE.md`
+for the full derivations. No claim in this paper was changed — all four
+are explanatory additions or omitted-justification repairs.
+
 ## Main result
 
 This paper evaluates the third residual character-sum class,

@@ -64,6 +64,29 @@ themselves, only as an observation about these two resolved cases — not
 as a general theorem about the hypercuboid construction or its constraint
 classes.
 
+### Revision note (September 2026)
+
+Both manuscripts were revised with five new remarks (and, in this paper,
+one new appendix), closing a bounded, fully-verified research round
+(`explorations/sector_signature_*_2026-09-14/`, culminating in
+`PROOF_CLOSURE.md`): (1) an explicit coordinate bridge in the Class III
+paper, connecting its projective-reduction lemma to its stated affine
+model; (2) a discriminant-factorization identity, in both papers, showing
+directly why Classes I/II's four bad fibers are *mixed* while Class III's
+three are *uniform*; (3) a characteristic clarification establishing the
+Kodaira classification at every odd prime (not only characteristic $0$),
+including a genuine characteristic-$3$ subtlety at one fiber, found and
+resolved via Tate's algorithm directly rather than sidestepped; and (4)
+field-specific Mordell–Weil rank results distinguishing the geometric rank
+(over $\overline{\mathbf Q}(t)$) from the rank over the actual base field
+$\mathbf Q(t)$ — Classes I's own surface has rank $0$ over $\mathbf Q(t)$
+despite geometric rank $1$, while its quadratic twist (identified,
+explicitly, with Class II's own Weierstrass model) has rank $1$ there.
+Verification throughout is exact symbolic/algebraic computation
+(`scripts/verify_char3_fiber_and_rank.py`) and mathematical argument —
+**no Lean formalization exists in this repository**; any future Lean work
+is deferred to a separate effort.
+
 ## What this project studies
 
 A clean finite-field hypercuboid residue system on four coordinates,

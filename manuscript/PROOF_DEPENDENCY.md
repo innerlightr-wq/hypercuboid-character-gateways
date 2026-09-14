@@ -35,6 +35,21 @@ Corollary 9.1 (Sigma_I)   Prop 9.2 (Gateway)
 Prop 10.1 (Sigma_III = 0 at p=3 mod 4)   [self-contained, INDEPENDENT of everything
                                            above -- uses no result from Sections 3-9]
 Open Problem 10.2 (Sigma_III at p=1 mod 4) [OPEN, no dependency graph -- unaddressed]
+
+-- September 2026 integration round (all E = elementary/self-contained;
+   none is load-bearing for any pre-existing result above, and none of
+   the pre-existing results depend on these) --
+Remark rem:disc-factorization              [self-contained, E; explanatory only]
+Remark rem:char-p                          [self-contained, E: Tate's algorithm Step 2
+                                             (unconditional) + the potentially-mult/good
+                                             dichotomy (classical, tame iff p!=2) +
+                                             explicit Tate Step 6 at one point]
+Remark rem:fiber-to-rank                   [self-contained, E; direct consequence of
+                                             Prop 6.1's own rk Triv=19 vs. ClassIII's 20]
+Remark rem:class2-twist + Appendix app:class2
+        [self-contained, E: standard quadratic-twist invariant law (c4,c6,Delta) +
+         Galois descent on MW tensor Q, using sigma(P_1)=-P_1 already proved in
+         Appendix C (Prop 6.1's own proof) -- no new external citation]
 ```
 
 ## Legend
