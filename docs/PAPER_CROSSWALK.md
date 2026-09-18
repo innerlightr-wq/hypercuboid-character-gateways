@@ -6,8 +6,15 @@ this repository. Hashes are of the files as examined; no PDF was edited.
 ## Paper 1 — the asymptotics paper (**not in this repository**)
 
 **"Zero-Diagonal Complement Collapse and Character-Sum Asymptotics in Clean Finite-Field Hypercuboid
-Residue Systems"** · Elias De Jesús · 15 pp · pdfTeX · created 2026-08-31 · no DOI/Zenodo/arXiv id
+Residue Systems"** · Elias De Jesús · 15 pp · pdfTeX · created 2026-08-31
+· **DOI [`10.5281/zenodo.22216640`](https://doi.org/10.5281/zenodo.22216640)** (`DeJesus2026collapse`;
+concept DOI `10.5281/zenodo.20533894`)
 · SHA-256 `7994b538772237663aec70940278467a60c2512f65c894f006b80df5f4b03bbb`
+
+*Metadata note:* the Zenodo deposit is titled "Zero-Diagonal Complement Collapse in Clean
+Finite-Field Hypercuboid Residue Systems" — it drops "and Character-Sum Asymptotics", which the PDF's
+own title page carries. Same document (deposit date matches the PDF exactly); worth aligning if the
+record is ever updated.
 
 * **Central claim.** `N_0^clean(p,5) = 0` for `p ≡ 3 (mod 4)`, and `= 2^{-15}p^4 + O(p^{7/2})` along
   `p ≡ 1 (mod 4)`.
@@ -114,8 +121,11 @@ Paper 1  (asymptotics, 2026-08-31)      — cites none of the family
 1. **Papers 2 and 3 both use Paper 1's collapse theorem without citing it.** Paper 2's §2 asserts the
    `n = 4` setup and the 7 representative forms directly; that content is Paper 1's Theorem 3.1 and
    Corollary 3.2. Paper 3 cites Paper 2 but not Paper 1.
-2. **Paper 1 is undeposited and uncommitted**, so the repository's scripts cite a document no reader
-   can obtain. Either commit it or give its docstring an external identifier.
+2. **Paper 1 is not committed here**, so the repository's scripts cite a document that is not in the
+   tree. It is, however, deposited and citable —
+   [`10.5281/zenodo.22216640`](https://doi.org/10.5281/zenodo.22216640) — so the fix is small: name
+   `DeJesus2026collapse` and its DOI in `scripts/baseline_verification.py`'s docstring, and cite it
+   from Papers 2 and 3.
 
 ## Claims appearing in code but not in any paper
 

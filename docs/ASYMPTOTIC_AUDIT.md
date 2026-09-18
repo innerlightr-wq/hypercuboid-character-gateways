@@ -13,9 +13,13 @@ No PDF was edited.
 **"Zero-Diagonal Complement Collapse and Character-Sum Asymptotics in Clean Finite-Field Hypercuboid
 Residue Systems"**, Elias De Jesús, 15 pages, pdfTeX, created 2026-08-31.
 
-SHA-256 `7994b538772237663aec70940278467a60c2512f65c894f006b80df5f4b03bbb`. No DOI, Zenodo ID or arXiv
-number appears anywhere in it — it is an undeposited note, and it is **not committed to this
-repository**.
+SHA-256 `7994b538772237663aec70940278467a60c2512f65c894f006b80df5f4b03bbb`.
+
+**Deposited on Zenodo** as `DeJesus2026collapse`:
+[`10.5281/zenodo.22216640`](https://doi.org/10.5281/zenodo.22216640) (deposit date 2026-08-31, matching
+the PDF; concept DOI `10.5281/zenodo.20533894`). The PDF itself carries no identifier on its title
+page, which is why the first pass of this audit could not find one. It remains **not committed to this
+repository**, but it is now citable.
 
 It contains, at the numbering the repository's scripts cite:
 
@@ -27,6 +31,11 @@ It contains, at the numbering the repository's scripts cite:
 **All four references in `scripts/baseline_verification.py` are therefore correct, not stale.** The
 previous audit's "documentation defect" is resolved: nothing was mis-numbered, the cited paper simply
 was not in the repository. That earlier finding is corrected.
+
+With the DOI now recorded, the remaining gap is purely editorial: `scripts/baseline_verification.py`
+names "Theorem 6.1", "Proposition 6.2 / Appendix C.5" and "Section 9" without saying which document
+they belong to. Adding `DeJesus2026collapse` and its DOI to that docstring would close it. This audit
+records the identifier but does not edit the script.
 
 ## 2. The exact theorem
 

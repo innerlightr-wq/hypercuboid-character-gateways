@@ -452,14 +452,17 @@ Added 2026-09-18, after examining three PDFs supplied in `~/Downloads`. **This s
 **Verdict A — the exact theorem has been found**, in a third paper that is not committed here:
 
 > **"Zero-Diagonal Complement Collapse and Character-Sum Asymptotics in Clean Finite-Field Hypercuboid
-> Residue Systems"**, Elias De Jesús, 15 pp, created 2026-08-31, no DOI or Zenodo identifier.
+> Residue Systems"**, Elias De Jesús, 15 pp, created 2026-08-31.
+> DOI [`10.5281/zenodo.22216640`](https://doi.org/10.5281/zenodo.22216640) (`DeJesus2026collapse`;
+> concept DOI `10.5281/zenodo.20533894`; the deposit title omits "and Character-Sum Asymptotics").
 > SHA-256 `7994b538772237663aec70940278467a60c2512f65c894f006b80df5f4b03bbb`.
 
 It contains Theorem 6.1 (the exact asymptotic, §6), Proposition 6.2 (odd-`|S|` exact vanishing, §6),
 Appendix C.5 (additional symmetry of the zero sector) and Section 9 (computational diagnostics,
 including the small-`p` caution). **All four repository references are correct and correctly
-numbered.** §9's "documentation defect" is withdrawn: nothing was stale. What remains is narrower —
-the cited paper is undeposited and uncommitted, so a reader cannot obtain it.
+numbered.** §9's "documentation defect" is withdrawn: nothing was stale. What remains is narrower and
+now editorial only: the paper is deposited and citable (DOI above) but is not committed here, and the
+citing script does not name it. Adding `DeJesus2026collapse` to that docstring closes the loop.
 
 ## 34. The prior audit's reconstructions were right, and the paper is more careful than assumed
 
