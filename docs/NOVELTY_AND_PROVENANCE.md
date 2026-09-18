@@ -434,3 +434,134 @@ of any prescribed sign vector is `2^-15`. **The coefficient `2^-15` matches the 
 | 15 classes | — | 15 points | `PG(3,2)` (`n = 4`: Fano plane) | yes | identification made here |
 | 15 classes | — | 15 coordinates | `[15,4]` binary simplex code; dual `[15,11,3]` Hamming | yes | analogy only — vocabulary, not content |
 | 15 forms `L_J`, `J ⊆ [4]` | — | coset reps with `x_5`-coefficient 0 | canonical representatives of `F_2^5/⟨1⟩` | yes | verified bijection |
+
+---
+
+# THREE-PAPER RECONCILIATION
+
+Added 2026-09-18, after examining three PDFs supplied in `~/Downloads`. **This section corrects §0 and
+§9 above.** Full detail in [`PAPER_CROSSWALK.md`](PAPER_CROSSWALK.md) and
+[`ASYMPTOTIC_AUDIT.md`](ASYMPTOTIC_AUDIT.md).
+
+## 33. The missing paper exists, and the repository's references are correct
+
+§0 above reported that no document in the repository contained
+`N_0^clean(p,5) = 2^{-15}p^4 + O(p^{7/2})`, and §9 recorded the scripts' references to
+"Theorem 6.1", "Proposition 6.2 / Appendix C.5" and "Section 9" as a documentation defect.
+
+**Verdict A — the exact theorem has been found**, in a third paper that is not committed here:
+
+> **"Zero-Diagonal Complement Collapse and Character-Sum Asymptotics in Clean Finite-Field Hypercuboid
+> Residue Systems"**, Elias De Jesús, 15 pp, created 2026-08-31, no DOI or Zenodo identifier.
+> SHA-256 `7994b538772237663aec70940278467a60c2512f65c894f006b80df5f4b03bbb`.
+
+It contains Theorem 6.1 (the exact asymptotic, §6), Proposition 6.2 (odd-`|S|` exact vanishing, §6),
+Appendix C.5 (additional symmetry of the zero sector) and Section 9 (computational diagnostics,
+including the small-`p` caution). **All four repository references are correct and correctly
+numbered.** §9's "documentation defect" is withdrawn: nothing was stale. What remains is narrower —
+the cited paper is undeposited and uncommitted, so a reader cannot obtain it.
+
+## 34. The prior audit's reconstructions were right, and the paper is more careful than assumed
+
+The audit above reconstructed the mathematics without access to this paper. The comparison is close:
+
+| Audit's finding (§3–§5 above) | Paper 1's own statement |
+|---|---|
+| `p ≡ 1 mod 4` is exactly `χ(−1) = 1` via `D_{S^c} = −D_S` | Theorem 3.1, same derivation |
+| the collapse is the fixed-point-free involution `I ↔ I^c`, `(2^n−2)/2` | Theorem 3.1, verbatim |
+| main term `2^{-15}` needs the forms independent modulo squares | Prop 7.1 + **Remark 7.4**, which deliberately avoids the word "independent" in favour of "pairwise non-associate, no nonempty product is a square" |
+| error `7/2 = 4 − 1/2` from one-variable Weil summed over `p^3` | Theorem 5.1, exactly this, with explicit constants |
+| the clean locus is a hyperplane-arrangement complement | handled as an `O(p^{d−1})` correction, folded into the constant |
+
+Remark 7.4 is a sharper formulation than the audit's own wording. The paper also states its
+non-claims explicitly (§10: no consequence for the integer perfect cuboid is claimed, and Theorem 7.2
+"points the other way").
+
+What the paper does **not** do is place any of this in the literature: its bibliography has four
+entries, and it names neither `PG(3,2)`, nor the resonance arrangement, nor prescribed-Legendre-pattern
+counts, nor Kummer/Chebotarev. That gap is what `references.bib` now fills.
+
+## 35. The error term: the suggested improvement is withdrawn
+
+The audit above closed by suggesting Deligne might sharpen `O(p^{7/2})` to about `O(p^2)`.
+**That suggestion is wrong and is withdrawn.** Checked, not assumed:
+
+* **The domain is a cone**, and for even `|S|` the integrand is scaling-invariant, so `(p−1)` divides
+  every term exactly — verified at ten primes. One full factor of `p` can never oscillate, so
+  `O(p^{5/2})` is the floor and `O(p^2)` is impossible.
+* **Nonresonance fails** for the small subsets: the worst `|S| = 2` term is `S = {x_1, x_2+x_3}`, whose
+  product does not involve `x_4` at all, so that direction admits no cancellation. The hypotheses of a
+  `O(p^{d/2})` theorem are violated, not merely unchecked (`STV1995` is the framework that makes this
+  precise).
+* **Empirically** `max_S|T_S| ~ p^{3.4}`–`p^{3.9}` over `p = 23…43` — consistent with `7/2`, and
+  inconsistent with `2` or `5/2`.
+
+The paper itself is careful here: Remark 6.3 says the odd-vanishing does not improve the exponent, and
+**Open Problem 11.1 asks exactly whether `O(p^{7/2})` can be improved to `O(p^3)`.** It never invokes
+Deligne.
+
+## 36. What *is* available: an exact main term
+
+The 15 forms are all nonzero `0/1` forms in four variables — the **resonance arrangement `R_4`**
+(`Kuhne2023`), which none of the three papers names. Computed and verified at eleven primes:
+
+```
+χ_{R_4}(p)   = p^4 − 15p^3 + 80p^2 − 170p + 104 = (p−4)(p−1)(p^2−10p+26)
+|clean domain| = p^4 − 25p^3 + 215p^2 − 695p + 504 = (p−1)(p−7)(p−8)(p−9)
+```
+
+and, since the domain is a cone, Proposition 6.2 extends to it verbatim (odd-`|S|` terms vanish
+exactly over the restricted domain — verified). Hence the exact identity
+
+```
+N_0^clean(p,5) = 2^{-15}(p−1)(p−7)(p−8)(p−9) + 2^{-15} Σ_{|S| even ≠ ∅} T_S .
+```
+
+This is a genuine structural sharpening — the `p^3`, `p^2`, `p^1` terms become exact and the number of
+terms needing an estimate halves — and it needs no new analysis. It does not change the error
+exponent. Classification: `ELEMENTARY CONSEQUENCE`, worth a remark, not a theorem.
+
+## 37. Effective threshold, rigorously
+
+From Paper 1's own explicit constants (`m = 15`, `d = 4`, plus 10 distinctness hyperplanes), the error
+is at most `14p^{7/2} + 130p^3`, so a nonzero count requires `p^4/32768 > 14p^{7/2} + 130p^3`, i.e.
+
+```
+p > 2.10 × 10^11      (full inequality: p ≳ 2.14 × 10^11).
+```
+
+The audit above said "≈`10^9`" using an implied constant of 1; **that was two orders too optimistic**
+and is corrected here. The `p^3` term alone would need only `p > 4.3 × 10^6` — which is why an
+exponent improvement to 3 would matter, and why §35 saying it is unavailable is the operative finding.
+
+## 38. K3 and AOP status across the three papers
+
+Both K3 papers are scrupulous. Paper 2: `disc NS = 8`, `T(X) ≅ diag(2,4)`, CM by `Q(√−2)`, newform
+`8.3.d.a`, and it states that its identity "recovers `AOP2002` Theorem 2.1 at `λ = 1`" and is "not
+claimed as new", while its proof method is "a different proof method from Ahlgren–Ono–Penniston's
+direct Jacobi-sum computation". Paper 3: `disc NS = 4`, `T ≅ diag(2,2)`, CM by `Q(i)`, newform
+`16.3.c.a = η^6(4z)`, explicitly "Ahlgren–Ono–Penniston's own modular form, not claimed as new", with
+its surface **provably non-isomorphic** to AOP's `λ = 8` surface. The repository's README matches both.
+
+So the "independent derivation" claim is justified in the precise sense the papers state it: the
+*identity* is AOP's, the *route* (Picard lattice → Mordell–Weil → Livné modularity) is not, and the
+papers say so themselves rather than leaving it to a reader. For the analytic side of the comparison —
+AOP's own method — the standard reference for the Jacobi-sum machinery is
+`BerndtEvansWilliams1998`; the two proof architectures share only the statement, since the geometric
+route never forms a Jacobi sum and the analytic route never mentions a lattice. The novelty resides in the bridge and in
+the identification of the specific surfaces — which is what §"WHAT THIS REPOSITORY ACTUALLY ADDS"
+above already concluded, and this reconciliation does not change it.
+
+## 39. Publication assessment, per paper
+
+* **Paper 1** — `B`: a publishable focused contribution built from classical machinery. Its
+  theorems are specializations of one-variable Weil plus exact bookkeeping, but they are correct,
+  explicitly constanted, honestly scoped, and not in the literature in this form. Needs the citation
+  layer of `references.bib` and should state its threshold.
+* **Paper 2** — `B/C`: the strongest single item is the independent geometric derivation; the
+  evaluation is `AOP2002`'s and is credited. The Gateway relation should be demoted to a remark.
+* **Paper 3** — `B`: the most technical of the three, and the only one resolving a case AOP does not
+  cover, with a provably distinct surface.
+
+Nothing requires a mathematical correction (`E`), and nothing is a wholesale novelty collapse (`D`).
+**No Zenodo record was updated and no PDF was modified.**

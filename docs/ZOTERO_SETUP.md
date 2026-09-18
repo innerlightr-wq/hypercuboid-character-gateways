@@ -1,7 +1,7 @@
 # Zotero organisation for this project
 
 Companion to [`NOVELTY_AND_PROVENANCE.md`](NOVELTY_AND_PROVENANCE.md). The authoritative bibliography
-is [`references.bib`](../references.bib) (20 entries); Zotero is a convenience layer and nothing in
+is [`references.bib`](../references.bib) (22 entries); Zotero is a convenience layer and nothing in
 the repository depends on it.
 
 Applied 2026-09-18 via the Zotero local API.
@@ -9,10 +9,10 @@ Applied 2026-09-18 via the Zotero local API.
 | Item | State |
 |---|---|
 | Parent collection | **created** — `Hypercuboid Character Gateways`, with all 17 specified subcollections |
-| Items | **20**, of which 19 newly imported and 1 (`IrelandRosen1990`) already in the library from another project, re-filed rather than duplicated |
-| Filing | **35 memberships** across 20 distinct items |
+| Items | **22**: 19 newly imported in the first pass, 1 (`IrelandRosen1990`) already in the library and re-filed rather than duplicated, and 2 (`Kuhne2023`, `STV1995`) added by the three-paper reconciliation |
+| Filing | **40 memberships** across 22 distinct items |
 | Tags | **11** controlled tags |
-| Notes | **7** child notes in the seven-field format |
+| Notes | **9** child notes in the seven-field format, on 9 items. A 10th item (`IrelandRosen1990`) carries a note from an earlier audit of a different project in the same library; notes on a shared item are shared, and it was left in place. |
 
 ## Scope: what this bibliography is and is not
 
@@ -41,13 +41,13 @@ finding: a reader of the manuscript cannot currently see how standard the combin
 | `07 — Finite Geometry / PG Structures` | 1 |
 | `08 — Coding Theory` | 1 |
 | `09 — Matroids / Sign Systems` | 1 |
-| `10 — Hyperplane Arrangements` | 2 |
+| `10 — Hyperplane Arrangements` | 4 |
 | `11 — Pseudorandomness of Character Sequences` | 3 |
 | `12 — Simultaneous Residue Conditions` | 3 |
 | `13 — Computational Finite-Field Enumeration` | **0** |
-| `14 — Exact n=5 / 15-Condition Search` | **0** |
+| `14 — Exact n=5 / 15-Condition Search` | 1 |
 | `15 — Directly Cited in Repository` | 3 |
-| `16 — Closest Prior Art / Novelty Checks` | 6 |
+| `16 — Closest Prior Art / Novelty Checks` | 8 |
 
 **Three subcollections are deliberately empty, and each emptiness is a finding rather than an
 omission:**
@@ -57,10 +57,12 @@ omission:**
 * `13 — Computational Finite-Field Enumeration`: the repository's enumeration is elementary exact
   modular arithmetic (`pow(a,(p-1)/2,p)` and exhaustive loops). No external method is used or needed,
   so there is nothing to cite.
-* `14 — Exact n=5 / 15-Condition Search`: **no prior art was located at this specificity.** Searches
-  for the exact configuration — 15 simultaneous Legendre conditions, 30 reduced to 15, the constant
-  `2^-15`, `p^4/32768` — return nothing. That is a real (if weak) novelty signal for the *assembly*,
-  and it coexists with every individual ingredient being classical.
+* `14 — Exact n=5 / 15-Condition Search`: **no longer empty.** The first pass found nothing at this
+  specificity; the three-paper reconciliation then identified the 15 forms as the **resonance
+  arrangement** `R_4` — all nonzero `0/1` forms in four variables — so `Kuhne2023` is prior art for the
+  arrangement itself, and its characteristic polynomial yields the exact clean-domain cardinality
+  `(p−1)(p−7)(p−8)(p−9)`. Still nothing is located for the *character-sum* problem at this
+  specificity, which remains a weak novelty signal for the assembly.
 
 `15 — Directly Cited in Repository` holds exactly the three manuscript-cited works that this audit
 also uses. It is deliberately not a mirror of `references.bib`: most entries here are ancestry the
@@ -98,3 +100,20 @@ available), `Hirschfeld1998` (the `30 → 15` geometry), `AOP2002` (the central 
 In all seven, the answer to **DOES SOURCE IMPLY THE REPO CLAIM?** is yes for the ingredient and no
 for the assembly — except `AOP2002`, which implies the evaluation outright and which the repository
 already credits.
+
+## Update — three-paper reconciliation (2026-09-18)
+
+Two references added, both to settle specific questions rather than to broaden the search:
+
+* **`Kuhne2023`** — identifies the 15-form arrangement as the resonance arrangement `R_4`. Filed in
+  `10`, `14`, `16`; tagged `closest-prior-art`, `projective-geometry`.
+* **`STV1995`** — states the nonresonance hypotheses a sharper error term would need, and is the
+  reference showing they fail for the subsets whose product omits a variable. Filed in `10`, `16`;
+  tagged `closest-prior-art`, `character-sum-standard`.
+
+Each carries a seven-field note. In both, the answer to **DOES SOURCE IMPLY THE REPO CLAIM?** is that
+the source settles the *framework* question (which arrangement; which hypotheses) while the repository's
+counting statement remains its own.
+
+`00 — Reviews & Orientation` and `13 — Computational Finite-Field Enumeration` remain deliberately
+empty for the reasons given above.
