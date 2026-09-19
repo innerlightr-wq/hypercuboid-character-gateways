@@ -19,7 +19,12 @@ divided by (p-1), NOT via the 2-variable reduction used elsewhere).
    elementary involution argument), independently reconfirmed here as a
    boundary/regression check on the same code used for the p = 1 mod 4 claims.
 """
-import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from newform_16_3_c_a import traces_c  # noqa: E402
+from newform_16_3_f_a_traces import traces_f  # noqa: E402
 
 
 def chi(a, p):
@@ -59,11 +64,6 @@ def A_of(lam, p):
             val = (x * y * (x + 1) * (y + 1) * (x + lam * y)) % p
             total += chi(val, p)
     return total
-
-
-data = json.load(open("/tmp/level16_weight3.json"))
-traces_c = next(r["traces"] for r in data["data"] if r["label"] == "16.3.c.a")
-traces_f = next(r["traces"] for r in data["data"] if r["label"] == "16.3.f.a")
 
 primes_1mod4 = [5, 13, 17, 29, 37, 41]
 primes_3mod4 = [3, 7, 11, 19, 23, 31]

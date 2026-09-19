@@ -1,5 +1,9 @@
 """Final consolidated computational table for the Round-1 Class III report."""
-import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from newform_16_3_c_a import traces_c  # noqa: E402
 
 def chi(a, p):
     a %= p
@@ -23,9 +27,6 @@ def T_of(p):
             val = (x*t*(t+1)*(x+t)*(x+t+1)) % p
             total += chi(val, p)
     return total
-
-data = json.load(open("/tmp/level16_weight3.json"))
-traces_c = next(r["traces"] for r in data["data"] if r["label"] == "16.3.c.a")
 
 primes = [3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139]
 print(f"{'p':>4}{'p%4':>5}{'chi2':>5}{'chim2':>6}{'Sigma_III(p)':>13}{'(p-1)T(p) match':>17}{'T(p)':>7}{'a_16.3.c.a(p)':>14}{'match':>7}")

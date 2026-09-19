@@ -90,9 +90,11 @@ print(f"All naive singular fibers (T=0, T=-1) have exactly p+1 points, all teste
 print()
 
 print("=== Direction 4: regression check, T(p) = a_p(16.3.c.a) (independent 3-var path) ===")
-import json
-data = json.load(open("/tmp/level16_weight3.json"))
-traces_c = next(r["traces"] for r in data["data"] if r["label"] == "16.3.c.a")
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from newform_16_3_c_a import traces_c  # noqa: E402
 
 def Sigma_III_raw(p):
     total = 0

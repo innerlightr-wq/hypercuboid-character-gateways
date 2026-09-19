@@ -38,7 +38,11 @@ Derivation sketch being checked:
     force point counts on V_III (NOT via the T(p) 2-variable reduction, to
     keep this an independent code path).
 """
-import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from newform_16_3_c_a import traces_c  # noqa: E402
 
 
 def chi(a, p):
@@ -73,9 +77,6 @@ def V_III_via_T(p):
             total += chi(val, p)
     return p * p + total
 
-
-data = json.load(open("/tmp/level16_weight3.json"))
-traces_c = next(r["traces"] for r in data["data"] if r["label"] == "16.3.c.a")
 
 primes = [5, 13, 17, 29, 37, 41, 53, 61]
 

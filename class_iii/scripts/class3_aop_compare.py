@@ -1,4 +1,8 @@
-import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from newform_16_3_c_a import traces_c  # noqa: E402
 
 def chi(a, p):
     a %= p
@@ -32,12 +36,6 @@ def A_lambda(lam_num, lam_den, p):
         val = ((x - 1) * (x * x - inv_lp1)) % p
         a -= chi(val, p)
     return chi(lam_plus_1, p) * (a * a - p) % p if False else chi(lam_plus_1, p) * (a * a - p)
-
-data = json.load(open("/tmp/level16_weight3.json"))
-traces_c = None
-for row in data["data"]:
-    if row["label"] == "16.3.c.a":
-        traces_c = row["traces"]
 
 print(f"{'p':>4}{'p%4':>5}{'T(p)':>8}{'chi2':>5}{'chim2':>6}{'a16.3.c.a':>10}"
       f"{'apE_i':>7}{'A(8,p)':>8}{'A(1/8,p)':>9}{'T/apE_i^2?':>10}")
