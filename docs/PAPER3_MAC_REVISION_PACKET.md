@@ -218,10 +218,12 @@ at every odd $p$, with no exceptional set.
 Chebotarev-implies-isomorphism. `\cite{Livne1995}` alone is not the right citation for this step. See
 `REFERENCES TO ADD OR MODIFY`.
 
-**Theorem numbering.** Inserting a `remark` in a shared `[theorem]` counter **shifts every subsequent
-number in that section and beyond.** All cross-references are by `\label`, so they will re-resolve
-automatically — but the printed numbers in the final PDF will differ from the deposited version. Note
-this when comparing PDFs.
+**Theorem numbering.** Corrected in the final pass: the counter is declared
+`\newtheorem{theorem}{Theorem}[section]`, so it **resets at every `\section`**. An insertion in §6
+therefore shifts only the remaining items **of §6** — nothing in §7 onward and nothing in the
+appendices. Exactly **one** printed number changes: `6.2 → 6.3`, the "Known vs. proved" remark. See
+`THEOREM-NUMBER SHIFT MAP` below. (An earlier draft of this packet said the shift propagated "in that
+section and beyond"; that was wrong.)
 
 ## REQUIRED 4 — build the manuscript
 
@@ -777,25 +779,27 @@ and record the mapping if any number a reader might cite has shifted.
 | `AOP2002` | Ahlgren, Ono, Penniston, *Zeta functions of an infinite family of K3 surfaces*, Amer. J. Math. **124** (2002), 353–368, `10.1353/ajm.2002.0007` | present | the evaluation and the newform | **verified** — DOI confirmed in the merged `references.bib` |
 | `Livne1995` | Livné, Israel J. Math. **92** (1995), 149–156, `10.1007/BF02762074` | present | modularity | **verified** |
 | `Shioda1990`, `ShiodaInose1977`, `MirandaPersson1989`, `Kodaira1963`, `Neron1964`, `Tate1975` | present | as cited | — | unchanged |
-| `Huber` | "T. Huber, Z.-G. Liu, et al., *On the vanishing of the coefficients of CM eta quotients*, preprint." | Remark (known vs proved) | independent occurrence of the form | **VERIFY ON MAC/WEB BEFORE SUBMISSION** — no identifier, incomplete author list ("et al."), publication status unknown. See below. |
-| *new, optional* | A standard reference for Brauer–Nesbitt / "equal traces on a density-one set ⇒ isomorphic" | REQUIRED 3's remark | supports the `almost all → every` upgrade | **needs selection on Mac**; any standard Galois-representations text will do |
+| `Huber` | **RESOLVED — published.** Huber, T.; Liu, Chang; McLaughlin, J.; Ye, D.; Yuan, M.; Zhang, S., *On the vanishing of the coefficients of CM eta quotients*, Proc. Edinburgh Math. Soc. **66** (2023), no. 4, 1202–1216, `10.1017/S0013091523000627` | Remark (known vs proved) | independent occurrence of the form | **Patch 14.** Current entry is stale *and* misattributed: it reads "Z.-G. Liu"; the coauthor is **Chang Liu**. |
+| `Serre1997` **(new)** | Serre, J.-P., *Abelian ℓ-Adic Representations and Elliptic Curves*, A K Peters/CRC Press, 1997 (orig. Benjamin, 1968), `10.1201/9781439863862` | REQUIRED 3's remark | the standard arithmetic-geometry source for Chebotarev arguments on ℓ-adic representations | **RESOLVED — verified.** One citation, and not a pad: it supports the step that fixes the main theorem's prime scope |
 | *new, optional* | Huybrechts, *Lectures on K3 Surfaces*, CUP 2016 — or Barth–Hulek–Peters–Van de Ven, *Compact Complex Surfaces* | the birational-K3 clause, if used | K3 minimality | **only if OP 2 is adopted**; `VERIFY` chapter number |
 
 **Do not citation-pad.** Nothing else needs adding: the finite-field ancestry layer
 (`Peralta1992`, `Hirschfeld1998`, `Kuhne2023` and the rest) belongs to the repository's
 `references.bib` and the provenance documents, **not** to Paper 3, whose subject is the surface.
 
-## Huber status
+## Huber status — RESOLVED
 
-The entry cites no DOI, no arXiv number, no journal, and an abbreviated author list. This environment
-cannot settle it. Two cases:
+Settled. The work is **published**, and the current entry is wrong twice over: it says "preprint" when
+it appeared in 2023, and it names "Z.-G. Liu" when the coauthor is **Chang Liu** (Zhi-Guo Liu is a
+different mathematician). Correct record, verified against the registered DOI metadata:
 
-* if it has since appeared, replace with full bibliographic data;
-* if not, write "unpublished preprint" explicitly and, if possible, add an arXiv identifier — an
-  unidentifiable "preprint" citation supporting a novelty-scoping claim is exactly what a referee will
-  query.
+> T. Huber, C. Liu, J. McLaughlin, D. Ye, M. Yuan, S. Zhang, *On the vanishing of the coefficients of
+> CM eta quotients*, Proc. Edinburgh Math. Soc. **66** (2023), no. 4, 1202–1216,
+> `doi:10.1017/S0013091523000627`.
 
-Marked **`VERIFY ON MAC/WEB BEFORE SUBMISSION`**.
+This matters beyond tidiness: the citation supports a novelty-scoping claim — that the newform occurs
+independently for the quartic Fermat K3 — so a misattributed, unlocatable reference is exactly what a
+referee would challenge. **Patch 14.**
 
 ---
 
@@ -1105,3 +1109,90 @@ Two items, both small and neither mathematical:
 
 Everything else — every mathematical decision, every replacement wording, the patch order, and the
 verification results — is fixed in this packet.
+
+---
+
+# FINAL-PASS RESOLUTIONS
+
+Four items were left open by the previous pass. All four are now settled; nothing mathematical remains.
+
+## A. The theorem's prime scope is correct as written — no rewording needed
+
+Audited specifically. The manuscript's Theorem (Exact transcendental trace) says "for every odd prime
+`p \neq 2`", and the Main Theorem "for every odd prime `p`". **Both are right**, and the justification
+already exists in the paper; only the bridge of REQUIRED 3 is missing.
+
+Why "every odd prime" and not the narrower alternatives:
+
+* **not "every odd prime of good reduction"** — because §"Bad primes" proves good reduction at *every*
+  odd prime, so the two phrases coincide. The argument: `a_2(T)=T(T+1)(T+2)` and `a_4(T)=T^2(T+1)^3`
+  have integral coefficients, `\Delta(T)=16T^8(T+1)^8`, and no odd prime divides all coefficients; so
+  reducing mod any odd `\ell` leaves the same three `I_2^*` fibers at the same three points `T=0,-1,\infty`
+  (these stay distinct mod every odd `\ell`). Bad reduction only at 2.
+* **not "every odd unramified prime"** — same reason: both representations are unramified outside
+  `\{2\}` (the surface by good reduction, the newform by 2-power level), so "unramified" and "odd"
+  coincide here.
+* **and `p=2` is excluded globally**, as the standing hypothesis.
+
+So the exceptional set implicit in Livné's "almost all" is removed entirely by REQUIRED 3, and no
+exceptional prime survives. **No change to either theorem statement.** This is worth one clause in the
+paper, however, because a referee will ask: after the Chebotarev remark, add "and, since `X_{\rm III}`
+has good reduction at every odd prime and `f` has 2-power level, every odd prime is unramified for both
+representations, so no exceptional set remains."
+
+## B. Brauer–Nesbitt: one citation, and it is needed
+
+**Recommendation: cite `Serre1997` once, in REQUIRED 3's remark.** It is not implicit in the cited
+Livné source in a usable way: Livné's *method* is a Faltings–Serre argument and so contains this kind of
+reasoning, but the *statement quoted in Paper 3* concludes only "for almost all primes of good
+reduction". A reader checking the quoted statement cannot get to "every odd prime" from it. Since that
+upgrade is what fixes the scope of the paper's main theorem, it deserves a pointer rather than being
+left as folklore.
+
+Verified record: **Serre, Jean-Pierre, *Abelian ℓ-Adic Representations and Elliptic Curves*, A K
+Peters/CRC Press, 1997** (originally Benjamin, 1968), `doi:10.1201/9781439863862`. This is the standard
+arithmetic-geometry source for Chebotarev arguments on `\ell`-adic representations. Chapter I is the
+relevant part; pin the exact proposition number on the Mac if a precise pointer is wanted — the fact
+itself is standard and the chapter reference suffices.
+
+Do **not** add a second citation for Brauer–Nesbitt as a pure representation-theory statement (Curtis–
+Reiner and the like). One pointer is enough and two would be padding.
+
+## C. The birational-K3 clause is **not needed** — keep it out
+
+REQUIRED 2's replacement wording concludes "no isomorphism over `\Q` can exist, and a fortiori none as
+elliptic surfaces over `\Q(T)`". It never asserts anything about birational maps, so the K3 minimality
+fact is not load-bearing anywhere.
+
+**Decision: omit it.** That removes the need for a Huybrechts or BHPV citation entirely, and avoids a
+digression into minimal models in a paper that has no other need for them. If the current manuscript
+text says "not isomorphic *or birational*", simply drop the word "birational" as part of Patch 2 rather
+than defending it.
+
+## D. Huber and Serre: both resolved above
+
+---
+
+# THEOREM-NUMBER SHIFT MAP
+
+Computed from the source, not estimated. The counter is
+`\newtheorem{theorem}{Theorem}[section]`, shared by `proposition`, `lemma`, `corollary`, `definition`,
+`remark`, `openproblem`, and **reset at every `\section`**. The Chebotarev remark of REQUIRED 3 is
+inserted at source line ~861, inside §6 ("Transcendental lattice and complex multiplication"), directly
+after the "Hypothesis check for `X_III`" paragraph.
+
+Consequently exactly **one** printed number changes:
+
+| Current printed number | Item | Expected new number |
+|---|---|---|
+| 6.1 | Theorem [Livné] | **6.1** (unchanged — precedes the insertion) |
+| *(new)* | Remark [from "almost all" to every odd prime] | **6.2** |
+| 6.2 | Remark [Known vs. proved] | **6.3** |
+
+**Everything else is unaffected** — all 35 other theorem-like items keep their printed numbers,
+including every item of §7 (`7.1` Twist candidate set, `7.2` Exhaustiveness, `7.3` Twist elimination,
+`7.4` remark, `7.5` Exact transcendental trace), every item of §8 (through `8.7` Main theorem), and
+every appendix item. Cross-references are all by `\label`/`\ref` and re-resolve automatically.
+
+**Build check:** after the build, confirm that the Main Theorem still prints as **8.6** and the Exact
+transcendental trace as **7.5**. If either has moved, an unintended environment was added.

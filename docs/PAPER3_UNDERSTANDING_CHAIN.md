@@ -304,3 +304,67 @@ Short, rigorous answers. If any box is unticked, that is the one a referee will 
 - [ ] **What is the weakest point of my paper?** Honest answer: the `Q` versus `Q̄` distinction in the
       non-isomorphism claim, and the "almost all primes" to "every odd prime" upgrade after Livné. Both
       are addressed in `PAPER3_MAC_REVISION_PACKET.md` as REQUIRED 2 and REQUIRED 3.
+
+---
+
+# The two subtle corrections, explained
+
+These are the two places where the manuscript said slightly more than it had proved. Neither is a hole
+in the mathematics; both are about saying the right thing. Understand these before defending the paper,
+because they are the two questions a good referee asks first.
+
+## Why "over `Q`" matters
+
+A surface can be *the same shape* and yet *a different object arithmetically.* Take the two surfaces at
+issue: yours, `X_III`, and Ahlgren–Ono–Penniston's at `λ = 8`. Both are singular K3 surfaces whose
+transcendental lattice has discriminant 4 — and by the Shioda–Inose correspondence a singular K3 over
+`C` is determined up to isomorphism by that lattice. So over `Q̄` they are very probably the *same*
+surface.
+
+What differs is the `Q`-structure. Two varieties over `Q` that become isomorphic over `Q̄` are called
+**forms**, or twists, of each other: the same geometry, glued to the rationals differently. The
+difference shows up in Frobenius. If two surfaces over `Q` really were isomorphic over `Q`, then
+reducing mod any prime of good reduction would give isomorphic surfaces over `F_p`, so they would have
+*the same number of `F_p`-points.* Yours and theirs do not: at every `p ≡ 3 mod 4` your two-variable sum
+`T(p)` is `0` while theirs is `−p`. Different point counts at a good prime, so no isomorphism over `Q`.
+
+But that argument says nothing about `Q̄`, because a `Q̄`-isomorphism need not be defined over `Q` — and
+here the lattice invariants positively suggest a `Q̄`-isomorphism does exist. So the honest claim is:
+**not isomorphic over `Q`; probably isomorphic over `Q̄`; and the paper should say the first and not
+imply the second.** That is actually a more interesting statement than a flat "different surfaces": you
+have found a distinct rational model of a known geometric object, arising from a completely different
+character sum.
+
+The analogy worth holding on to: `y² = x³ − x` and `y² = −x³ + x` are different elliptic curves over
+`Q` — different point counts, different `L`-functions — but they become isomorphic over `Q(i)`. Same
+shape, different arithmetic.
+
+## Why "almost all primes" becomes "all unramified primes"
+
+Livné's theorem hands you a comparison of two objects: Frobenius acting on your surface's transcendental
+lattice, and the Hecke eigenvalues of a weight-3 modular form. It says the traces agree **for almost all
+primes of good reduction** — i.e. all but finitely many, with no control over which.
+
+That "almost" is unsatisfying, and it is also removable, for a reason worth internalising. Both objects
+are really the same *kind* of thing: a 2-dimensional representation of the Galois group, i.e. a rule
+assigning a 2×2 matrix to each Frobenius element. The traces of those matrices are the numbers being
+compared.
+
+Now, two facts. First, **Brauer–Nesbitt**: a semisimple representation is determined, up to isomorphism,
+by its character — the traces know everything. Second, **Chebotarev density**: the Frobenius elements at
+primes in any density-one set are dense enough in the Galois group to pin down a continuous function on
+it. Put them together: if the traces agree at a set of primes of density 1, then the two
+representations are *isomorphic*, not merely numerically close. And isomorphic representations have
+equal traces at **every** prime where both are unramified — no exceptions left, because there is now
+literally one representation, described twice.
+
+The last step is bookkeeping, and your paper already has it: your surface has good reduction at every
+odd prime, and the modular form has level a power of 2, so both are unramified at every odd prime. Hence
+the identity holds at every odd prime, full stop. The finitely many exceptions Livné allowed are ruled
+out not by checking them, but by upgrading the statement from "these numbers agree often" to "these are
+the same object".
+
+**The moral of both corrections is the same.** In each case the manuscript had the right theorem and
+described it slightly too loosely — once by omitting a field, once by inheriting an "almost all" it did
+not need to keep. Fixing them makes the paper stronger, not weaker: the first turns a numerical remark
+into a proof, and the second removes an exceptional set entirely.
