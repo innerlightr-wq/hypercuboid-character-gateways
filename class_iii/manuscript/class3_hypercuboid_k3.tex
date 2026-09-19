@@ -30,12 +30,55 @@
 \title{Class III Hypercuboid Character Sums and a Discriminant-4 Singular K3 Surface}
 
 \author{Elias De Jes\'us}
+\address{Independent Researcher}
+\thanks{ORCID: \href{https://orcid.org/0009-0007-0190-9143}{0009-0007-0190-9143}}
 
 \begin{document}
 \pagestyle{plain}
 
 \begin{abstract}
-We study the character sum $\Sigma_{\rm III}(p)=\sum_{x\in\Fp^3}\chi\bigl(x_0x_1x_2(x_0+x_2)(x_1+x_2)(x_0+x_1+x_2)\bigr)$, the third of three residual classes arising from a clean finite-field hypercuboid residue system, and previously left open where the companion Classes~I/II were resolved. An elementary projective reduction gives $\Sigma_{\rm III}(p)=(p-1)T(p)$ for the two-variable sum $T(p)=\sum_{x,t\in\Fp}\chi\bigl(x\,t(t+1)(x+t)(x+t+1)\bigr)$, and an explicit coordinate involution proves $\Sigma_{\rm III}(p)=0$ for $p\equiv3\pmod4$ by an elementary, self-contained argument requiring no arithmetic geometry. For $p\equiv1\pmod4$, $T(p)$ is realized as the trace of Frobenius on the transcendental lattice of a singular K3 surface $X_{\rm III}$, constructed as the elliptic fibration attached to $T(p)$'s defining affine surface. This surface has three fibers of Kodaira type $I_2^*$ and full rational $2$-torsion $(\Z/2)^2$ over $\Q(T)$, the field of the fibration's base. We prove that every irreducible component of every reducible fiber is individually defined over $\Q$ by a new argument -- not requiring an explicit resolution of any singular fiber -- combining the rationality of the zero section and the three nonzero $2$-torsion sections with a rigidity property of the fiber's incidence graph: once the zero section and the three torsion sections are shown to occupy four pairwise distinct multiplicity-one components, the graph automorphism group compatible with that marking is trivial, forcing the remaining components to be Galois-fixed as well. This yields $\Tr(F_p\mid\NS(X_{\rm III}))=20p$ unconditionally, and $\disc\NS(X_{\rm III})=4$, $T(X_{\rm III})\cong\mathrm{diag}(2,2)$, identifying the associated CM field as $\Q(i)$. Combining this with Livn\'e's modularity theorem and a finite twist-elimination argument (exhaustive over a candidate set of four characters, forced by ramification, before any numerical value is consulted), we prove $\Tr(F_p\mid T(X_{\rm III}))=a_p(\texttt{16.3.c.a})$ for every odd $p$, where \texttt{16.3.c.a}$=\eta^6(4z)$ is Ahlgren--Ono--Penniston's own modular form, not claimed as new here; combined with an independently re-derived point-count ledger, this yields the exact evaluation $\Sigma_{\rm III}(p)=(p-1)\,a_p(\texttt{16.3.c.a})$ for $p\equiv1\pmod4$ and $\Sigma_{\rm III}(p)=0$ for $p\equiv3\pmod4$, completing the finite-field hypercuboid classification left open by the companion paper.
+For an odd prime $p$ let
+$\Sigma_{\rm III}(p)=\sum_{x\in\Fp^3}\chi\bigl(x_0x_1x_2(x_0+x_2)(x_1+x_2)(x_0+x_1+x_2)\bigr)$,
+where $\chi$ is the Legendre symbol. An elementary projective reduction
+gives $\Sigma_{\rm III}(p)=(p-1)T(p)$ for the two-variable sum
+$T(p)=\sum_{x,t\in\Fp}\chi\bigl(x\,t(t+1)(x+t)(x+t+1)\bigr)$, and an
+explicit coordinate involution gives $\Sigma_{\rm III}(p)=0$ for
+$p\equiv3\pmod4$ with no recourse to arithmetic geometry.
+
+For $p\equiv1\pmod4$ we realize $T(p)$ as a Frobenius trace. The affine
+surface $Y^2=X(X+1)T(T+1)(X+T+1)$ carrying $T(p)$ has an elliptic
+fibration over the $T$-line with exactly three fibers of Kodaira type
+$I_2^*$ and full rational $2$-torsion $(\Z/2)^2$ over $\Q(T)$. Its trivial
+lattice already has rank $20$, so the associated smooth projective surface
+$X_{\rm III}$ has maximal geometric Picard number and trivial Mordell--Weil
+rank. We prove that every component of every reducible fiber is
+individually defined over $\Q$ by an argument that resolves no fiber:
+the zero section and the three nonzero $2$-torsion sections occupy four
+pairwise distinct multiplicity-one components, and the only automorphism of
+the fiber's incidence graph fixing those four is the identity. This gives
+$\Tr(F_p\mid\NS(X_{\rm III}))=20p$ for every odd $p$,
+$\disc\NS(X_{\rm III})=4$, and hence
+$T(X_{\rm III})\cong\mathrm{diag}(2,2)$ with complex multiplication by
+$\Q(i)$.
+
+Livn\'e's modularity theorem, together with a twist elimination that is
+exhaustive over a four-element candidate set forced by ramification at $2$,
+identifies the transcendental trace with the weight-$3$ CM newform
+$f=\eta^6(4z)$ (LMFDB \texttt{16.3.c.a}). Combined with an independently
+derived point-count ledger this yields
+\[
+\Sigma_{\rm III}(p)=(p-1)\,a_p(f)\ \ (p\equiv1\bmod4),\qquad
+\Sigma_{\rm III}(p)=0\ \ (p\equiv3\bmod4).
+\]
+The newform $f$ is not new: it is the form Ahlgren, Ono and Penniston
+attach to their own K3 surface at parameter $\lambda=8$, and it also occurs
+for the quartic Fermat K3 surface. What is established here is that the
+Class~III surface -- which has a different Weierstrass model, a different
+fiber configuration, and different point counts at every $p\equiv3\pmod4$,
+hence is not isomorphic over $\Q$ to theirs -- carries the same
+transcendental representation, untwisted, and that the resulting evaluation
+completes the four-coordinate finite-field hypercuboid classification left
+open by the companion paper.
 \end{abstract}
 
 \maketitle
@@ -43,19 +86,62 @@ We study the character sum $\Sigma_{\rm III}(p)=\sum_{x\in\Fp^3}\chi\bigl(x_0x_1
 \section{Introduction}
 \label{sec:intro}
 
-This paper is a sequel to \emph{Finite-Field Hypercuboid Character Sums
-and a Discriminant-8 Singular K3 Surface} \cite{ClassesI_II}, which
-studied two of the three residual character-sum classes,
-$\Sigma_I(p)$ and $\Sigma_{II}(p)$, arising from the zero-diagonal
-complement collapse structure of a clean finite-field hypercuboid residue
-system on four coordinates. That paper reduced $\Sigma_I(p)$ to a
-two-variable sum realized, via an explicit singular K3 surface, in terms
-of the weight-$3$, level-$8$ newform $f=\texttt{8.3.d.a}$, with CM by
-$\Q(\sqrt{-2})$ and transcendental lattice $T(X)\cong\mathrm{diag}(2,4)$.
-The present paper resolves the third class, $\Sigma_{III}(p)$, whose
-elementary vanishing for $p\equiv3\pmod4$ was already established in
-\cite{ClassesI_II} but whose value for $p\equiv1\pmod4$ was left as the
-genuine open problem of that paper.
+Fix an odd prime $p$ and let $\chi$ denote the Legendre symbol modulo $p$.
+This paper evaluates the character sum
+\[
+\Sigma_{\rm III}(p)=\sum_{x\in\Fp^3}
+\chi\bigl(x_0x_1x_2(x_0+x_2)(x_1+x_2)(x_0+x_1+x_2)\bigr),
+\]
+a sum over a product of six linear forms in three variables, in closed form
+for every odd $p$. The answer is a Hecke eigenvalue: for $p\equiv1\pmod4$,
+$\Sigma_{\rm III}(p)=(p-1)a_p(f)$ with $f=\eta^6(4z)$ the weight-$3$
+newform of level $16$ with complex multiplication by $\Q(i)$, and
+$\Sigma_{\rm III}(p)=0$ for $p\equiv3\pmod4$.
+
+Sums of this shape -- a quadratic character applied to a product of linear
+or quadratic forms -- have been evaluated in closed form when the
+underlying variety is recognizably modular. The nearest precedent is
+Ahlgren, Ono and Penniston \cite{AOP2002}, who computed the zeta functions
+of a one-parameter family of K3 surfaces and, by a direct Jacobi-sum
+computation, evaluated the associated two-variable character sums; the
+form $\eta^6(4z)$ is the one they attach to their surface at
+$\lambda=8$. The sum $\Sigma_{\rm III}$ is not among those they treat,
+and is not obtained from theirs by a change of variables: its surface has
+a different Weierstrass model and a different fiber configuration, and
+already differs in point count at every $p\equiv3\pmod4$
+(Section~\ref{sec:AOP-precise}).
+
+Our route is geometric rather than Jacobi-sum-theoretic. After an
+elementary projective reduction to a two-variable sum $T(p)$, we exhibit
+$T(p)$ as a point count on an explicit affine surface, resolve that
+surface into a singular K3 surface $X_{\rm III}$ -- here and throughout,
+``singular'' in the standard sense of maximal geometric Picard number
+$20$, not of a surface with singular points -- and compute its Picard and
+transcendental lattices directly. The computation is unusually clean: three
+$I_2^*$ fibers make the trivial lattice already of rank $20$, which forces
+both maximal Picard number and trivial Mordell--Weil rank, and full
+rational $2$-torsion plus a rigidity property of the fiber's incidence
+graph forces every fiber component to be individually rational without
+resolving any fiber. The transcendental lattice is then pinned to
+$\mathrm{diag}(2,2)$, its CM field to $\Q(i)$, and -- via Livn\'e's
+theorem and a finite, exhaustive twist elimination -- the Frobenius trace
+to $a_p(f)$.
+
+The sum $\Sigma_{\rm III}$ arises from a combinatorial question, and that
+is how we came to it. This paper is a sequel to \emph{Finite-Field
+Hypercuboid Character Sums and a Discriminant-8 Singular K3 Surface}
+\cite{ClassesI_II}, which studied two of the three residual character-sum
+classes, $\Sigma_I(p)$ and $\Sigma_{II}(p)$, arising from the
+zero-diagonal complement collapse structure of a clean finite-field
+hypercuboid residue system on four coordinates. That paper reduced
+$\Sigma_I(p)$ to a two-variable sum realized, via an explicit singular K3
+surface, in terms of the weight-$3$, level-$8$ newform
+$f=\texttt{8.3.d.a}$, with CM by $\Q(\sqrt{-2})$ and transcendental
+lattice $T(X)\cong\mathrm{diag}(2,4)$. The present paper resolves the
+third class, $\Sigma_{III}(p)$, whose elementary vanishing for
+$p\equiv3\pmod4$ was already established in \cite{ClassesI_II} but whose
+value for $p\equiv1\pmod4$ was left as the genuine open problem of that
+paper.
 
 We show that $\Sigma_{III}(p)$, for $p\equiv1\pmod4$, is governed by a
 \emph{different} singular K3 surface $X_{\rm III}$, with discriminant
@@ -94,13 +180,14 @@ attached to their own singular K3 surface at their parameter $\lambda=8$.
 transcendental representation with Ahlgren--Ono--Penniston's $\lambda=8$
 surface, but differs in its underlying K3 model, Weierstrass equation,
 fiber configuration, and defining character sum} -- the two surfaces are
-provably non-isomorphic (the two-variable sums $T(p)$ and
-Ahlgren--Ono--Penniston's own $A(8,p)$ disagree at essentially every
-prime tested), a fact explained, once both surfaces' transcendental
-lattices are identified as isomorphic to $\mathrm{diag}(2,2)$, by the
+non-isomorphic \emph{over $\Q$} (Section~\ref{sec:AOP-precise} gives the
+structural reason: their point counts already disagree at an explicit
+witness prime, $p=7$), a fact compatible, once both surfaces' transcendental
+lattices are identified as isomorphic to $\mathrm{diag}(2,2)$, with the
 general principle that two singular K3 surfaces sharing a transcendental
 lattice must share a trace formula however different their geometry is
-otherwise. We do not claim the modular form itself as new anywhere in
+otherwise; over $\overline\Q$ this shared lattice does not by itself
+distinguish them. We do not claim the modular form itself as new anywhere in
 this paper.
 
 \subsection*{Outline}
@@ -120,9 +207,9 @@ twist-elimination argument identifying the governing newform as
 $\texttt{16.3.c.a}$, untwisted. Section~\ref{sec:eval} re-derives the
 point-count ledger and proves the paper's main theorem,
 Theorem~\ref{thm:main}. Section~\ref{sec:comparison} compares the two
-resolved branches of the hypercuboid classification. Appendices A--F,
-containing the longer explicit local computations referenced throughout
-the text, remain to be written.
+resolved branches of the hypercuboid classification. Appendices A--F
+contain the longer explicit local computations referenced throughout
+the text.
 
 \section{The Class III character sum}
 \label{sec:sum}
@@ -136,14 +223,20 @@ $A_1,A_2,A_3,A_4\in\Fp$ subject to $\sum_iA_i=0$ is governed by the seven
 nonzero pairwise-sum forms $L_J(x)=\sum_{j\in J}x_j$, $\emptyset\neq
 J\subseteq\{1,2,3\}$, in the parametrization $A_1=x_0,A_2=x_1,A_3=x_2,
 A_4=-(x_0+x_1+x_2)$. The natural $S_4$-symmetry permuting $A_1,\dots,A_4$
-acts on the seven six-element subsets of these seven forms with exactly
-three orbits, giving the three character-sum classes $\Sigma_I,\Sigma_{II},
-\Sigma_{III}$. Classes I and II each omit a form associated to a
+acts on the seven six-element subsets of these seven forms with two
+orbits, of sizes four and three, according to whether the omitted form
+corresponds to a $(1,3)$- or a $(2,2)$-shaped complement pair. The
+size-four orbit splits further, $3+1$, according to whether the omitted
+representative involves the eliminated coordinate $A_4$; crossing that
+split multiplies the sum by $\chi(-1)$, which is the Gateway relation
+$\Sigma_{II}(p)=\chi(-1)\Sigma_I(p)$ of \cite{ClassesI_II}. This yields
+the three character-sum classes $\Sigma_I,\Sigma_{II},\Sigma_{III}$.
+Classes I and II each omit a form associated to a
 \emph{singleton}-type element of the permutation action; Class~III omits
-the form associated to a \emph{pair}-type element, $L_3=x_0+x_1$ (the
-form fixed, up to sign, by the double transposition $(1\,3)(2\,4)\in
-S_4$) -- a genuinely different orbit, with no permutation relating Class
-III to Classes I or II.
+the form associated to a \emph{pair}-type element, $L_{\{1,2\}}=x_0+x_1$
+(the form fixed, up to sign, by the double transposition $(1\,3)(2\,4)\in
+S_4$) -- a genuinely different orbit (the $(2,2)$ orbit above), with no
+permutation relating Class III to Classes I or II.
 
 \begin{definition}
 \label{def:sigmaIII}
@@ -154,6 +247,22 @@ III}(x_0,x_1,x_2)\bigr),\qquad P_{\rm
 III}(x_0,x_1,x_2):=x_0x_1x_2(x_0+x_2)(x_1+x_2)(x_0+x_1+x_2).
 \]
 \end{definition}
+
+For the reader coming to this sum directly: the seven forms
+$L_J(x)=\sum_{j\in J}x_j$, indexed by the nonempty subsets
+$J\subseteq\{1,2,3\}$, are exactly the nontrivial subset sums of the four
+quantities $A_1=x_0$, $A_2=x_1$, $A_3=x_2$, $A_4=-(x_0+x_1+x_2)$, which sum
+to zero; each such subset sum equals, up to sign, the sum over the
+complementary subset, so the fourteen nontrivial subset sums of
+$\{A_1,\dots,A_4\}$ reduce to these seven forms. Deleting one of the seven
+and taking the quadratic character of the product of the remaining six
+gives a character sum; up to the $S_4$-action permuting $A_1,\dots,A_4$
+there are three such sums, and $\Sigma_{\rm III}$ is the one obtained by
+deleting the form $L_{\{1,2\}}=x_0+x_1$, whose complement pair has shape
+$(2,2)$. In conventional terms, $\Sigma_{\rm III}(p)$ is a quadratic
+character sum over the complement of an arrangement of six hyperplanes in
+$\mathbb{A}^3$, and no property of the combinatorial origin is used
+anywhere in this paper beyond fixing which six forms appear.
 
 $P_{\rm III}$ is manifestly homogeneous of degree $6$ (a product of six
 linear forms) and vanishes identically on the hyperplane $x_0=0$.
@@ -615,6 +724,20 @@ fiber $L_1,L_2$ (legs at one end), $S_1,S_2,S_3$ (spine, a path with
 $S_1$ adjacent to $L_1,L_2$ and $S_3$ adjacent to $L_3,L_4$), $L_3,L_4$
 (legs at the other end).
 
+The dual graph of an $I_2^*$ fiber is a tree on seven vertices: a spine
+$S_1$--$S_2$--$S_3$ of multiplicity-two components with two multiplicity-one
+legs attached at each end, $L_1,L_2$ at $S_1$ and $L_3,L_4$ at $S_3$.
+Galois acts on the fiber's components through an automorphism of this
+graph preserving multiplicities. The zero section and the three nonzero
+rational $2$-torsion sections meet four \emph{pairwise distinct}
+multiplicity-one components (Lemma~\ref{lem:four-legs}), so those four
+legs are individually Galois-fixed. The lemma below shows that a tree
+automorphism fixing all four legs is the identity: each leg is a leaf with
+a unique neighbor, so fixing $L_1$ fixes $S_1$ and fixing $L_3$ fixes
+$S_3$, and $S_2$ is the unique vertex adjacent to both. Hence Galois fixes
+all seven components, and every component of the fiber is defined over
+$\Q$ -- with no fiber resolved explicitly at any point in the argument.
+
 \begin{lemma}[Graph rigidity]
 \label{lem:rigidity}
 Let $\varphi$ be an automorphism of this graph preserving multiplicities
@@ -760,6 +883,18 @@ alike -- to be individually Galois-fixed.}
 
 \subsection*{Lattice consequences}
 
+It matters that we compute the discriminant of $\NS(X_{\rm III})$ itself
+and not of a proper sublattice. With Mordell--Weil rank $0$, Shioda--Tate
+identifies the quotient $\NS(X_{\rm III})/\Triv(X_{\rm III})$ with the
+torsion subgroup $\mathrm{MW}(X_{\rm III}/\Q(T))_{\rm tors}$, so
+$[\NS(X_{\rm III}):\Triv(X_{\rm III})]=\#\mathrm{MW}_{\rm tors}$, and this
+index is legitimate exactly because
+Proposition~\ref{prop:torsion-complete} proves the torsion is \emph{all}
+of $(\Z/2)^2$ -- not merely that it contains the three visible $2$-torsion
+sections. Without that completeness the index, and hence the discriminant
+below, would be only an upper bound on $|\disc\NS(X_{\rm III})|$, and
+$T(X_{\rm III})$ would not be pinned down to a single isomorphism class.
+
 Combining Theorem~\ref{thm:NS-trace} with the lattice structure of
 Proposition~\ref{prop:picard} and the torsion order of
 Proposition~\ref{prop:torsion-complete}: $\disc(\Triv(X_{\rm III})) =
@@ -867,20 +1002,40 @@ governing newform $f$, weight $3$, CM by $\Q(i)$, at some $2$-power level
 -- but does not by itself identify $f$ or rule out a quadratic twist; that
 is the content of Section~\ref{sec:twist}.
 
+\begin{remark}[From ``almost all'' to every odd prime]
+\label{rem:chebotarev}
+Theorem~\ref{thm:livne} gives the trace identity only for almost all
+primes of good reduction, whereas Theorem~\ref{thm:trans-trace} asserts it
+for every odd $p$. The upgrade is standard. The representations
+$\rho_T$ on $T(X_{\rm III})\otimes\Q_\ell$ and $\rho_f$ attached to $f$
+are both $2$-dimensional and semisimple, and both are unramified outside
+$\{2\}$: $\rho_T$ because $X_{\rm III}$ has good reduction at every odd
+prime (Section~\ref{sec:badprimes}), and $\rho_f$ because $f$ has
+$2$-power level. Two semisimple $\ell$-adic representations whose traces
+agree on a set of primes of density $1$ have isomorphic semisimplifications,
+by the Chebotarev density theorem together with the Brauer--Nesbitt theorem
+\cite{Serre1997}; isomorphic representations have equal Frobenius traces at
+every unramified prime. Since every odd prime is unramified for both, the
+identity holds at every odd $p$, with no exceptional set.
+\end{remark}
+
 \subsection{Identifying the candidate newform}
 
-Weight-$3$ newforms with CM by $\Q(i)$ and rational Hecke eigenvalues are
-classified by their level; a search of the relevant space at $2$-power
-level identifies the newform
+The relevant candidate is the weight-$3$ newform
 \[
-f(z) = \eta^6(4z), \qquad \text{LMFDB label } \texttt{16.3.c.a},\qquad
-f = q-6q^5+9q^9+10q^{13}-30q^{17}+11q^{25}+\cdots
+f(z)=\eta^6(4z)=q\prod_{n\ge1}(1-q^{4n})^6=\sum_{n\ge1}a_nq^n
+=q-6q^5+9q^9+10q^{13}-30q^{17}+11q^{25}+\cdots,
 \]
-as the unique candidate of level $16$ with these properties, and confirms
-its Nebentypus is $\chi_{-1}$, consistent with a weight-$3$, CM-by-$\Q(i)$
-form at level $16$ (the Nebentypus of such a form must be the quadratic
-character of the CM field itself, ramified exactly at the primes dividing
-the discriminant, here $2$).
+of level $16$, Nebentypus $\chi_{-1}$, with complex multiplication by
+$\Q(i)$; in the LMFDB's labelling this is \texttt{16.3.c.a}. Weight-$3$
+newforms with CM by $\Q(i)$ and rational Hecke eigenvalues are classified
+by level, and a search of the relevant space at $2$-power level shows $f$
+is the unique such form of level $16$; its Nebentypus is $\chi_{-1}$, as
+it must be for a weight-$3$, CM-by-$\Q(i)$ form (the Nebentypus of such a
+form is the quadratic character of the CM field itself, ramified exactly
+at the primes dividing the discriminant, here $2$). Note that $f$ is
+singled out here on structural grounds -- weight, level, Nebentypus and CM
+field -- \emph{before} any coefficient is compared with a character sum.
 
 \begin{remark}[Known vs.\ proved]
 \label{rem:known-vs-proved}
@@ -1211,9 +1366,34 @@ isomorphically related to $X_{\rm III}$.
 $X_\lambda$, with no combinatorial hypercuboid motivation and no notion
 of a ``Class III'' sum; possibilities (i) and (ii) do not apply.
 \cite{AOP2002}'s own surface at $\lambda=8$ has a different Weierstrass
-model and fiber configuration from $X_{\rm III}$, and the two are provably
-non-isomorphic (the two-variable sums $T(p)$ and $A(8,p)$ disagree at
-essentially every tested prime); possibilities (iii) and (vi) do not
+model and fiber configuration from $X_{\rm III}$, and the two are
+non-isomorphic over $\Q$, witnessed explicitly at $p=7$ rather than by a
+numerical search over a range. \cite{AOP2002}'s evaluation reads
+$A(\lambda,p)=\chi(\lambda+1)\bigl(a(\lambda,p)^2-p\bigr)$, and at
+$\lambda=8$ the inner sum $a(8,p)$ is defined using $1/(\lambda+1)=1/9$,
+which does not exist mod $3$; \emph{the prime $p=3$ is therefore not a
+valid comparison prime for this formula at all}, not merely an
+exceptional case of an otherwise-universal identity, and we do not use
+it. At $p=7$, $\lambda+1=9\equiv2\pmod7$ is invertible, and since
+$9=3^2$ is a nonzero square modulo every prime other than $3$,
+$\chi(9,7)=1$. At this prime the inner sum vanishes, $a(8,7)=0$ (direct
+computation: a sum of $7$ terms), giving
+$A(8,7)=\chi(9,7)\bigl(0^2-7\bigr)=-7$, whereas
+Proposition~\ref{prop:involution} gives $T(7)=0$ (an independent,
+elementary computation, unrelated to \cite{AOP2002}'s formula). Since
+$A(8,7)=-7\neq0=T(7)$, the two affine surfaces have different numbers of
+$\mathbb{F}_7$-points. The prime $p=7$ is one of good reduction for $X_{\rm
+III}$ (Section~\ref{sec:badprimes} establishes this at every odd prime)
+and, since $7\nmid\lambda+1=9$, one at which \cite{AOP2002}'s formula for
+$A(8,p)$ is defined and applies; hence $X_{\rm III}$ and
+\cite{AOP2002}'s surface are not isomorphic over $\Q$, and a fortiori not
+isomorphic as elliptic surfaces over $\Q(T)$. (The same vanishing
+$a(8,p)=0$, and hence the same discrepancy $A(8,p)=-p\neq0=T(p)$, was
+also checked directly at $p=11,19$; $p=7$ is used here as a convenient
+single witness, not a distinguished one, and no step of this argument
+uses or requires $p=3$.) Over $\overline\Q$ we make no such claim: both
+are singular K3 surfaces with transcendental lattice of discriminant $4$,
+which does not distinguish them. Possibilities (iii) and (vi) do not
 apply. \cite{AOP2002} establishes the Picard-lattice structure of its own
 surfaces by methods specific to their explicit parametrized family, not
 by an argument resembling Section~\ref{sec:NS}'s torsion-and-graph-rigidity
@@ -1233,24 +1413,72 @@ stronger claim of originality.
 
 \section{Discussion}
 
-This paper resolves the Class~III sector of the hypercuboid
-classification left open by \cite{ClassesI_II}, completing the
-finite-field hypercuboid system's four-coordinate case. The central new
-technical contribution -- proving $\NS$-rationality for all three $I_2^*$
-fibers of $X_{\rm III}$ via full rational $2$-torsion and rigidity of the
-fiber's incidence graph, without resolving any fiber explicitly -- is, as
-far as our literature search has determined, a genuinely different route
-from both \cite{AOP2002}'s and \cite{ClassesI_II}'s own methods, and may
-be of independent interest for other singular K3 surfaces exhibiting full
-rational $2$-torsion at their reducible fibers. As with
-\cite{ClassesI_II}, we make no claim to any new general theorem in the
-theory of K3 surfaces or modular forms: the machinery used here (Kodaira's
-classification, Shioda--Tate, Livn\'e's modularity theorem) is entirely
-classical, and our contribution is the specific application to the
-surface that the Class~III hypercuboid reduction produces. This paper
-does not address the classical integer perfect-hypercuboid problem, to
-which the finite-field system studied here and in \cite{ClassesI_II} is
-only a motivating, logically separate construction.
+This paper evaluates $\Sigma_{\rm III}(p)$ in closed form for every odd
+prime, resolving the Class~III sector left open by \cite{ClassesI_II} and
+completing the four-coordinate case of the finite-field hypercuboid
+classification. The central technical contribution is the proof that every
+component of every reducible fiber of $X_{\rm III}$ is individually defined
+over $\Q$, obtained from full rational $2$-torsion together with a rigidity
+property of the fiber's incidence graph and \emph{without resolving any
+fiber explicitly}; as far as our literature search has determined this is a
+different route from both \cite{AOP2002}'s Jacobi-sum computation and
+\cite{ClassesI_II}'s own method, and it should apply to other singular K3
+surfaces with full rational $2$-torsion at their reducible fibers.
+
+We claim no new general theorem about K3 surfaces or modular forms: the
+machinery -- Kodaira's classification, Tate's algorithm, Shioda--Tate, the
+Shioda--Inose correspondence, Livn\'e's modularity theorem -- is entirely
+classical, and the newform $\eta^6(4z)$ is Ahlgren, Ono and Penniston's
+own. What is new is the identification of \emph{this} surface, arising from
+\emph{this} character sum, together with its lattice data and the resulting
+evaluation. In particular $X_{\rm III}$ and \cite{AOP2002}'s surface at
+$\lambda=8$ share a transcendental representation while differing over
+$\Q$: their point counts disagree at every $p\equiv3\pmod4$, so they are
+not isomorphic over $\Q$, though their transcendental lattices do not
+distinguish them over $\overline\Q$.
+
+This paper does not address the classical integer perfect-hypercuboid
+problem, to which the finite-field system studied here and in
+\cite{ClassesI_II} is a motivating but logically separate construction.
+
+\subsection*{Reproducibility}
+The computations supporting this paper are in the repository
+\url{https://github.com/innerlightr-wq/hypercuboid-character-gateways}
+(directory \texttt{class\_iii/}), archived with the manuscript at
+\texttt{doi:10.5281/zenodo.22713447}. All finite-field computations use
+exact integer arithmetic: Legendre symbols via modular exponentiation,
+never floating point. Reproducible items include the character sums
+$\Sigma_{\rm III}(p)$ and $T(p)$ by direct enumeration; the Weierstrass
+reduction and the invariants $c_4$, $c_6$, $\Delta$ symbolically; the
+Kodaira fiber types by valuation; the $q$-expansion of $\eta^6(4z)$ from
+its product form, compared against $T(p)$; the exhaustive automorphism
+count for the $I_2^*$ dual graph; and the lattice arithmetic behind
+$\disc\NS=4$ and $T(X_{\rm III})\cong\mathrm{diag}(2,2)$. These are checks
+on results proved in the text, not substitutes for the proofs.
+
+\subsection*{Data and code availability}
+No external data were used; every quantity in this paper is computed from
+the definitions. The scripts that reproduce the computational checks are
+in the repository cited above and are archived with the manuscript on
+Zenodo (\texttt{doi:10.5281/zenodo.22713447}). The manuscript source is
+archived with the PDF. All results are reproducible from the scripts with
+a standard Python installation and a computer algebra system for the
+symbolic steps.
+
+\subsection*{AI assistance}
+Large language model tools were used during this work for exploratory
+reasoning, for developing and reviewing the verification scripts, for
+literature and provenance auditing, for checking proofs, and for
+manuscript editing. No output of such a tool was treated as authoritative.
+Every mathematical claim in this paper was verified independently of the
+tool that suggested it: the algebraic identities by symbolic computation,
+the fiber configuration and lattice data by direct calculation from the
+Weierstrass model, the graph-automorphism count by exhaustive enumeration,
+and the modular identification by expanding the eta product and comparing
+with brute-force character-sum evaluations in exact integer arithmetic.
+Bibliographic data were checked against the cited sources or their
+registered metadata rather than against any model's recollection. The
+author reviewed all content and takes full responsibility for it.
 
 \appendix
 
@@ -1802,14 +2030,24 @@ $29$ & $42$ & $42$ & \checkmark\\
 \end{center}
 
 \textbf{Scripts.} The character-sum and lattice identities above are
-independently verified by scripts in the companion research record's
-`explorations/class\_iii/scripts/' directory: the projectivization and
+independently verified by scripts in this repository's tracked
+`class\_iii/scripts/' directory: the projectivization and
 involution identities, torsion completeness, the graph automorphism
 enumeration, the fiber-multiplicity checks, the twist elimination
 (`class3\_twist\_elimination.py'), and the point-count ledger
 (`class3\_ledger\_check.py'). None of these scripts is cited as a step in
 any proof above; each is cited only as an independent numerical check on
 a claim already proved by the preceding symbolic or deductive argument.
+Both scripts, and the further falsification-battery scripts alongside
+them, obtain the Hecke eigenvalues of $f=\eta^6(4z)=\texttt{16.3.c.a}$
+from `newform\_16\_3\_c\_a.py', a self-contained module in the same
+directory that computes them directly from the eta-product definition
+above (no network access, no external file); one further script,
+`class3\_round2\_falsification.py', additionally uses
+`newform\_16\_3\_f\_a\_traces.py', which records a documented, dated
+excerpt of the LMFDB's own trace data for the unrelated Galois orbit
+\texttt{16.3.f.a} (used there only as a deliberate wrong-newform check),
+since that orbit has no comparably elementary closed form.
 
 \begin{thebibliography}{99}
 
@@ -1876,12 +2114,15 @@ theorem (Theorem~\ref{thm:livne}), applied here at discriminant $-4$ as
 it is applied in \cite{ClassesI_II} at discriminant $-8$.
 
 \bibitem{Huber}
-T.~Huber, Z.-G.~Liu, et al., \emph{On the vanishing of the coefficients
-of CM eta quotients}, preprint. Independent literature confirmation
-(outside \cite{AOP2002}) that $\eta^6(4z)=\texttt{16.3.c.a}$ is a CM
-newform by $\Q(i)$, there associated with the quartic Fermat K3 surface
--- a \emph{third} variety, distinct from both $X_8$ and $X_{\rm III}$,
-sharing the same trace formula (Remark~\ref{rem:known-vs-proved}).
+T.~Huber, C.~Liu, J.~McLaughlin, D.~Ye, M.~Yuan, S.~Zhang, \emph{On the
+vanishing of the coefficients of CM eta quotients}, Proc. Edinburgh Math.
+Soc. \textbf{66} (2023), no.~4, 1202--1216,
+\url{https://doi.org/10.1017/S0013091523000627}. Independent literature
+confirmation (outside \cite{AOP2002}) that $\eta^6(4z)=\texttt{16.3.c.a}$
+is a CM newform by $\Q(i)$, there associated with the quartic Fermat K3
+surface -- a \emph{third} variety, distinct from both $X_8$ and $X_{\rm
+III}$, sharing the same trace formula
+(Remark~\ref{rem:known-vs-proved}).
 
 \bibitem{Collapse2026}
 E.~De Jes\'us, \emph{Zero-Diagonal Complement Collapse in Clean
@@ -1893,6 +2134,14 @@ complement-pair conditions, and cleanness forces $p\equiv1\pmod4$), which
 is the mechanism underlying the seven-form reduction recalled in
 \S\ref{sec:sum}. Cited for attribution; \S\ref{sec:sum} restates
 everything this paper uses, so no result here depends on consulting it.
+
+\bibitem{Serre1997}
+J.-P.~Serre, \emph{Abelian $\ell$-Adic Representations and Elliptic
+Curves}, A K Peters, Wellesley, MA, 1997 (originally Benjamin, New York,
+1968), \url{https://doi.org/10.1201/9781439863862}. Cited for the standard
+fact that semisimple $\ell$-adic representations with equal Frobenius
+traces on a density-one set of primes are isomorphic (Chebotarev together
+with Brauer--Nesbitt), used in Remark~\ref{rem:chebotarev}.
 
 \end{thebibliography}
 

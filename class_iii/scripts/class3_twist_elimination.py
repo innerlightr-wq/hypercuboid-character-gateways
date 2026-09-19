@@ -14,7 +14,11 @@ a_p(16.3.c.a) from the cached LMFDB data, and checks F_0 vs F_1 vs T(p) at
 p = 5 (and a spread of other p = 1 mod 4 primes) to show F_1 is refuted and
 F_0 = T(p) holds -- i.e. the twist is forced to be trivial (untwisted).
 """
-import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from newform_16_3_c_a import traces_c  # noqa: E402
 
 
 def chi(a, p):
@@ -32,9 +36,6 @@ def T_of(p):
             total += chi(val, p)
     return total
 
-
-data = json.load(open("/tmp/level16_weight3.json"))
-traces_c = next(r["traces"] for r in data["data"] if r["label"] == "16.3.c.a")
 
 primes_1mod4 = [5, 13, 17, 29, 37, 41, 53, 61, 73, 89, 97, 101, 109, 113, 137]
 

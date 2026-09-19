@@ -101,9 +101,11 @@ print(f"Three 2-torsion x-coordinates pairwise distinct at good (T,p) pairs test
 print()
 
 print("=== Direction 4: regression -- twist/point-count formulas unaffected ===")
-import json
-data = json.load(open("/tmp/level16_weight3.json"))
-traces_c = next(r["traces"] for r in data["data"] if r["label"] == "16.3.c.a")
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from newform_16_3_c_a import traces_c  # noqa: E402
 
 def T_of(p):
     total = 0
