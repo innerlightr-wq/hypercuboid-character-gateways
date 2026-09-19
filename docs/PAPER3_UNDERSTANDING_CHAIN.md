@@ -232,3 +232,75 @@ The two questions most likely to come first:
 2. *"Is the Picard lattice really saturated?"* — Yes, and that is exactly what the torsion computation
    is for: `NS/Triv` is the torsion of Mordell–Weil, which the paper proves is all of `(Z/2)^2`, giving
    the index-squared divisor `16` in `64/16 = 4`.
+
+---
+
+# BEFORE I SUBMIT, I SHOULD BE ABLE TO EXPLAIN
+
+Short, rigorous answers. If any box is unticked, that is the one a referee will find.
+
+- [ ] **What exactly is the Class III sum?** `Σ_III(p) = Σ_{x∈F_p³} χ(x₀x₁x₂(x₀+x₂)(x₁+x₂)(x₀+x₁+x₂))`,
+      `χ` the Legendre symbol. Six linear forms, three variables, one integer per prime.
+- [ ] **Why does it become a surface point count?** Because `#{y : y² = c} = 1 + χ(c)`, valid at `c = 0`
+      too. Summing that identity turns a character sum into a point count, here of
+      `Y² = X(X+1)T(T+1)(X+T+1)`, with `T(p) = #V_III(F_p) − p²`.
+- [ ] **What makes the surface K3?** The smooth projective model of that affine surface has trivial
+      canonical bundle and `h¹(O) = 0`. Concretely, it is the elliptic surface attached to the
+      Weierstrass model whose fiber degrees sum to Euler number 24 — the K3 condition for an elliptic
+      surface over `P¹`.
+- [ ] **What is an elliptic fibration?** A map to `P¹` whose general fiber is a genus-1 curve with a
+      marked point. Here: fix `T`, and the equation in `(X,Y)` is a cubic.
+- [ ] **What does `I_2*` mean?** A Kodaira fiber type: seven components, arranged as a three-vertex
+      spine of multiplicity 2 with two multiplicity-1 legs at each end; Euler number 8; root lattice
+      `D_6`. Tate's criterion identifies it by `v(c₄) ≥ 2`, `v(c₆) ≥ 3`, `v(Δ) = n + 6` with `n = 2`.
+- [ ] **Why do three such fibers already force Picard number 20?** Each contributes `D_6`, rank 6, so
+      with the general fiber and zero section the trivial lattice has rank `2 + 18 = 20`. A complex K3
+      has Picard number at most 20. A rank-20 sublattice therefore *is* everything.
+- [ ] **What is the Mordell–Weil group?** The group of sections of the fibration, equivalently the
+      rational points of the generic fiber over `Q(T)` (or `Q̄(T)`).
+- [ ] **Why does MW rank become zero?** Shioda–Tate says `ρ = rank Triv + rank MW`. With `ρ = 20` and
+      `rank Triv = 20`, the rank of MW is 0. Forced, not assumed.
+- [ ] **What is the Néron–Severi lattice?** The group of divisor classes with the intersection form —
+      the algebraic part of `H²`.
+- [ ] **What does saturation mean?** That you have `NS` itself, not a finite-index sublattice. `Triv` sits
+      inside `NS` with index equal to the order of the Mordell–Weil torsion; if you compute the
+      discriminant of `Triv` and forget the index, you get the wrong answer by the square of it.
+- [ ] **Why is its discriminant 4?** `|disc Triv| = |disc U| · |disc D_6|³ = 1 · 4³ = 64`, and the index
+      is `#MW_tors = 4`, so `|disc NS| = 64/4² = 4`. The step that makes this legitimate is *torsion
+      completeness* — proving the torsion is all of `(Z/2)²`.
+- [ ] **What is the transcendental lattice?** `T(X) = NS(X)^⊥` inside `H²(X,Z)`. Since `H²` is unimodular
+      of rank 22 and `ρ = 20`, it has rank 2 and `|disc T| = |disc NS| = 4`.
+- [ ] **Why is it `diag(2,2)`?** It is even, positive definite, rank 2, determinant 4, and there is
+      exactly one such lattice up to isometry — equivalently, the class number of binary quadratic
+      forms of discriminant `−4` is one.
+- [ ] **What does "singular K3" mean?** Maximal geometric Picard number, 20. **Not** a surface with
+      singular points — `X_III` is smooth projective. (The affine model `V_III` *is* singular; that is
+      why the terminology needs stating once.)
+- [ ] **Why does this lattice imply CM by `Q(i)`?** By the Shioda–Inose classification a singular K3
+      corresponds to its transcendental lattice, a positive-definite even binary form, and the CM field
+      is the imaginary quadratic field of that form's discriminant. Discriminant `−4` gives `Q(i)`.
+- [ ] **What is a weight-3 modular form?** A holomorphic function on the upper half plane transforming
+      by `(cz+d)³` under a congruence subgroup, with a `q`-expansion. "CM by `Q(i)`" means its
+      coefficients come from a Hecke character of `Q(i)`, which forces `a_p = 0` at primes inert in
+      `Q(i)`, i.e. `p ≡ 3 mod 4`.
+- [ ] **Why is `η⁶(4z)` relevant?** It is the unique weight-3 newform with CM by `Q(i)`, rational
+      eigenvalues and 2-power level — and 2-power level is forced because the surface has good reduction
+      at every odd prime. Explicitly `η⁶(4z) = q∏(1−q^{4n})⁶`.
+- [ ] **What does Frobenius trace mean here?** Frobenius acts on `H²` of the reduction, preserving the
+      splitting into `NS` and `T`. Its trace on the rank-2 piece `T` is a single integer per prime, and
+      that integer is what the character sum computes.
+- [ ] **What does Livné's theorem accomplish?** It says that rank-2 piece is modular: its Frobenius
+      traces are the Hecke eigenvalues of a weight-3 CM newform — **up to a quadratic twist**, and a
+      priori only at almost all good primes. Both gaps then have to be closed: the twist by an
+      exhaustive four-candidate argument, the exceptional set by Chebotarev.
+- [ ] **What did AOP prove?** They computed zeta functions for their own one-parameter family of K3
+      surfaces and evaluated the associated two-variable character sums by a direct Jacobi-sum
+      computation; `η⁶(4z)` is the form they attach to their surface at `λ = 8`.
+- [ ] **What exactly does this paper add beyond AOP?** This surface — not a member of their family, with
+      a different Weierstrass model, a different fiber configuration, and different point counts at
+      every `p ≡ 3 mod 4`, so not isomorphic to theirs over `Q`. Its lattice data. The
+      fiber-rationality technique that avoids resolving any fiber. And the closed evaluation of
+      `Σ_III`. Not the modular form, and not any general theorem.
+- [ ] **What is the weakest point of my paper?** Honest answer: the `Q` versus `Q̄` distinction in the
+      non-isomorphism claim, and the "almost all primes" to "every odd prime" upgrade after Livné. Both
+      are addressed in `PAPER3_MAC_REVISION_PACKET.md` as REQUIRED 2 and REQUIRED 3.
