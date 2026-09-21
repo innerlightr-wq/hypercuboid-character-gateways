@@ -30,13 +30,15 @@ For `q` an odd prime and `x in F_q^d` define the **prime-incidence statistic**
 m_q(x) = #{ nonempty J subseteq [d] : L_J(x) = 0 in F_q }.
 ```
 
-Throughout we assume `x != 0`. (In the integral setting this is automatic: if
-`x in Z^d` is primitive then `x mod q != 0` for every prime `q`.)
+For the spectrum computations of §3 we restrict to `x != 0`. (In the integral
+setting this is automatic: if `x in Z^d` is primitive then `x mod q != 0` for
+every prime `q`.) The lemma of §2 does **not** need that restriction — see
+Remark 2.1.
 
 Two derived quantities:
 
 ```
-Z = { j in [d] : x_j = 0 },                z = |Z|          (so 0 <= z <= d-1)
+Z = { j in [d] : x_j = 0 },                z = |Z|          (0 <= z <= d-1 when x != 0)
 S'= { J subseteq [d] \ Z : L_J(x) = 0 },   s = |S'| >= 1
 ```
 
@@ -72,6 +74,33 @@ geometric reading: the stratum through `x` is a cone over the stratum determined
 by the nonzero coordinates, with the zero coordinates contributing a free Boolean
 factor. **`(z, s)` is therefore the natural state vector** for incidence questions
 — it is forced by the lemma rather than chosen.
+
+### Remark 2.1 — what the proof actually uses
+
+The proof is a bijection between subsets, not a field computation: it uses no
+property of `F_q` beyond addition and the identity element. The identity therefore
+holds verbatim with `F_q` replaced by **any abelian group** `A`, for every
+`x in A^d`, with no hypothesis at all:
+
+* **primality is not used** — it holds over `Z/n` for composite `n`;
+* **odd characteristic is not used** — it holds in characteristic `2`;
+* **commutative-ring or field structure is not used** — only the additive group
+  matters, so non-cyclic `A` such as `(Z/2)^2` is fine;
+* **`x != 0` is not used** — at `x = 0` one has `z = d`, `[d] \ Z = empty`,
+  `S' = {empty}` and `s = 1`, so the formula returns `2^d - 1`, which is exactly
+  the number of nonempty `J`, all of which do vanish.
+
+The hypotheses "`q` an odd prime" and "`x != 0`" are retained in the statement
+above **only to match the surrounding hypercuboid setting**, where `q` is the
+modulus of the Legendre symbol and `x` is the reduction of a primitive integer
+vector. Nothing downstream in this repository uses the more general form, and no
+novelty attaches to it; it is recorded so that the hypotheses are not mistaken
+for load-bearing ones.
+
+The contrast with §3 is the point worth keeping: the *factorization* is
+characteristic-free, but the *spectrum* is not. `T_k(q)` is a genuine statement
+about the field, and the `q = 3` row of the table below shows that dependence is
+real.
 
 ---
 

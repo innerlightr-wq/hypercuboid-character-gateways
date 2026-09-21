@@ -8,7 +8,10 @@ reported number. Reproduces, in order:
   2. the tables T_k(q) of achievable |S'| for k nonzero values;
   3. the realizable spectra S_d(q) derived from the corollary, cross-checked
      against direct enumeration of m_q;
-  4. the stabilization caveat (T_6(7) differs from T_6(11) = T_6(13) = T_6(17)).
+  4. the stabilization caveat (T_6(7) differs from T_6(11) = T_6(13) = T_6(17));
+  5. Remark 2.1: the factorization needs neither primality, nor odd
+     characteristic, nor x != 0 -- checked over Z/n for composite and even n,
+     over non-cyclic abelian groups, and at x = 0.
 
 Setup matches scripts/core.py: d = n - 1, forms L_J(x) = sum_{j in J} x_j for
 nonempty J subseteq [d], evaluated at x in F_q^d with x != 0.
@@ -80,6 +83,37 @@ def spectrum_direct(d: int, q: int) -> set[int]:
     }
 
 
+def lemma_holds_over_group(elements, add, zero, d: int) -> bool:
+    """The factorization, checked over an arbitrary finite abelian group.
+
+    `elements` lists the group, `add` is the operation, `zero` the identity.
+    Every x in elements^d is tested, INCLUDING x = 0.
+    """
+    for x in itertools.product(elements, repeat=d):
+        m = 0
+        for mask in range(1, 1 << d):
+            t = zero
+            for i in range(d):
+                if mask >> i & 1:
+                    t = add(t, x[i])
+            if t == zero:
+                m += 1
+        z = sum(1 for v in x if v == zero)
+        nz = [v for v in x if v != zero]
+        k = len(nz)
+        s = 0
+        for mask in range(1 << k):
+            t = zero
+            for i in range(k):
+                if mask >> i & 1:
+                    t = add(t, nz[i])
+            if t == zero:
+                s += 1
+        if m != 2**z * s - 1:
+            return False
+    return True
+
+
 def main() -> int:
     ok = True
 
@@ -128,6 +162,37 @@ def main() -> int:
     for q, v in t6.items():
         print(f"     T_6({q:>2}) = {v}")
     print(f"     T_6(7) != T_6(11) == T_6(13) == T_6(17): {caveat}")
+
+    # --- 5. Remark 2.1: no primality, no odd characteristic, no x != 0 ---
+    print("5. Remark 2.1 (hypotheses are not load-bearing):")
+
+    # x = 0 is the boundary case: z = d, s = 1, so the formula must return 2^d - 1.
+    zero_ok = all(2**d * 1 - 1 == 2**d - 1 for d in range(1, 7))
+    for d in (1, 3, 6):
+        x = (0,) * d
+        assert m_q(x, 5) == 2**d - 1, "every form vanishes at x = 0"
+        z, s = z_and_s(x, 5)
+        zero_ok &= (z, s) == (d, 1) and m_q(x, 5) == 2**z * s - 1
+    ok &= zero_ok
+    print(f"     x = 0 (z = d, s = 1 -> 2^d - 1, all forms vanish): {zero_ok}")
+
+    groups = [
+        ("Z/2  (characteristic 2)", list(range(2)), lambda a, b: (a + b) % 2, 0, 4),
+        ("Z/4  (not a field)", list(range(4)), lambda a, b: (a + b) % 4, 0, 4),
+        ("Z/6  (composite, even)", list(range(6)), lambda a, b: (a + b) % 6, 0, 4),
+        ("Z/9  (prime power)", list(range(9)), lambda a, b: (a + b) % 9, 0, 3),
+        ("(Z/2)^2  (non-cyclic)",
+         [(a, b) for a in range(2) for b in range(2)],
+         lambda a, b: ((a[0] + b[0]) % 2, (a[1] + b[1]) % 2), (0, 0), 5),
+        ("Z/2 x Z/4  (non-cyclic)",
+         [(a, b) for a in range(2) for b in range(4)],
+         lambda a, b: ((a[0] + b[0]) % 2, (a[1] + b[1]) % 4), (0, 0), 3),
+    ]
+    for label, els, add, zero, dmax in groups:
+        good = all(lemma_holds_over_group(els, add, zero, d)
+                   for d in range(1, dmax + 1))
+        ok &= good
+        print(f"     {label:<26} d = 1..{dmax}, all x incl. 0: {good}")
 
     print("\nALL CHECKS PASS" if ok else "\nCHECKS FAILED")
     return 0 if ok else 1
