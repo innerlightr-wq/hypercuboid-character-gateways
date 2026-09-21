@@ -15,6 +15,64 @@ This paper is the sequel to the repository's Classes I/II paper (see the
 top-level [`README.md`](../README.md) for that paper's citation and the
 `## Companion Papers` section comparing the two).
 
+## Revision status
+
+The manuscript in this directory is a **corrected author revision**, dated
+**21 September 2026**, of *Class III Hypercuboid Character Sums and a
+Discriminant-4 Singular K3 Surface*. It is not a published version.
+
+What changed relative to the originally submitted and deposited manuscript:
+
+- **Provenance.** The Class III surface is now explicitly identified with the
+  exceptional $\lambda=-1$ ($t=-1$) member of the Ahlgren–Ono–Penniston /
+  van Geemen–Top family, via an exact $\mathbb Q$-rational coordinate change
+  ($T\mapsto -T-1$, giving literal equality of defining equations). See
+  `## Main result` below and the manuscript's §9.1.
+- **Known prior art, credited.** The discriminant-4 singular-K3 geometry —
+  $T(X)\cong\operatorname{diag}(2,2)$ and complex multiplication by
+  $\mathbb Q(i)$ — is consequently presented as known prior art (Persson;
+  van Geemen–Top; Shioda–Inose), independently re-derived here from the
+  hypercuboid construction rather than claimed as new.
+- **Surviving principal result.** The exact Class III character-sum
+  evaluation remains the principal project-specific contribution: the generic
+  Ahlgren–Ono–Penniston zeta-function theorem is stated for
+  $\lambda\neq0,-1$ and does not cover this exceptional parameter.
+- **$I_n^*$ rigidity positioning.** The four-fixed-legs component argument is
+  retained as a self-contained technical step but is now positioned as a
+  standard corollary of published split/non-split $I_n^*$ component theory
+  (Wazir; Ulmer), not as a new general theorem.
+- **Néron–Severi / trivial-lattice correction.** The integral relation is
+  corrected from the false $\operatorname{NS}=\operatorname{Triv}$ to
+  $\operatorname{NS}/\operatorname{Triv}\cong\mathrm{MW}\cong(\mathbb Z/2)^2$
+  with $[\operatorname{NS}:\operatorname{Triv}]=4$. The 20 standard classes
+  form a $\mathbb Z$-basis of $\operatorname{Triv}$; two rational $2$-torsion
+  section classes complete the integral lattice.
+- **K3-status proof repair.** A circular argument at the fiber over infinity
+  is removed: the transformed discriminant is now computed directly from the
+  rescaled coefficients, and K3 status is concluded from the resulting fiber
+  types rather than assumed in obtaining them.
+- **Odd-prime reduction repair.** The good-reduction argument is strengthened
+  so that residue characteristic 3 is handled explicitly, rather than being
+  covered by a fiber-classification criterion valid only in residue
+  characteristic $\geq5$.
+- **Main result unchanged.** The principal Class III character-sum theorem,
+  its closed formula, and the reported numerical evaluations are **unchanged**
+  by these corrections. What changed are intermediate proof statements and
+  proof logic, together with the prior-art positioning.
+- **Validation.** The revised manuscript rebuilds cleanly (0 errors, 0
+  undefined references or citations), and the final cross-consistency checks
+  produced **zero mismatches** across all odd primes $\leq61$ tested,
+  including $p=3$.
+
+The corrected manuscript revision was established at commit `6779b6f`.
+
+### Deposited versions
+
+The existing Zenodo deposit (DOI above) and the SSRN posting are **historical
+versions** and remain as deposited. This repository holds the corrected
+next-version manuscript. Nothing is being erased or rewritten; a new deposit
+version has not yet been uploaded at the time of writing.
+
 ## Main result
 
 This paper evaluates the third residual character-sum class,
