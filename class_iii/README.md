@@ -35,16 +35,38 @@ K3 surface** $X_{\rm III}$, with:
   $\eta^6(4z)=$ LMFDB `16.3.c.a`.
 
 **The modular form itself is not new.** `16.3.c.a` $=\eta^6(4z)$ is
-Ahlgren, Ono, and Penniston's own form, governing their own (different)
-K3 surface at their parameter $\lambda=8$ ("Zeta functions of an infinite
-family of K3 surfaces," *Amer. J. Math.* **124** (2002), no. 2, 353–368).
-**The K3 surface $X_{\rm III}$ is also not claimed as new beyond what a
-literature search could confirm**: the exact surface, the exact character
-sum, and the graph-rigidity technique used to establish
-$\operatorname{NS}$-rationality were not located in the literature
-searched (see the paper's own §9.1 and the `verification/` directory for
-the full search discipline) — this is reported as a search-scope
-limitation, not a stronger claim of originality.
+Ahlgren, Ono, and Penniston's own form, governing their K3 surface at
+their parameter $\lambda=8$ ("Zeta functions of an infinite family of K3
+surfaces," *Amer. J. Math.* **124** (2002), no. 2, 353–368).
+
+**Neither is the surface (corrected September 2026).** A prior-art audit
+established that $X_{\rm III}$ is the $\lambda=-1$ member of that same
+family. Two independent checks, both in
+[`scripts/class3_aop_identification.py`](scripts/class3_aop_identification.py):
+$T(p)=A(-1,p)$ at every odd prime tested, and the $\mathbb Q$-linear
+substitution $(x,t,w)\mapsto(x,\,t-x,\,-t-w)$ carries the Class III branch
+sextic *exactly* onto the $\lambda=-1$ branch sextic, with no residual
+scalar — so the two surfaces are isomorphic **over $\mathbb Q$**.
+
+Consequently $T(X)\cong\operatorname{diag}(2,2)$, $\operatorname{disc}=4$
+and CM by $\mathbb Q(i)$ are **known prior art**: van Geemen–Top, *An
+isogeny of K3 surfaces*, Bull. LMS **38** (2006), 209–223, record the
+lattice and discriminant, citing Persson, LNM **1124** (1985), p. 298, and
+note Shioda–Inose's identification of the surface as the desingularised
+quotient of $E_i\times E_i$, $E_i=\mathbb C/\mathbb Z[i]$.
+
+This paper is therefore an **independent derivation and hypercuboid
+realization of a known singular-K3 arithmetic sector**, not the discovery
+of a new one. Earlier versions of this README and of the manuscript said
+the surface was different from Ahlgren–Ono–Penniston's; that comparison
+had been made against $\lambda=8$ only and did not extend over the family.
+
+One point runs the other way: $\lambda=-1$ is precisely where
+Ahlgren–Ono–Penniston's closed-form evaluation degenerates (it carries a
+factor $\chi(\lambda+1)$ and an inverse of $\lambda+1$), and van
+Geemen–Top exclude $t=-1$ from their isogeny theorem. The exact evaluation
+of $\Sigma_{\rm III}(p)$ obtained here is therefore not a specialization
+of theirs.
 
 ## Methodological contribution
 
@@ -58,10 +80,22 @@ are individually $\mathbb Q$-rational, the only graph automorphism of the
 fiber compatible with fixing all four legs is the identity, forcing the
 remaining ("spine") components to be Galois-fixed as well. This yields
 $\operatorname{Tr}(F_p\mid\operatorname{NS}(X_{\rm III}))=20p$
-unconditionally. As far as this project's own literature search
-determined, this is a different route from both Ahlgren–Ono–Penniston's
-and the companion paper's own methods for establishing the analogous
-fact about their respective surfaces.
+unconditionally. This is a different route from both
+Ahlgren–Ono–Penniston's and the companion paper's methods for
+establishing the analogous fact about their respective surfaces.
+
+The graph-rigidity step itself is a **standard corollary**, not a new
+result. Wazir, *Arithmetic on elliptic threefolds*, Compositio Math.
+**140** (2004), 567–580, records that an $I_n^*$ fiber has either $n+5$ or
+$n+3$ rational components, determined by the splitting of a quadratic;
+Ulmer, PCMI **18** (2011), Lecture 3 §6, gives the same dichotomy in
+split/non-split form. At most one conjugate pair of multiplicity-one
+components is ever exchanged, which is exactly the lemma's conclusion.
+Two caveats travel with it: $I_0^*$ needs separate treatment (its dual
+graph is $\widetilde D_4$, with automorphism group $S_4$), and the
+statement presumes a perfect residue field. What is claimed here is the
+assembly — deducing $\operatorname{NS}$-rationality from rational
+$2$-torsion alone, with no fiber resolved.
 
 ## Relation to Classes I/II
 

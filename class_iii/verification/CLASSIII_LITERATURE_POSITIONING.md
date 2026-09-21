@@ -1,5 +1,34 @@
 # Class III Sequel — Literature Positioning
 
+> ## ⚠ SUPERSEDED IN PART — 2026-09-21
+>
+> A prior-art audit established that **`X_III` is the `λ = -1` member of the
+> Ahlgren–Ono–Penniston family**: `T(p) = A(-1,p)` at every odd prime tested, and the
+> `Q`-linear substitution `(x,t,w) -> (x, t-x, -t-w)` carries the Class III branch sextic
+> exactly onto the `λ = -1` branch sextic, so the surfaces are isomorphic over `Q`.
+> Verified in `class_iii/scripts/class3_aop_identification.py`.
+>
+> Two statements below are therefore **withdrawn**:
+>
+> 1. that "the specific character sum `T(p)`/`Σ_III(p)`, and the specific Weierstrass model /
+>    fiber-location data of `X_III`, were not found in the literature searched" — the sum is
+>    AOP's own at `λ = -1`, and the surface's transcendental lattice `diag(2,2)`, discriminant
+>    `4` and CM field `Q(i)` are recorded by van Geemen–Top, Bull. LMS **38** (2006), 209–223,
+>    citing Persson, LNM **1124** (1985), p. 298, and Shioda–Inose (1977);
+> 2. the framing of `X_III` as a surface distinct from AOP's. That comparison was made against
+>    `λ = 8` only and did not extend over the family.
+>
+> Also revised: the graph-rigidity step is a **standard corollary**, not a novel technique —
+> Wazir, Compositio Math. **140** (2004), 567–580, and Ulmer, PCMI **18** (2011), Lecture 3 §6,
+> record that an `I_n^*` fiber has `n+5` or `n+3` rational components. The *assembly* remains
+> the paper's contribution.
+>
+> One point runs the other way: `λ = -1` is exactly where AOP's closed-form evaluation
+> degenerates, so the evaluation of the sum obtained here is not a specialization of theirs.
+>
+> The current positioning is in `notes/HYPERCUBOID_K3_RESEARCH_CLOSURE.md` §14 and in the
+> revised manuscript. This file is retained as the historical record of the earlier search.
+
 Distilled from `literature/ROUND2_LITERATURE_AUDIT.md`,
 `literature/ROUND4_EXTREMAL_K3_AUDIT.md`, and
 `literature/PHASE5_LITERATURE_AUDIT.md`. This file states, precisely and

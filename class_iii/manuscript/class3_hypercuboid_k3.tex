@@ -35,7 +35,7 @@
 \pagestyle{plain}
 
 \begin{abstract}
-We study the character sum $\Sigma_{\rm III}(p)=\sum_{x\in\Fp^3}\chi\bigl(x_0x_1x_2(x_0+x_2)(x_1+x_2)(x_0+x_1+x_2)\bigr)$, the third of three residual classes arising from a clean finite-field hypercuboid residue system, and previously left open where the companion Classes~I/II were resolved. An elementary projective reduction gives $\Sigma_{\rm III}(p)=(p-1)T(p)$ for the two-variable sum $T(p)=\sum_{x,t\in\Fp}\chi\bigl(x\,t(t+1)(x+t)(x+t+1)\bigr)$, and an explicit coordinate involution proves $\Sigma_{\rm III}(p)=0$ for $p\equiv3\pmod4$ by an elementary, self-contained argument requiring no arithmetic geometry. For $p\equiv1\pmod4$, $T(p)$ is realized as the trace of Frobenius on the transcendental lattice of a singular K3 surface $X_{\rm III}$, constructed as the elliptic fibration attached to $T(p)$'s defining affine surface. This surface has three fibers of Kodaira type $I_2^*$ and full rational $2$-torsion $(\Z/2)^2$ over $\Q(T)$, the field of the fibration's base. We prove that every irreducible component of every reducible fiber is individually defined over $\Q$ by a new argument -- not requiring an explicit resolution of any singular fiber -- combining the rationality of the zero section and the three nonzero $2$-torsion sections with a rigidity property of the fiber's incidence graph: once the zero section and the three torsion sections are shown to occupy four pairwise distinct multiplicity-one components, the graph automorphism group compatible with that marking is trivial, forcing the remaining components to be Galois-fixed as well. This yields $\Tr(F_p\mid\NS(X_{\rm III}))=20p$ unconditionally, and $\disc\NS(X_{\rm III})=4$, $T(X_{\rm III})\cong\mathrm{diag}(2,2)$, identifying the associated CM field as $\Q(i)$. Combining this with Livn\'e's modularity theorem and a finite twist-elimination argument (exhaustive over a candidate set of four characters, forced by ramification, before any numerical value is consulted), we prove $\Tr(F_p\mid T(X_{\rm III}))=a_p(\texttt{16.3.c.a})$ for every odd $p$, where \texttt{16.3.c.a}$=\eta^6(4z)$ is Ahlgren--Ono--Penniston's own modular form, not claimed as new here; combined with an independently re-derived point-count ledger, this yields the exact evaluation $\Sigma_{\rm III}(p)=(p-1)\,a_p(\texttt{16.3.c.a})$ for $p\equiv1\pmod4$ and $\Sigma_{\rm III}(p)=0$ for $p\equiv3\pmod4$, completing the finite-field hypercuboid classification left open by the companion paper.
+We study the character sum $\Sigma_{\rm III}(p)=\sum_{x\in\Fp^3}\chi\bigl(x_0x_1x_2(x_0+x_2)(x_1+x_2)(x_0+x_1+x_2)\bigr)$, the third of three residual classes arising from a clean finite-field hypercuboid residue system, and previously left open where the companion Classes~I/II were resolved. An elementary projective reduction gives $\Sigma_{\rm III}(p)=(p-1)T(p)$ for the two-variable sum $T(p)=\sum_{x,t\in\Fp}\chi\bigl(x\,t(t+1)(x+t)(x+t+1)\bigr)$, and an explicit coordinate involution proves $\Sigma_{\rm III}(p)=0$ for $p\equiv3\pmod4$ by an elementary, self-contained argument requiring no arithmetic geometry. For $p\equiv1\pmod4$, $T(p)$ is realized as the trace of Frobenius on the transcendental lattice of a singular K3 surface $X_{\rm III}$, constructed as the elliptic fibration attached to $T(p)$'s defining affine surface. This surface has three fibers of Kodaira type $I_2^*$ and full rational $2$-torsion $(\Z/2)^2$ over $\Q(T)$, the field of the fibration's base. We prove that every irreducible component of every reducible fiber is individually defined over $\Q$ by a new argument -- not requiring an explicit resolution of any singular fiber -- combining the rationality of the zero section and the three nonzero $2$-torsion sections with a rigidity property of the fiber's incidence graph: once the zero section and the three torsion sections are shown to occupy four pairwise distinct multiplicity-one components, the graph automorphism group compatible with that marking is trivial, forcing the remaining components to be Galois-fixed as well. This yields $\Tr(F_p\mid\NS(X_{\rm III}))=20p$ unconditionally, and $\disc\NS(X_{\rm III})=4$, $T(X_{\rm III})\cong\mathrm{diag}(2,2)$, identifying the associated CM field as $\Q(i)$. Combining this with Livn\'e's modularity theorem and a finite twist-elimination argument (exhaustive over a candidate set of four characters, forced by ramification, before any numerical value is consulted), we prove $\Tr(F_p\mid T(X_{\rm III}))=a_p(\texttt{16.3.c.a})$ for every odd $p$, where \texttt{16.3.c.a}$=\eta^6(4z)$ is Ahlgren--Ono--Penniston's own modular form, not claimed as new here; combined with an independently re-derived point-count ledger, this yields the exact evaluation $\Sigma_{\rm III}(p)=(p-1)\,a_p(\texttt{16.3.c.a})$ for $p\equiv1\pmod4$ and $\Sigma_{\rm III}(p)=0$ for $p\equiv3\pmod4$, completing the finite-field hypercuboid classification left open by the companion paper. We also record the surface's provenance: $T(p)=A(-1,p)$ for Ahlgren--Ono--Penniston's two-variable sum, and $X_{\rm III}$ is isomorphic over $\Q$ to the $\lambda=-1$ member of their family, whose transcendental lattice $\mathrm{diag}(2,2)$, discriminant $4$ and CM field $\Q(i)$ are already recorded in the literature. The hypercuboid route therefore reaches a known singular-K3 arithmetic sector independently rather than exhibiting a new one; what is contributed here is the combinatorial origin, the finite-field identities, and the rationality argument. We note that $\lambda=-1$ is precisely the parameter at which Ahlgren--Ono--Penniston's own closed-form evaluation degenerates, so the evaluation obtained here is not a specialization of theirs.
 \end{abstract}
 
 \maketitle
@@ -81,27 +81,84 @@ defined over $\overline{\Q}$ -- is in fact defined over $\Q$. We resolve
 this not by resolving each of $X_{\rm III}$'s three singular fibers
 explicitly, but by an argument combining full rational $2$-torsion with a
 rigidity property of the fiber's incidence graph (Section~\ref{sec:NS}).
-This is, to our knowledge, a genuinely different technique from the one
-used in \cite{ClassesI_II}, and is the central new contribution of this
-paper.
+This is a different technique from the one used in \cite{ClassesI_II},
+and is the paper's central technical contribution. Its graph-rigidity
+step is a standard corollary of published facts about the Galois action
+on $I_n^*$ fibers (Remark~\ref{rem:rigidity-prior-art}); what is
+contributed is the assembly -- deducing $\NS$-rationality from rational
+$2$-torsion alone, with no fiber resolved.
 
 \subsection*{Relation to Ahlgren--Ono--Penniston}
 The governing modular form identified in this paper's later sections,
 LMFDB \texttt{16.3.c.a}, is \emph{not new}: it is exactly Ahlgren, Ono,
 and Penniston's own $A(z)=\eta^6(4z)$ \cite{AOP2002}, the modular form
-attached to their own singular K3 surface at their parameter $\lambda=8$.
-\textbf{Class III shares the same modular form and the same
-transcendental representation with Ahlgren--Ono--Penniston's $\lambda=8$
-surface, but differs in its underlying K3 model, Weierstrass equation,
-fiber configuration, and defining character sum} -- the two surfaces are
-provably non-isomorphic (the two-variable sums $T(p)$ and
-Ahlgren--Ono--Penniston's own $A(8,p)$ disagree at essentially every
-prime tested), a fact explained, once both surfaces' transcendental
-lattices are identified as isomorphic to $\mathrm{diag}(2,2)$, by the
-general principle that two singular K3 surfaces sharing a transcendental
-lattice must share a trace formula however different their geometry is
-otherwise. We do not claim the modular form itself as new anywhere in
-this paper.
+attached to their singular K3 surface at their parameter $\lambda=8$.
+
+More than that, and more importantly for provenance, \textbf{the
+Class~III surface is itself a member of Ahlgren--Ono--Penniston's
+family.} Write
+$A(\lambda,p)=\sum_{x,y\in\Fp}\chi\bigl(xy(x+1)(y+1)(x+\lambda y)\bigr)$
+for the two-variable sum of \cite{AOP2002}, whose surfaces $X_\lambda$ are
+the minimal resolutions of the double covers of $\mathbb{P}^2$ branched
+along the six lines $x$, $y$, $x+1$, $y+1$, $x+\lambda y$ and the line at
+infinity. Then
+\[
+  T(p)=A(-1,p)\qquad\text{for every odd prime tested,}
+\]
+and at the level of surfaces the branch sextic of $X_{\rm III}$ is carried
+\emph{onto} that of the $\lambda=-1$ member, with no residual scalar, by
+the $\Q$-linear substitution $(x,t,w)\mapsto(x,\;t-x,\;-t-w)$. Hence
+$X_{\rm III}$ is isomorphic over $\Q$ to $X_{-1}$. Both statements are
+checked in the script
+\texttt{class3\_aop\_identification.py}.
+
+It is worth being exact about \emph{which} member this is.
+\cite{AOP2002} evaluate $A(\lambda,q)$ in closed form through a quantity
+of the shape $\chi(\lambda+1)\bigl(a(\lambda,q)^2-q\bigr)$, which requires
+$\lambda+1$ to be invertible; van Geemen and Top likewise take
+$t\neq0,-1$ in their isogeny theorem \cite{vanGeemenTop2006}. So
+$\lambda=-1$ is precisely the parameter at which the family's standard
+evaluation degenerates -- and it is the parameter at which the
+hypercuboid reduction lands. The same script confirms that the closed
+form reproduces the direct sum at $\lambda=8$ and $\lambda=2$ and is
+undefined at $\lambda=-1$.
+
+The consequence must be stated plainly. The $\lambda=-1$ member is a
+classically studied surface: van Geemen and Top \cite{vanGeemenTop2006}
+record that its transcendental lattice has rank $2$ and discriminant $4$,
+hence is $\langle2\rangle\oplus\langle2\rangle$, attributing the lattice
+computation to Persson \cite{Persson1985}, and note that Shioda and Inose
+\cite{ShiodaInose1977} exhibit the surface as the desingularised quotient
+of $E_i\times E_i$ with $E_i=\mathbb{C}/\Z[i]$ -- that is, with complex
+multiplication by $\Q(i)$. \textbf{The arithmetic package
+$T(X)\cong\mathrm{diag}(2,2)$, $\disc\NS=4$, CM by $\Q(i)$ is therefore
+already present in the literature and is not claimed here as a new
+discovery.} What this paper contributes is the route to it: the
+hypercuboid origin of the sum, the projective reduction
+$\Sigma_{\rm III}(p)=(p-1)T(p)$, the self-contained involution proof of
+vanishing for $p\equiv3\pmod4$, the torsion-and-graph-rigidity proof that
+every fiber component is defined over $\Q$ without resolving any fiber,
+and the resulting exact evaluation of $\Sigma_{\rm III}(p)$. The
+hypercuboid construction \emph{independently reaches and realizes} a known
+singular-K3 arithmetic sector; it does not discover one.
+
+Two cautions about the $\lambda=8$ comparison, which earlier drafts of
+this paper rested on. The surfaces do have different branch
+configurations: $\lambda=8$ lies in the generic incidence stratum of the
+family (three triple points and six double points), whereas $\lambda=-1$
+lies in the stratum with four triple points and three double points. But
+the observation that $T(p)$ and $A(8,p)$ differ is \emph{not} by itself
+evidence that the underlying surfaces are non-isomorphic: the difference
+is the entirely structured
+\[
+  A(8,p)-T(p)=\left(\tfrac{-1}{p}\right)p ,
+\]
+a term of exactly the size produced by a change of affine normalisation
+rather than by a change of surface. We therefore make no claim in either
+direction about the relation between $X_8$ and $X_{\rm III}$, beyond the
+shared trace formula -- which follows in any case from the shared
+transcendental lattice. We do not claim the modular form itself as new
+anywhere in this paper.
 
 \subsection*{Outline}
 Section~\ref{sec:sum} defines $\Sigma_{\rm III}(p)$, reconstructs its
@@ -463,7 +520,10 @@ exactly.
 \section{Rational $2$-torsion and N\'eron--Severi rationality}
 \label{sec:NS}
 
-This section contains the paper's central new technical contribution.
+This section contains the paper's central technical contribution. Its
+ingredients are standard -- see Remark~\ref{rem:rigidity-prior-art} for
+the prior art on the graph-rigidity step -- and what is claimed is the
+route, not the components.
 $X_{\rm III}$ already has geometric Picard number $20$ and Mordell--Weil
 rank $0$ (Proposition~\ref{prop:picard}), so unlike the twist-isomorphism
 argument of \cite{ClassesI_II}, no further Mordell--Weil generator is
@@ -649,6 +709,30 @@ independent check on Lemma~\ref{lem:rigidity}, not as its proof}: the
 proof above is the short, self-contained graph-theoretic argument, using
 only the tree structure and uniqueness of adjacency, that the paper
 relies on.
+\end{remark}
+
+\begin{remark}[Prior art for Lemma~\ref{lem:rigidity}]
+\label{rem:rigidity-prior-art}
+Lemma~\ref{lem:rigidity} is a \emph{standard corollary}, and we claim no
+more for it than the packaging. The governing dichotomy is published. For
+a fiber of type $I_n^*$, Wazir \cite{Wazir2004} records that the number of
+rational components is either $n+5$ or $n+3$, determined by the splitting
+of a quadratic polynomial; Ulmer \cite{Ulmer2011} states the same
+dichotomy in split/non-split language, with the non-split case leaving
+exactly one conjugate pair. So at most one pair of components is ever
+exchanged, and a pair exchanged by a multiplicity-preserving automorphism
+of the dual graph must be a pair of multiplicity-one legs at a common end.
+Lemma~\ref{lem:rigidity} follows at once. Two cautions, both real: the
+case $I_0^*$ must be treated separately, because its dual graph is
+$\widetilde{D}_4$, whose automorphism group is $S_4$ rather than the
+order-$8$ group above, so the split/non-split dichotomy does not exhaust
+its monodromy; and the statement presumes a perfect residue field, since
+over a non-perfect residue field the geometric special fiber of the
+minimal regular model need not be a Kodaira type at all. Both hypotheses
+hold throughout this paper, where $n=2$ and the residue fields are finite
+or $\Q$. What the lemma is \emph{not} is the assertion that full rational
+$2$-torsion rigidifies every reducible fiber: that is false, as $I_4$ and
+$I_6$ show, since $(\Z/2)^2$ cannot inject into a cyclic component group.
 \end{remark}
 
 \begin{proof}[Proof of Proposition~\ref{prop:main-NS}, at $T=0$]
@@ -890,14 +974,20 @@ surface $X_8$ at their parameter $\lambda=8$. \textbf{What is known in
 the literature}: this modular form's existence, its $q$-expansion, its
 occurrence as the trace form for $X_8$, and (independently, via
 Huber--Liu--McLaughlin--Ye--Yuan--Zhang \cite{Huber}) its occurrence for
-the quartic Fermat K3 surface. \textbf{What is proved in this
-manuscript}: that the Class~III hypercuboid surface $X_{\rm III}$ -- a
-surface not treated in either of those sources, with its own Weierstrass
-model, its own fiber configuration, and provably not isomorphic or
-birational to $X_8$ (Section~\ref{sec:AOP-precise} below) -- has
-transcendental lattice of the same discriminant $4$, and (via
-Section~\ref{sec:twist}) the same untwisted trace formula. We do not
-claim the modular form itself as new anywhere in this paper.
+the quartic Fermat K3 surface. To these must be added a fourth known
+occurrence, established in Section~\ref{sec:AOP-precise}: $X_{\rm III}$ is
+isomorphic over $\Q$ to the $\lambda=-1$ member of \cite{AOP2002}'s
+family, whose transcendental lattice $\langle2\rangle\oplus\langle2\rangle$
+and CM by $\Q(i)$ are recorded in \cite{vanGeemenTop2006}, citing
+\cite{Persson1985} and \cite{ShiodaInose1977}. \textbf{What is proved in
+this manuscript} is accordingly not the existence of a discriminant-$4$
+singular K3 with this trace form, which is known, but that the Class~III
+hypercuboid character sum reaches one: that $\Sigma_{\rm III}$ reduces to
+$T(p)$, that the attached surface has $\NS$ defined over $\Q$ by the
+argument of Section~\ref{sec:NS}, and that the resulting trace formula is
+untwisted (Section~\ref{sec:twist}), yielding the exact evaluation of
+$\Sigma_{\rm III}(p)$. We do not claim the modular form itself, or the
+surface, or its lattice, as new anywhere in this paper.
 \end{remark}
 
 \subsection{Bad primes of $X_{\rm III}$}
@@ -1209,47 +1299,105 @@ isomorphically related to $X_{\rm III}$.
 \cite{AOP2002} is a paper about their own one-parameter family
 $X_\lambda$, with no combinatorial hypercuboid motivation and no notion
 of a ``Class III'' sum; possibilities (i) and (ii) do not apply.
-\cite{AOP2002}'s own surface at $\lambda=8$ has a different Weierstrass
-model and fiber configuration from $X_{\rm III}$, and the two are provably
-non-isomorphic (the two-variable sums $T(p)$ and $A(8,p)$ disagree at
-essentially every tested prime); possibilities (iii) and (vi) do not
-apply. \cite{AOP2002} establishes the Picard-lattice structure of its own
-surfaces by methods specific to their explicit parametrized family, not
-by an argument resembling Section~\ref{sec:NS}'s torsion-and-graph-rigidity
-route; possibility (iv) does not apply, as far as this search has
-determined. What \emph{does} apply is (v): \textbf{Class~III shares the
-same modular form and the same transcendental representation with
-Ahlgren--Ono--Penniston's $\lambda=8$ surface, but differs in its
-underlying K3 model, Weierstrass equation, fiber configuration, and
-defining character sum.} We do not claim a novelty stronger than this
-literature search supports: the exact sum $\Sigma_{\rm III}(p)$, the exact
-surface $X_{\rm III}$, and the graph-rigidity technique were not located
-in \cite{AOP2002} or, as far as searched, elsewhere in the literature
-(see the companion research record's literature audits for the full
-search log), but this reflects the scope of a search without institutional
-database access to complete extremal-K3 classification tables, not a
-stronger claim of originality.
+
+Possibilities (iii) and (vi) \emph{do} apply, and an earlier version of
+this paper stated the opposite. The comparison made there was against the
+single parameter $\lambda=8$, and it did not extend over the family. As
+recorded in the Introduction, $T(p)=A(-1,p)$ at every odd prime tested,
+and the branch sextic of $X_{\rm III}$ is carried onto that of the
+$\lambda=-1$ member by an explicit $\Q$-linear substitution with no
+residual scalar, so that $X_{\rm III}\cong X_{-1}$ over $\Q$. The exact
+sum and the exact surface of this paper are therefore \emph{not} absent
+from \cite{AOP2002}'s family: they are its $\lambda=-1$ member, reached
+from an unrelated combinatorial starting point.
+
+Nor is the resulting arithmetic new. The surface $X_{-1}$ is classically
+studied: van Geemen and Top \cite{vanGeemenTop2006} record its
+transcendental lattice as $\langle2\rangle\oplus\langle2\rangle$ of
+discriminant $4$, citing Persson \cite{Persson1985}, and observe that
+Shioda and Inose \cite{ShiodaInose1977} identify it as the desingularised
+quotient of $E_i\times E_i$, $E_i=\mathbb{C}/\Z[i]$, giving CM by $\Q(i)$.
+Possibility (v) accordingly also applies, and in a stronger form than the
+$\lambda=8$ coincidence: the transcendental lattice, the discriminant and
+the CM field are all prior art.
+
+What does \emph{not} appear in \cite{AOP2002}, in
+\cite{vanGeemenTop2006}, or in the literature reviewed is possibility
+(iv): the argument of Section~\ref{sec:NS}, which establishes
+$\NS$-rationality from full rational $2$-torsion plus rigidity of the
+fiber's incidence graph, without resolving any singular fiber. Even here
+we claim only that the packaging is ours. The graph-rigidity step is a
+standard corollary of published facts about the Galois action on
+$I_n^*$ fibers: Wazir \cite{Wazir2004} records that an $I_n^*$ fiber has
+either $n+5$ or $n+3$ rational components, according to the splitting of a
+quadratic, and Ulmer \cite{Ulmer2011} gives the same dichotomy in
+split/non-split form; only a conjugate pair of multiplicity-one components
+can ever be exchanged, which is precisely Lemma~\ref{lem:rigidity}'s
+conclusion. See the remark following that lemma.
+
+Summarising the provenance honestly: the character-sum identity, the
+hypercuboid reduction, the elementary involution proof and the
+$\NS$-rationality route are this paper's; the surface, its transcendental
+lattice, its CM field and its modular form are not. The contribution is
+an independent derivation and a combinatorial realization of a known
+singular-K3 arithmetic sector, not the discovery of one.
+
+One qualification cuts the other way and should be recorded with the
+same care. The parameter reached here is exactly the one at which
+\cite{AOP2002}'s own evaluation degenerates, since their closed form
+carries a factor $\chi(\lambda+1)$ and an inverse of $\lambda+1$, and
+\cite{vanGeemenTop2006}'s isogeny theorem likewise excludes $t=-1$. The
+exact evaluation of $\Sigma_{\rm III}(p)$ obtained here is therefore not
+a specialization of \cite{AOP2002}'s formula; it is obtained by a route
+that remains valid where that formula does not apply. What is prior art
+is the surface and its lattice-theoretic and CM data, not the evaluation
+of the sum at this parameter.
 
 \section{Discussion}
 
 This paper resolves the Class~III sector of the hypercuboid
 classification left open by \cite{ClassesI_II}, completing the
-finite-field hypercuboid system's four-coordinate case. The central new
+finite-field hypercuboid system's four-coordinate case. The central
 technical contribution -- proving $\NS$-rationality for all three $I_2^*$
 fibers of $X_{\rm III}$ via full rational $2$-torsion and rigidity of the
-fiber's incidence graph, without resolving any fiber explicitly -- is, as
-far as our literature search has determined, a genuinely different route
-from both \cite{AOP2002}'s and \cite{ClassesI_II}'s own methods, and may
-be of independent interest for other singular K3 surfaces exhibiting full
-rational $2$-torsion at their reducible fibers. As with
-\cite{ClassesI_II}, we make no claim to any new general theorem in the
-theory of K3 surfaces or modular forms: the machinery used here (Kodaira's
-classification, Shioda--Tate, Livn\'e's modularity theorem) is entirely
-classical, and our contribution is the specific application to the
-surface that the Class~III hypercuboid reduction produces. This paper
-does not address the classical integer perfect-hypercuboid problem, to
-which the finite-field system studied here and in \cite{ClassesI_II} is
-only a motivating, logically separate construction.
+fiber's incidence graph, without resolving any fiber explicitly -- is a
+different route from \cite{ClassesI_II}'s twist-isomorphism argument, and
+may be of use for other singular K3 surfaces exhibiting full rational
+$2$-torsion at their reducible fibers. Its graph-rigidity step is a
+standard corollary of published $I_n^*$ component behaviour
+(Remark~\ref{rem:rigidity-prior-art}); the assembly is what is claimed.
+
+We make no claim to any new general theorem in the theory of K3 surfaces
+or modular forms: the machinery used here (Kodaira's classification,
+Shioda--Tate, Livn\'e's modularity theorem) is entirely classical, and
+the contribution is the specific application to the surface that the
+Class~III hypercuboid reduction produces. Nor, as
+Section~\ref{sec:AOP-precise} sets out, is that surface new: it is the
+$\lambda=-1$ member of \cite{AOP2002}'s family, and its transcendental
+lattice, discriminant and CM field are recorded in
+\cite{vanGeemenTop2006}, \cite{Persson1985} and \cite{ShiodaInose1977}.
+The hypercuboid route reaches a known singular-K3 arithmetic sector
+independently; it does not exhibit a new one.
+
+One further caution, drawn from the same family. The branch arrangement
+$\{x,\,y,\,x+1,\,y+1,\,x+\lambda y,\,\text{line at infinity}\}$ has the
+\emph{same} incidence combinatorics -- three triple points and six double
+points, the same matroid, the same singularity pattern -- for every
+$\lambda$ outside $\{0,-1,\infty\}$, while its arithmetic varies sharply
+across that stratum: the generic member has Picard number $19$ and no CM
+at all, and particular members are singular with differing CM data.
+\textbf{Bare incidence combinatorics therefore do not determine the
+arithmetic sector within this family.} We draw only that negative
+conclusion. It is not a claim that combinatorics is irrelevant to
+arithmetic, nor that no combinatorics-to-arithmetic relationship is
+possible; an enriched invariant carrying realization or moduli data could
+still be informative, and that question is untouched here. In particular
+this paper does \textbf{not} claim, and its two data points could not
+support, any general law sending a hypercuboid class to a CM field.
+
+This paper does not address the classical integer perfect-hypercuboid
+problem, to which the finite-field system studied here and in
+\cite{ClassesI_II} is only a motivating, logically separate construction.
 
 \appendix
 
@@ -1827,6 +1975,46 @@ family of K3 surfaces}, Amer. J. Math. \textbf{124} (2002), no.~2,
 $=\eta^6(4z)$, identified as the newform governing their own
 $\lambda=8$ surface (see the Introduction); \textbf{not} claimed as new
 in this paper.
+
+\bibitem{vanGeemenTop2006}
+B.~van Geemen, J.~Top, \emph{An isogeny of K3 surfaces}, Bull. London
+Math. Soc. \textbf{38} (2006), no.~2, 209--223,
+\url{https://doi.org/10.1112/S0024609306018170}; preprint
+\texttt{arXiv:math/0309272}. Studies \cite{AOP2002}'s family
+$X_t:y^2=xz(x+1)(z+1)(x+zt)$; records that the general member has
+N\'eron--Severi rank $19$, and that the member at $t=-1$ -- the surface
+shown in Section~\ref{sec:AOP-precise} to be isomorphic over $\Q$ to
+$X_{\rm III}$ -- has transcendental lattice of rank $2$ and discriminant
+$4$, hence $\langle2\rangle\oplus\langle2\rangle$, citing
+\cite{Persson1985}, and is by \cite{ShiodaInose1977} the desingularised
+quotient of $E_i\times E_i$ with $E_i=\mathbb{C}/\Z[i]$.
+
+\bibitem{Persson1985}
+U.~Persson, \emph{Double sextics and singular K-3 surfaces}, in
+\emph{Algebraic Geometry, Sitges 1983}, Lecture Notes in Math.
+\textbf{1124}, Springer, 1985, 262--328,
+\url{https://doi.org/10.1007/BFb0075003}. The source
+\cite{vanGeemenTop2006} cites (p.~298) for the transcendental lattice of
+the $t=-1$ member; the systematic theory of double covers of
+$\mathbb{P}^2$ branched along a union of lines.
+
+\bibitem{Wazir2004}
+R.~Wazir, \emph{Arithmetic on elliptic threefolds}, Compositio Math.
+\textbf{140} (2004), no.~3, 567--580,
+\url{https://doi.org/10.1112/S0010437X03000381}; preprint
+\texttt{arXiv:math/0112259}. In the enumeration of fiber types: for type
+$I_n^*$ the number of rational components is $n+5$ or $n+3$, determined by
+the splitting of a quadratic polynomial. Prior art for the dichotomy
+underlying Lemma~\ref{lem:rigidity} (Remark~\ref{rem:rigidity-prior-art}).
+
+\bibitem{Ulmer2011}
+D.~Ulmer, \emph{Elliptic curves over function fields}, in \emph{Arithmetic
+of $L$-functions}, IAS/Park City Math. Ser. \textbf{18}, Amer. Math. Soc.,
+2011, 211--280, \url{https://doi.org/10.1090/pcms/018/09}; preprint
+\texttt{arXiv:1101.1939}. Lecture~3, \S6 defines split and non-split
+reduction for $I_n^*$ by whether all geometric components are defined over
+the residue field, the non-split case leaving exactly one conjugate pair;
+cited alongside \cite{Wazir2004} in Remark~\ref{rem:rigidity-prior-art}.
 
 \bibitem{Kodaira1963}
 K.~Kodaira, \emph{On compact analytic surfaces II--III}, Ann. of Math.

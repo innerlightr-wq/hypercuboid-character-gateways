@@ -51,6 +51,19 @@ Manuscript: [`class_iii/manuscript/class3_hypercuboid_k3.pdf`](class_iii/manuscr
 Key arithmetic sector: $T(X)\cong\operatorname{diag}(2,2)$,
 $\operatorname{disc}=4$, CM by $\mathbb Q(i)$.
 
+**Provenance (September 2026).** This surface is the $\lambda=-1$ member
+of Ahlgren–Ono–Penniston's family: $T(p)=A(-1,p)$, and the branch sextics
+agree after an explicit $\mathbb Q$-linear substitution, so the surfaces
+are isomorphic over $\mathbb Q$ (verified in
+[`class_iii/scripts/class3_aop_identification.py`](class_iii/scripts/class3_aop_identification.py)).
+Its transcendental lattice, discriminant and CM field are consequently
+**known prior art** — van Geemen–Top (2006), citing Persson (1985) and
+Shioda–Inose (1977). The hypercuboid route is an **independent derivation
+and realization** of that arithmetic sector, not the discovery of a new
+one. Note that $\lambda=-1$ is exactly where Ahlgren–Ono–Penniston's own
+closed-form evaluation degenerates, so the evaluation of the sum is not a
+specialization of theirs.
+
 See [`class_iii/README.md`](class_iii/README.md) for the full account of
 this paper, including its literature positioning, its relation to
 Ahlgren–Ono–Penniston, and its own reproducibility material.
@@ -91,11 +104,14 @@ not claimed as new** here. This repository's contribution is:
 
 **Class III** is proved to vanish for $p\equiv3\pmod4$ by an
 independent, self-contained symmetry argument unrelated to the K3
-machinery. Its value for $p\equiv1\pmod4$ — not addressed by
-Ahlgren–Ono–Penniston either — is resolved in a companion paper via a
-*different* singular K3 surface (discriminant 4, CM by $\mathbb
-Q(i)$); see [`class_iii/`](class_iii/) and the **Companion Papers**
-section below.
+machinery. Its value for $p\equiv1\pmod4$ is resolved in a companion
+paper via a singular K3 surface of discriminant 4 with CM by $\mathbb
+Q(i)$. That surface is *not* a new one: it is the $\lambda=-1$ member of
+Ahlgren–Ono–Penniston's own family (see the Class III entry above), and
+its lattice and CM data are prior art. What the companion paper supplies
+is the hypercuboid route to it and the exact evaluation at a parameter
+where Ahlgren–Ono–Penniston's closed form degenerates; see
+[`class_iii/`](class_iii/) and the **Companion Papers** section below.
 
 ## Repository contents
 
