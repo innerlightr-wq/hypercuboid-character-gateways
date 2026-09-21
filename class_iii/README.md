@@ -66,12 +66,31 @@ What changed relative to the originally submitted and deposited manuscript:
 
 The corrected manuscript revision was established at commit `6779b6f`.
 
-### Deposited versions
+### Current archival version
 
-The existing Zenodo deposit (DOI above) and the SSRN posting are **historical
-versions** and remain as deposited. This repository holds the corrected
-next-version manuscript. Nothing is being erased or rewritten; a new deposit
-version has not yet been uploaded at the time of writing.
+The corrected September 21, 2026 author revision is archived on Zenodo:
+
+> Elias De Jesús (2026), *Class III Hypercuboid Character Sums and a
+> Discriminant-4 Singular K3 Surface*. Zenodo.
+> <https://doi.org/10.5281/zenodo.22883331>
+
+This version incorporates the provenance and proof-architecture corrections
+described above. The principal Class III character-sum theorem and numerical
+evaluations are unchanged.
+
+It was deposited as a **new version of the existing record**, not as a separate
+upload: Zenodo registers it as a version of the concept DOI
+[`10.5281/zenodo.22713446`](https://doi.org/10.5281/zenodo.22713446), which
+always resolves to the most recent version. Cite the concept DOI wherever a
+stable pointer is wanted, and a version DOI when a specific text is meant.
+
+### Earlier deposited versions
+
+Earlier Zenodo versions and the SSRN posting are **historical versions** and
+remain as deposited. Nothing has been erased or rewritten. Readers comparing
+against them should note that they predate the corrections listed above — in
+particular, they identify the surface differently and contain the superseded
+`NS = Triv` statement.
 
 ## Main result
 

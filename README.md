@@ -44,7 +44,13 @@ $\operatorname{disc}=8$, CM by $\mathbb Q(\sqrt{-2})$.
 **Class III Hypercuboid Character Sums and a Discriminant-4 Singular K3
 Surface**
 
-DOI: [https://doi.org/10.5281/zenodo.22713447](https://doi.org/10.5281/zenodo.22713447)
+DOI (all versions): [https://doi.org/10.5281/zenodo.22713446](https://doi.org/10.5281/zenodo.22713446)
+— resolves to the latest. Current version, the corrected author revision of
+21 September 2026: [https://doi.org/10.5281/zenodo.22883331](https://doi.org/10.5281/zenodo.22883331).
+Earlier versions, including the originally deposited
+[`10.5281/zenodo.22713447`](https://doi.org/10.5281/zenodo.22713447), remain as
+historical versions and predate the corrections summarised in
+[`class_iii/README.md`](class_iii/README.md#revision-status).
 
 Manuscript: [`class_iii/manuscript/class3_hypercuboid_k3.pdf`](class_iii/manuscript/class3_hypercuboid_k3.pdf)
 
