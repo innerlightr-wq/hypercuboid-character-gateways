@@ -6,11 +6,19 @@ Three independent checks, all exact (integer arithmetic only, no floating point)
           T(p)        = sum_{x,t} chi( x t (t+1)(x+t)(x+t+1) )          [this paper]
           A(lambda,p) = sum_{x,y} chi( x y (x+1)(y+1)(x + lambda y) )   [AOP]
 
-  2.  BRANCH SEXTIC.  The Q-linear substitution (x,t,w) -> (x, t-x, -t-w) carries
-      the branch sextic of X_III onto the branch sextic of the lambda = -1 member
-      EXACTLY -- with no residual scalar -- so the two double covers, and hence
-      their minimal resolutions, are isomorphic over Q.  Verified by expanding
-      both degree-6 forms as integer polynomials and comparing coefficients.
+  2.  THE SURFACE, in the manuscript's own coordinates.  For
+          V_III : Y^2 = X(X+1) T(T+1) (X+T+1)
+      the single substitution  T -> -T-1  -- an involution of the base, defined
+      over Q -- gives
+          X(X+1)(-T-1)(-T)(X-T) = X(X+1) T(T+1) (X-T),
+      which is AOP's affine equation at lambda = -1 EXACTLY, with no residual
+      scalar (the two sign flips cancel).  So the relation is literal equality of
+      defining equations after an affine change of variable on the base, hence an
+      isomorphism over Q.  Checked here projectively, as integer polynomials.
+
+  2b. THE SUM FORM.  The same conclusion for the branch sextic attached to the
+      two-variable sum x t(t+1)(x+t)(x+t+1), via (x,t,w) -> (x, t-x, -t-w).
+      Included because the manuscript uses both presentations.
 
   3.  AOP'S OWN EVALUATION DEGENERATES AT lambda = -1.  AOP evaluate A(lambda,q)
       in closed form via chi(lambda+1) * (a(lambda,q)^2 - q), which requires
@@ -110,21 +118,34 @@ def main():
             failures.append(f"T({p})={t} != A(-1,{p})={a}")
         print(f"     p = {p:3d}   T(p) = {t:7d}   A(-1,p) = {a:7d}   {flag}")
 
-    # ---- check 2: the branch sextics agree after a Q-linear substitution --
-    print("\n2. branch sextics, under (x,t,w) -> (x, t-x, -t-w)")
-    # X_III : x t (t+w)(x+t)(x+t+w) w
-    P_III = product([lin(1, 0, 0), lin(0, 1, 0), lin(0, 1, 1),
-                     lin(1, 1, 0), lin(1, 1, 1), lin(0, 0, 1)])
     # AOP at lambda = -1 : x z (x+w)(z+w)(x - z) w
     P_AOP = product([lin(1, 0, 0), lin(0, 1, 0), lin(1, 0, 1),
                      lin(0, 1, 1), lin(1, -1, 0), lin(0, 0, 1)])
+
+    # ---- check 2: the SURFACE form, under the involution T -> -T-1 --------
+    print("\n2. surface V_III : Y^2 = X(X+1)T(T+1)(X+T+1), under T -> -T-1")
+    # branch sextic of V_III, homogenised:  X (X+W) T (T+W) (X+T+W) W
+    P_V = product([lin(1, 0, 0), lin(1, 0, 1), lin(0, 1, 0),
+                   lin(0, 1, 1), lin(1, 1, 1), lin(0, 0, 1)])
+    # (X, T, W) -> (X, -T-W, W)
+    M_V = [[1, 0, 0], [0, -1, -1], [0, 0, 1]]
+    got_V = substitute(P_V, M_V)
+    same_V = got_V == P_AOP
+    if not same_V:
+        failures.append("surface-form branch sextic differs after T -> -T-1")
+    print(f"     identical to the lambda = -1 branch sextic, scalar exactly +1: {same_V}")
+    print("     -> literal equality of defining equations after an affine change")
+    print("        of variable on the base; an isomorphism over Q.")
+
+    # ---- check 2b: the SUM form ------------------------------------------
+    print("\n2b. sum form  x t(t+1)(x+t)(x+t+1), under (x,t,w) -> (x, t-x, -t-w)")
+    P_III = product([lin(1, 0, 0), lin(0, 1, 0), lin(0, 1, 1),
+                     lin(1, 1, 0), lin(1, 1, 1), lin(0, 0, 1)])
     M = [[1, 0, 0], [-1, 1, 0], [0, -1, -1]]
     got = substitute(P_III, M)
     same = got == P_AOP
     if not same:
-        failures.append("branch sextics differ after substitution")
-    print(f"     monomials in P_III(Mv) : {len(got)}")
-    print(f"     monomials in P_AOP     : {len(P_AOP)}")
+        failures.append("sum-form branch sextic differs after substitution")
     print(f"     identical as integer polynomials (scalar exactly +1): {same}")
 
     # ---- check 3: AOP's closed form degenerates at lambda = -1 -----------
