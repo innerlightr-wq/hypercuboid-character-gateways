@@ -72,6 +72,11 @@ Zenodo `10.5281/zenodo.22711323` · SHA-256
 Zenodo `10.5281/zenodo.22713447` · SHA-256
 `ba37532b68873b903fe692ff745cd06131395ad61103a27cd2aa9aca2f9d9eb7`
 
+*(These are the originally deposited first version: 23 pp. The current text is
+the corrected revision of 21 September 2026, `10.5281/zenodo.22883331`, 27 pp,
+SHA-256 `42dbaccc77aaa4f582da1c6a2b6283d81d10fe0f96325089635cd5e7cc6273e8`.
+Concept DOI for all versions: `10.5281/zenodo.22713446`.)*
+
 * **Central claim.** Evaluates `Σ_III(p)` for `p ≡ 1 (mod 4)` — the case Paper 2 left open — via a
   *different* singular K3 surface.
 * **K3 data.** `disc NS(X_III) = 4`, `T(X_III) ≅ diag(2,2)`, CM field `Q(i)`,

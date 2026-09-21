@@ -9,7 +9,12 @@
 
 > De Jesús, Elias. (2026). *Class III Hypercuboid Character Sums and a
 > Discriminant-4 Singular K3 Surface*. Zenodo.
-> https://doi.org/10.5281/zenodo.22713447
+> <https://doi.org/10.5281/zenodo.22713446>
+
+That is the **concept DOI**: it covers all versions and resolves to the most
+recent. To cite this exact text, use the current version DOI
+[`10.5281/zenodo.22883331`](https://doi.org/10.5281/zenodo.22883331) — see
+[Current archival version](#current-archival-version) below.
 
 This paper is the sequel to the repository's Classes I/II paper (see the
 top-level [`README.md`](../README.md) for that paper's citation and the

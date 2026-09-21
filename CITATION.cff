@@ -41,5 +41,10 @@ references:
     year: 2026
     publisher:
       name: Zenodo
-    doi: "10.5281/zenodo.22713447"
-    url: "https://doi.org/10.5281/zenodo.22713447"
+    doi: "10.5281/zenodo.22713446"
+    url: "https://doi.org/10.5281/zenodo.22713446"
+    notes: >-
+      Concept DOI, resolving to the latest version of the Class III paper.
+      The current version is the corrected author revision of 21 September
+      2026, 10.5281/zenodo.22883331; the originally deposited version is
+      10.5281/zenodo.22713447. See class_iii/README.md for what changed.
